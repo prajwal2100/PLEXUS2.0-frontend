@@ -1,0 +1,986 @@
+//globals
+* {
+  margin: 0;
+  padding: 0;
+  font-family: pnReg;
+}
+
+@font-face {
+  font-family: pnBold;
+  src: url(./fonts/bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: gB;
+  src: url("./fonts/gothamBold.woff");
+}
+
+@font-face {
+  font-family: pnReg;
+  src: url(./fonts/regular.ttf) format("truetype");
+}
+
+// cover page
+.wrapper {
+  display: flex;
+  background: linear-gradient(50deg, #f3c680, hsla(179, 54%, 76%, 1));
+
+  .mainbody {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+  }
+
+  .sidebar {
+    background-image: url(https://ak3.picdn.net/shutterstock/videos/22442113/thumb/1.jpg);
+    height: 100vh;
+    width: 20%;
+
+    .navlist {
+      img {
+        height: 25vh;
+      }
+
+      ul {
+        a {
+          text-decoration: none;
+          li {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            padding-top: 70px;
+            text-align: center;
+            font-family: pnReg;
+          }
+        }
+      }
+    }
+  }
+
+  .mainpage {
+    height: 100vh;
+    width: 100%;
+    .nav {
+      display: flex;
+      width: 100%;
+      height: 5%;
+      background: linear-gradient(50deg, #f3c680, hsla(179, 54%, 76%, 1));
+      .title {
+        a {
+          padding-left: 20px;
+          font-size: 30px;
+          text-decoration: none;
+          color: black;
+        }
+      }
+      .login {
+        a {
+          position: absolute;
+          right: 2rem;
+          font-size: 30px;
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+//login page
+.loginPage {
+  height: 100%;
+  .loginnav {
+    display: flex;
+    background: rgb(2, 1, 16);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 1, 16, 1) 0%,
+      rgba(105, 89, 226, 1) 50%,
+      rgba(66, 223, 255, 1) 100%
+    );
+    width: 100%;
+    height: 5%;
+    .title {
+      padding: 20px;
+      a {
+        font-size: 35px;
+        color: white;
+        font-family: pnBold;
+        text-decoration: none;
+      }
+    }
+
+    .login {
+      padding: 20px;
+      a {
+        font-size: 35px;
+        color: #050315;
+        font-family: pnBold;
+        text-decoration: none;
+        position: absolute;
+        right: 2.2rem;
+      }
+    }
+  }
+
+  .body {
+    padding: 24px;
+    background: rgb(2, 1, 16);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 1, 16, 1) 0%,
+      rgba(105, 89, 226, 1) 50%,
+      rgba(66, 223, 255, 1) 100%
+    );
+
+    body {
+      margin: 0;
+      color: #6a6f8c;
+      background: #c8c8c8;
+      font: 600 16px/18px "Open Sans", sans-serif;
+    }
+    *,
+    :after,
+    :before {
+      box-sizing: border-box;
+    }
+    .clearfix:after,
+    .clearfix:before {
+      content: "";
+      display: table;
+    }
+    .clearfix:after {
+      clear: both;
+      display: block;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .login-wrap {
+      width: 100%;
+      margin: auto;
+      max-width: 525px;
+      min-height: 670px;
+      position: relative;
+      background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg)
+        no-repeat center;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+    .login-html {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      padding: 90px 70px 50px 70px;
+      background: rgba(40, 57, 101, 0.9);
+    }
+    .login-html .sign-in-htm,
+    .login-html .sign-up-htm {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+      transition: all 0.4s linear;
+    }
+    .login-html .sign-in,
+    .login-html .sign-up,
+    .login-form .group .check {
+      display: none;
+    }
+    .login-html .tab,
+    .login-form .group .label,
+    .login-form .group .button {
+      text-transform: uppercase;
+    }
+    .login-html .tab {
+      font-size: 22px;
+      margin-right: 15px;
+      padding-bottom: 5px;
+      margin: 0 15px 10px 0;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+    }
+    .login-html .sign-in:checked + .tab,
+    .login-html .sign-up:checked + .tab {
+      color: #fff;
+      border-color: #1161ee;
+    }
+    .login-form {
+      min-height: 345px;
+      position: relative;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+    .login-form .group {
+      margin-bottom: 15px;
+    }
+    .login-form .group .label,
+    .login-form .group .input,
+    .login-form .group .button {
+      width: 100%;
+      color: #fff;
+      display: block;
+    }
+    .login-form .group .input,
+    .login-form .group .button {
+      border: none;
+      padding: 15px 20px;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .login-form .group input[data-type="password"] {
+      text-security: circle;
+      -webkit-text-security: circle;
+    }
+    .login-form .group .label {
+      color: #aaa;
+      font-size: 20px;
+    }
+    .login-form .group .button {
+      background: #1161ee;
+    }
+    .login-form .group label .icon {
+      width: 15px;
+      height: 15px;
+      border-radius: 2px;
+      position: relative;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .login-form .group label .icon:before,
+    .login-form .group label .icon:after {
+      content: "";
+      width: 10px;
+      height: 2px;
+      background: #fff;
+      position: absolute;
+      transition: all 0.2s ease-in-out 0s;
+    }
+    .login-form .group label .icon:before {
+      left: 3px;
+      width: 5px;
+      bottom: 6px;
+      transform: scale(0) rotate(0);
+    }
+    .login-form .group label .icon:after {
+      top: 6px;
+      right: 0;
+      transform: scale(0) rotate(0);
+    }
+    .login-form .group .check:checked + label {
+      color: #fff;
+    }
+    .login-form .group .check:checked + label .icon {
+      background: #1161ee;
+    }
+    .login-form .group .check:checked + label .icon:before {
+      transform: scale(1) rotate(45deg);
+    }
+    .login-form .group .check:checked + label .icon:after {
+      transform: scale(1) rotate(-45deg);
+    }
+    .login-html
+      .sign-in:checked
+      + .tab
+      + .sign-up
+      + .tab
+      + .login-form
+      .sign-in-htm {
+      transform: rotate(0);
+    }
+    .login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
+      transform: rotate(0);
+    }
+
+    .hr {
+      height: 2px;
+      margin: 60px 0 50px 0;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .foot-lnk {
+      text-align: center;
+      .foot-lnk2 {
+        font-size: 20px;
+        color: white;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+//home page
+.wrapper {
+  .mainpage {
+    .logoutButton {
+      .group {
+        input {
+          border-radius: 25px;
+          background-color: blue;
+          color: white;
+          width: 25%;
+          font-size: 25px;
+          font-family: pnBold;
+        }
+      }
+    }
+  }
+}
+
+//signup page
+
+.signupWrapper {
+  .loginnav2 {
+    display: flex;
+    background: rgb(2, 1, 16);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 1, 16, 1) 0%,
+      rgba(105, 89, 226, 1) 50%,
+      rgba(66, 223, 255, 1) 100%
+    );
+    width: 100%;
+    height: 5%;
+    .title2 {
+      padding: 20px;
+      a {
+        font-size: 35px;
+        color: white;
+        font-family: pnBold;
+        text-decoration: none;
+      }
+    }
+
+    .login2 {
+      padding: 20px;
+      a {
+        font-size: 35px;
+        color: #050315;
+        font-family: pnBold;
+        text-decoration: none;
+        position: absolute;
+        right: 2.2rem;
+      }
+    }
+  }
+  .nodeco {
+    text-decoration: none;
+    color: black;
+  }
+
+  @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+  html,
+  body {
+    position: relative;
+    min-height: 100vh;
+    background-color: #e1e8ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .form-structor {
+    background-color: #222;
+    border-radius: 15px;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-structor::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(./images/signup.jpg);
+  }
+  .form-structor .signup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    width: 65%;
+    z-index: 5;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .signup.slide-up {
+    top: 5%;
+    -webkit-transform: translate(-50%, 0%);
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .signup.slide-up .form-holder,
+  .form-structor .signup.slide-up .submit-btn {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .form-structor .signup.slide-up .form-title {
+    font-size: 1em;
+    cursor: pointer;
+  }
+  .form-structor .signup.slide-up .form-title span {
+    margin-right: 5px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .signup .form-title {
+    color: black;
+    font-size: 50px;
+    font-family: pnBold;
+
+    text-align: center;
+  }
+  .form-structor .signup .form-title span {
+    color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .signup .form-holder {
+    border-radius: 15px;
+    background-color: #fff;
+    overflow: hidden;
+    margin-top: 50px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .signup .form-holder .input {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    font-size: 12px;
+  }
+  .form-structor .signup .form-holder .input:last-child {
+    border-bottom: 0;
+  }
+  .form-structor .signup .form-holder .input::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .form-structor .signup .button {
+    margin-top: 20px;
+    width: 100%;
+    text-decoration: none;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    opacity: 0.9;
+    font-family: pnBold;
+    background-color: lightblue;
+  }
+  .form-structor .signup .button:hover {
+    transition: all 0.3s ease;
+    background-color: black;
+    color: white;
+    opacity: 1;
+  }
+  .form-structor .login {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 5;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .login::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    -webkit-transform: translate(-50%, 0);
+
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      162deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(45, 230, 253, 0.9239845596441701) 100%
+    );
+
+    width: 200%;
+    height: 250px;
+    border-radius: 50%;
+    z-index: 4;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .login .center {
+    position: absolute;
+    top: calc(50% - 10%);
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    width: 65%;
+    z-index: 5;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .login .center .form-title {
+    color: #000;
+    font-size: 1.7em;
+    text-align: center;
+  }
+  .form-structor .login .center .form-title span {
+    color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .login .center .form-holder {
+    border-radius: 15px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    overflow: hidden;
+    margin-top: 50px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .login .center .form-holder .input {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    font-size: 12px;
+  }
+  .form-structor .login .center .form-holder .input:last-child {
+    border-bottom: 0;
+  }
+  .form-structor .login .center .form-holder .input::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .form-structor .login .center .submit-btn {
+    background-color: #6b92a4;
+    color: rgba(255, 255, 255, 0.7);
+    border: 0;
+    border-radius: 15px;
+    display: block;
+    margin: 15px auto;
+    padding: 15px 45px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .login .center .submit-btn:hover {
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .form-structor .login.slide-up {
+    top: 90%;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .login.slide-up .center {
+    top: 10%;
+    -webkit-transform: translate(-50%, 0%);
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .login.slide-up .form-holder,
+  .form-structor .login.slide-up .submit-btn {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .login.slide-up .form-title {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+  }
+  .form-structor .login.slide-up .form-title span {
+    margin-right: 5px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.3s ease;
+  }
+
+  .form-structor {
+    border: 2px solid black;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 50%;
+  }
+}
+
+//card component
+
+.cardWrapper {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    min-height: 100%;
+    font-family: "Open sans", sans-serif;
+  }
+  body {
+    background: linear-gradient(50deg, #f3c680, hsla(179, 54%, 76%, 1));
+  }
+
+  /*--------------------
+  Buttons
+  --------------------*/
+  .btn {
+    display: block;
+    background: hsl(86, 76%, 71%);
+    color: hsl(0, 0, 100);
+    text-decoration: none;
+    margin: 20px 0;
+    padding: 15px 15px;
+    border-radius: 5px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.2s ease-in-out;
+      box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0), 0 3px 3px hsla(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+
+    &:hover::after {
+      background: hsla(0, 0, 0, 0.1);
+      box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0.2);
+    }
+  }
+
+  /*--------------------
+  Form
+  --------------------*/
+  .form {
+    fieldset {
+      border: none;
+      padding: 0;
+      padding: 10px 0;
+      position: relative;
+      clear: both;
+
+      &.fieldset-expiration {
+        float: left;
+        width: 60%;
+
+        & .select {
+          width: 84px;
+          margin-right: 12px;
+          float: left;
+        }
+      }
+
+      &.fieldset-ccv {
+        clear: none;
+        float: right;
+        width: 86px;
+      }
+
+      label {
+        display: block;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: hsla(0, 0, 0, 0.6);
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-family: Inconsolata;
+      }
+
+      input,
+      .select {
+        width: 100%;
+        height: 38px;
+        color: hsl(0, 0, 20);
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 15px;
+        outline: none !important;
+        border: 1px solid hsla(0, 0, 0, 0.3);
+        box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
+
+        &.input-cart-number {
+          width: 82px;
+          display: inline-block;
+          margin-right: 8px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .select {
+        position: relative;
+
+        &::after {
+          content: "";
+          border-top: 8px solid #222;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          position: absolute;
+          z-index: 2;
+          top: 14px;
+          right: 10px;
+          pointer-events: none;
+        }
+
+        select {
+          appearance: none;
+          position: absolute;
+          padding: 0;
+          border: none;
+          width: 100%;
+          outline: none !important;
+          top: 6px;
+          left: 6px;
+          background: none;
+
+          :-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #000;
+          }
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      outline: none !important;
+      background: linear-gradient(180deg, #49a09b, #3d8291);
+      text-transform: uppercase;
+      font-weight: bold;
+      border: none;
+      box-shadow: none;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      margin-top: 90px;
+
+      & .fa {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  /*--------------------
+  Checkout
+  --------------------*/
+  .checkout {
+    margin: 150px auto 30px;
+    position: relative;
+    width: 350px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 160px 45px 30px;
+    box-shadow: 0 10px 40px hsla(0, 0, 0, 0.1);
+  }
+
+  /*--------------------
+  Credit Card
+  --------------------*/
+  .credit-card-box {
+    perspective: 1000;
+    width: 300px;
+    height: 280px;
+    position: absolute;
+    top: -112px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:hover .flip,
+    &.hover .flip {
+      transform: rotateY(180deg);
+    }
+
+    .front,
+    .back {
+      //another animation
+      width: 300px;
+      height: 250px;
+      border-radius: 15px;
+      backface-visibility: hidden;
+      background: linear-gradient(135deg, #bd6772, #53223f);
+      position: absolute;
+      color: #fff;
+      font-family: Inconsolata;
+      top: 0;
+      left: 0;
+      text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+      box-shadow: 0 1px 6px hsla(0, 0, 0, 0.3);
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url("http://cdn.flaticon.com/svg/44/44386.svg") no-repeat
+          center;
+        background-size: cover;
+        opacity: 0.05;
+      }
+    }
+
+    .flip {
+      transition: 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 9px;
+      right: 20px;
+      width: 60px;
+
+      svg {
+        width: 100%;
+        height: auto;
+        fill: #fff;
+      }
+    }
+
+    .front {
+      z-index: 2;
+      transform: rotateY(0deg);
+    }
+
+    .back {
+      transform: rotateY(180deg);
+
+      .logo {
+        top: 185px;
+      }
+    }
+
+    .chip {
+      position: absolute;
+      width: 60px;
+      height: 45px;
+      top: 20px;
+      left: 20px;
+      background: linear-gradient(
+        135deg,
+        hsl(269, 54%, 87%) 0%,
+        hsl(200, 64%, 89%) 44%,
+        hsl(18, 55%, 94%) 100%
+      );
+      border-radius: 8px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 4px solid hsla(0, 0, 50, 0.1);
+        width: 80%;
+        height: 70%;
+        border-radius: 5px;
+      }
+    }
+
+    .strip {
+      background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      top: 30px;
+      left: 0;
+    }
+
+    .number {
+      position: absolute;
+      margin: 0 auto;
+      top: 103px;
+      left: 19px;
+      font-size: 38px;
+    }
+
+    .card-holder,
+    .back {
+      label {
+        font-size: 30px;
+        font-family: pnBold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+    }
+    .card-expiration-date {
+      position: absolute;
+      margin: 0 auto;
+      top: 180px;
+      left: 19px;
+      font-size: 22px;
+      text-transform: capitalize;
+      text-align: right;
+      left: auto;
+      right: 20px;
+    }
+
+    .ccv {
+      height: 36px;
+      background: #fff;
+      width: 91%;
+      border-radius: 5px;
+      top: 110px;
+      left: 0;
+      right: 0;
+      position: absolute;
+      margin: 0 auto;
+      color: #000;
+      text-align: right;
+      padding: 10px;
+
+      label {
+        margin: -25px 0 14px;
+        color: #fff;
+      }
+    }
+  }
+
+  .the-most {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 50vw;
+    max-width: 200px;
+    padding: 10px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
