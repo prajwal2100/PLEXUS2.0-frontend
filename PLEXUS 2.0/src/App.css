@@ -89,6 +89,12 @@
   height: 100%;
 }
 
+.loginPage .loginmsg {
+  font-size: 20px;
+  color: black;
+  visibility: hidden;
+}
+
 .loginPage .loginnav {
   display: -webkit-box;
   display: -ms-flexbox;

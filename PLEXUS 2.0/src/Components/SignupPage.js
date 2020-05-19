@@ -9,6 +9,7 @@ export default class SignupPage extends Component {
       username: "",
       password: "",
       email: "",
+      admissionNumber: "",
       redirect: false,
     };
     this.signup = this.signup.bind(this);
@@ -64,18 +65,21 @@ export default class SignupPage extends Component {
                 <input
                   type="text"
                   class="input"
+                  name="username"
                   placeholder="Name"
                   onChange={this.onChange}
                 />
                 <input
                   type="email"
                   class="input"
+                  name="email"
                   placeholder="Email"
                   onChange={this.onChange}
                 />
                 <input
                   type="password"
                   class="input"
+                  name="password"
                   placeholder="Password"
                   onChange={this.onChange}
                 />
@@ -88,6 +92,7 @@ export default class SignupPage extends Component {
                 <input
                   type="text"
                   class="input"
+                  name="admissionNumber"
                   placeholder="Admission Number"
                   onChange={this.onChange}
                 />

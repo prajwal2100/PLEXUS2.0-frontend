@@ -89,6 +89,11 @@
 //login page
 .loginPage {
   height: 100%;
+  .loginmsg {
+    font-size: 20px;
+    color: black;
+    visibility: hidden;
+  }
   .loginnav {
     display: flex;
     background: rgb(2, 1, 16);

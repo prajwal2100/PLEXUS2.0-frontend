@@ -8,7 +8,7 @@ export default class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      redirect: false
+      redirect: false,
     };
     this.login = this.login.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -23,7 +23,7 @@ export default class Login extends Component {
           sessionStorage.setItem("userData", responseJSON);
           this.setState({ redirect: true });
         } else {
-          console.log("login error");
+          document.getElementById("msg").style.visibility = "visible";
         }
       });
     }
@@ -106,17 +106,18 @@ export default class Login extends Component {
                         onClick={this.login}
                       />
                     </div>
-
+                    <div id="msg" className="loginmsg">
+                      invalid user name or password
+                    </div>
                     <div class="hr"></div>
 
                     <div class="foot-lnk">
-                      <a class="foot-lnk2" href="#forgot">
-                        Forgot Password?
+                      <a class="foot-lnk2" href="/signup">
+                        Not registered
+                        <br />
+                        SIGNUP
                       </a>
                       <br />
-                      <label for="tab-2" class="tab foot-lnk2">
-                        Not a member?
-                      </label>
                     </div>
                   </div>
 
