@@ -17,7 +17,12 @@ export default class SignupPage extends Component {
   }
 
   signup() {
-    if (this.state.username && this.state.password) {
+    if (
+      this.state.username &&
+      this.state.password &&
+      this.state.email &&
+      this.state.admissionNumber
+    ) {
       PostData1("signup", this.state).then((result) => {
         let responseJSON = result;
 
@@ -32,7 +37,7 @@ export default class SignupPage extends Component {
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   render() {

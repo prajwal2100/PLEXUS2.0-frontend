@@ -1,5 +1,6 @@
 export function PostData(type, userData) {
-  let BaseUrl = "https://ncs-plexus.herokuapp.com/api/register/login/";
+  let BaseUrl =
+    "https://cors-anywhere.herokuapp.com/https://ncs-plexus.herokuapp.com/api/register/login/";
   return new Promise((resolve, reject) => {
     // BaseUrl + type
     fetch(BaseUrl, {
