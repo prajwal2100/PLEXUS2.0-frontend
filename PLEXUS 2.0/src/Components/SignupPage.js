@@ -3,6 +3,76 @@ import { PostData1 } from "../services/PostData1";
 import { Redirect } from "react-router-dom";
 
 export default class SignupPage extends Component {
+  // userdata;
+  // constructor(props) {
+  //   super(props);
+  //   this.onChangeName = this.onChangeName.bind(this);
+  //   this.onChangeEmail = this.onChangeEmail.bind(this);
+  //   this.onChangePassword = this.onChangePassword.bind(this);
+  //   this.onChangeConfirmpassword = this.onChangeConfirmpassword.bind(this);
+  //   this.onChangeAdmissionNumber = this.onChangeAdmissionNumber.bind(this);
+
+  //   this.state = {
+  //     username: "",
+  //     password: "",
+  //     email: "",
+  //     admissionNumber: "",
+  //     redirect: false,
+  //   };
+  // }
+
+  // onChangeName(e) {
+  //   this.setState({ name: e.target.value });
+  // }
+  // onChangeEmail(e) {
+  //   this.setState({ email: e.target.value });
+  // }
+  // onChangePassword(e) {
+  //   this.setState({ password: e.target.value });
+  // }
+  // onChangeConfirmpassword(e) {
+  //   this.setState({ confirmPassword: e.target.value });
+  // }
+  // onChangeAdmissionNumber(e) {
+  //   this.setState({ admissionNumber: e.target.value });
+  // }
+
+  // onSubmit(e) {
+  //   e.preventDefault();
+  //   this.setState({
+  //     username: "",
+  //     password: "",
+  //     email: "",
+  //     admissionNumber: "",
+  //   })
+  // }
+
+  // componentDidMount() {
+  //   this.userdata = JSON.parse(localStorage.getItem("user"));
+  //   if (localStorage.getItem("user")) {
+  //     this.setState({
+  //       name: this.userData.name,
+  //       email: this.userData.email,
+  //       password: this.userData.password,
+  //       confirmPassword: this.userData.confirmPassword,
+  //       admissionNumber: this.userData.admissionNumber,
+  //     });
+  //   }else{
+  //     this.setState({
+  //       username: "",
+  //       password: "",
+  //       email: "",
+  //       admissionNumber: "",
+  //     })
+
+  //     };
+  //   }
+  // }
+
+  // componentWillUpdate(nextProps, nextState) {
+  //   localStorage.setItem("user", JSON.stringify(nextState));
+  // }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -63,6 +133,7 @@ export default class SignupPage extends Component {
             {/* signup */}
 
             <div class="signup">
+              {/* <form onSubmit={this.onSubmit}> */}
               <h2 class="form-title" id="signup">
                 <span>or</span>Sign up
               </h2>
@@ -72,6 +143,7 @@ export default class SignupPage extends Component {
                   class="input"
                   name="username"
                   placeholder="Name"
+                  // value={this.state.name}
                   onChange={this.onChange}
                 />
                 <input
@@ -79,6 +151,7 @@ export default class SignupPage extends Component {
                   class="input"
                   name="email"
                   placeholder="Email"
+                  // value={this.state.email}
                   onChange={this.onChange}
                 />
                 <input
@@ -86,12 +159,14 @@ export default class SignupPage extends Component {
                   class="input"
                   name="password"
                   placeholder="Password"
+                  // value={this.state.password}
                   onChange={this.onChange}
                 />
                 <input
                   type="password"
                   class="input"
                   placeholder="Confirm Password"
+                  // value={this.state.confirmPassword}
                   onChange={this.onChange}
                 />
                 <input
@@ -99,6 +174,7 @@ export default class SignupPage extends Component {
                   class="input"
                   name="admissionNumber"
                   placeholder="Admission Number"
+                  // value={this.state.admissionNumber}
                   onChange={this.onChange}
                 />
               </div>{" "}
@@ -108,6 +184,7 @@ export default class SignupPage extends Component {
                 value="Sign Up"
                 onClick={this.signup}
               />
+              {/* </form> */}
             </div>
 
             {/* login */}
