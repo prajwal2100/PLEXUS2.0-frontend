@@ -2,55 +2,101 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: pnReg;
+  font-family: proxinova-regular;
 }
 
+//* pn bold fonts
 @font-face {
   font-family: pnBold;
   src: url(./fonts/bold.otf) format("opentype");
 }
-
 @font-face {
   font-family: gB;
   src: url("./fonts/gothamBold.woff");
 }
-
 @font-face {
   font-family: pnReg;
   src: url(./fonts/regular.ttf) format("truetype");
 }
 
+//* proxi nova fonts
+@font-face {
+  font-family: proxinova-regular;
+  src: url(./fonts/ProximaNova-Regular.otf) format(opentype);
+}
+
 // cover page
 .wrapper {
   display: flex;
-  background: linear-gradient(50deg, #f3c680, hsla(179, 54%, 76%, 1));
+  background: #1f183e;
+  height: 143vh;
 
   .mainbody {
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 8%;
+    left: 18%;
+
+    .event {
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.9);
+      font-family: pnBold;
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+
+    .welcomeText {
+      color: white;
+      h2 {
+        font-family: pnReg;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      p {
+        padding-top: 10px;
+        font-family: pnReg;
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+    .cardEvents {
+      display: flex;
+      .card1 {
+        padding-right: 30px;
+      }
+    }
+  }
+
+  img {
+    max-width: 177px;
+    height: 55px;
+    position: relative;
+    left: 3rem;
+    top: 2rem;
   }
 
   .sidebar {
-    background-image: url(https://ak3.picdn.net/shutterstock/videos/22442113/thumb/1.jpg);
-    height: 100vh;
+    background-color: #151029;
+    height: 150vh;
     width: 20%;
-
     .navlist {
-      img {
-        height: 25vh;
-      }
-
       ul {
+        border: 1px solid green;
+        padding: 8px;
+        position: relative;
+        top: 5rem;
+        background-color: #24e3ae;
         a {
           text-decoration: none;
           li {
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
-            padding-top: 70px;
-            text-align: center;
+            color: #2d2c2c;
+            font-size: 17px;
+            font-weight: 600;
             font-family: pnReg;
+            display: inline-block;
+            .icon1 {
+              padding-left: 1rem;
+              padding-right: 1rem;
+            }
           }
         }
       }
@@ -64,25 +110,120 @@
       display: flex;
       width: 100%;
       height: 5%;
-      background: linear-gradient(50deg, #f3c680, hsla(179, 54%, 76%, 1));
+      background-color: #1d1739;
+      border-bottom: 1px solid #524396;
       .title {
         a {
           padding-left: 20px;
-          font-size: 30px;
+          font-size: 26px;
+          position: absolute;
+          top: 0.3rem;
+          font-family: pnBold;
           text-decoration: none;
-          color: black;
+          color: #24e3ae;
         }
       }
       .login {
         a {
           position: absolute;
           right: 2rem;
-          font-size: 30px;
+          top: 0.6rem;
           text-decoration: none;
-          color: black;
+          font-family: pnBold;
+          font-size: 16px;
+          line-height: 19px;
+          color: #24e3ae;
         }
       }
     }
+  }
+
+  //footer
+  .footer {
+    p {
+      color: white;
+      font-size: 16px;
+      font-family: pnReg;
+      text-align: right;
+      background-color: #1d1739;
+      padding: 20px;
+    }
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 83.35%;
+    float: right;
+  }
+
+  @media only screen and (max-width: 375px) {
+    .sidebar {
+      img {
+        height: 50px;
+        width: 126px;
+        position: absolute;
+        top: 0.2rem;
+        left: 1rem;
+      }
+      width: 0%;
+      .navlist {
+        display: none;
+      }
+    }
+
+    .mainpage {
+      background-color: #1f183e;
+      height: 301vh;
+
+      .nav {
+        height: 2.5%;
+        .title {
+          display: none;
+        }
+        .login {
+          display: none;
+        }
+      }
+    }
+
+    .mainbody {
+      left: 5%;
+      width: 90%;
+      .welcomeText {
+        h2 {
+          padding-top: 10px;
+          font-size: 22px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+      .event {
+        font-size: 22px;
+      }
+      .cardEvents {
+        display: block;
+        width: 100%;
+        .card1 {
+          padding-bottom: 25px;
+        }
+      }
+    }
+    .cardHolder1,
+    .cardHolder2,
+    .cardHolder3 {
+      .card {
+        width: 343px;
+      }
+    }
+
+    .footer {
+      width: 100%;
+      p {
+        text-align: center;
+      }
+    }
+
+    //? bracket of media query
   }
 }
 
@@ -634,358 +775,176 @@
 }
 
 //card component
+//? card 1
 
-.cardWrapper {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  html,
-  body {
-    min-height: 100%;
-    font-family: "Open sans", sans-serif;
-  }
-  body {
-    background: linear-gradient(50deg, #f3c680, hsla(179, 54%, 76%, 1));
-  }
-
-  /*--------------------
-  Buttons
-  --------------------*/
-  .btn {
-    display: block;
-    background: hsl(86, 76%, 71%);
-    color: hsl(0, 0, 100);
-    text-decoration: none;
-    margin: 20px 0;
-    padding: 15px 15px;
-    border-radius: 5px;
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: all 0.2s ease-in-out;
-      box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0), 0 3px 3px hsla(0, 0, 0, 0.2);
-      border-radius: 5px;
-    }
-
-    &:hover::after {
-      background: hsla(0, 0, 0, 0.1);
-      box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0.2);
-    }
-  }
-
-  /*--------------------
-  Form
-  --------------------*/
-  .form {
-    fieldset {
-      border: none;
-      padding: 0;
-      padding: 10px 0;
-      position: relative;
-      clear: both;
-
-      &.fieldset-expiration {
-        float: left;
-        width: 60%;
-
-        & .select {
-          width: 84px;
-          margin-right: 12px;
-          float: left;
-        }
+.cardHolder1 {
+  .card {
+    width: 230px;
+    height: 230px;
+    background: #2b2352;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    border-top: 7px solid #ed1d68;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .items {
+      h2 {
+        font-size: 20px;
+        color: white;
+        font-family: pnReg;
+        font-style: normal;
+        line-height: 24px;
+        padding-bottom: 10px;
+        letter-spacing: 1.3px;
       }
 
-      &.fieldset-ccv {
-        clear: none;
-        float: right;
-        width: 86px;
+      h3 {
+        font-size: 14px;
+        font-family: pnReg;
+        color: white;
+        font-weight: 600;
+        padding-bottom: 25px;
       }
-
-      label {
-        display: block;
-        text-transform: uppercase;
-        font-size: 11px;
-        color: hsla(0, 0, 0, 0.6);
-        margin-bottom: 5px;
+      p {
+        font-family: pnReg;
+        font-size: 13px;
         font-weight: bold;
-        font-family: Inconsolata;
+        text-transform: uppercase;
+        color: #9186be;
+        padding-bottom: 25px;
       }
-
-      input,
-      .select {
-        width: 100%;
-        height: 38px;
-        color: hsl(0, 0, 20);
-        padding: 10px;
-        border-radius: 5px;
+      button {
+        text-decoration: none;
+        border: none;
+        width: 120px;
+        height: 40px;
+        background: #24e3ae;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
         font-size: 15px;
-        outline: none !important;
-        border: 1px solid hsla(0, 0, 0, 0.3);
-        box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
-
-        &.input-cart-number {
-          width: 82px;
-          display: inline-block;
-          margin-right: 8px;
-
-          &:last-child {
-            margin-right: 0;
-          }
+        font-family: pnReg;
+        color: #103d30;
+        font-weight: bold;
+        &:hover {
+          background-color: #1f183e;
+          border: 1.5px solid #ed1d68;
+          color: #24e3ae;
         }
-      }
-
-      .select {
-        position: relative;
-
-        &::after {
-          content: "";
-          border-top: 8px solid #222;
-          border-left: 4px solid transparent;
-          border-right: 4px solid transparent;
-          position: absolute;
-          z-index: 2;
-          top: 14px;
-          right: 10px;
-          pointer-events: none;
-        }
-
-        select {
-          appearance: none;
-          position: absolute;
-          padding: 0;
-          border: none;
-          width: 100%;
-          outline: none !important;
-          top: 6px;
-          left: 6px;
-          background: none;
-
-          :-moz-focusring {
-            color: transparent;
-            text-shadow: 0 0 0 #000;
-          }
-        }
-      }
-    }
-
-    button {
-      width: 100%;
-      outline: none !important;
-      background: linear-gradient(180deg, #49a09b, #3d8291);
-      text-transform: uppercase;
-      font-weight: bold;
-      border: none;
-      box-shadow: none;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-      margin-top: 90px;
-
-      & .fa {
-        margin-right: 6px;
       }
     }
   }
+}
 
-  /*--------------------
-  Checkout
-  --------------------*/
-  .checkout {
-    margin: 150px auto 30px;
-    position: relative;
-    width: 350px;
-    background-color: white;
-    border-radius: 15px;
-    padding: 160px 45px 30px;
-    box-shadow: 0 10px 40px hsla(0, 0, 0, 0.1);
-  }
+//? card 2
 
-  /*--------------------
-  Credit Card
-  --------------------*/
-  .credit-card-box {
-    perspective: 1000;
-    width: 300px;
-    height: 280px;
-    position: absolute;
-    top: -112px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    &:hover .flip,
-    &.hover .flip {
-      transform: rotateY(180deg);
-    }
-
-    .front,
-    .back {
-      //another animation
-      width: 300px;
-      height: 250px;
-      border-radius: 15px;
-      backface-visibility: hidden;
-      background: linear-gradient(135deg, #bd6772, #53223f);
-      position: absolute;
-      color: #fff;
-      font-family: Inconsolata;
-      top: 0;
-      left: 0;
-      text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
-      box-shadow: 0 1px 6px hsla(0, 0, 0, 0.3);
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: url("http://cdn.flaticon.com/svg/44/44386.svg") no-repeat
-          center;
-        background-size: cover;
-        opacity: 0.05;
+.cardHolder2 {
+  .card {
+    width: 230px;
+    height: 230px;
+    background: #2b2352;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    border-top: 7px solid #24e3ae;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .items {
+      h2 {
+        font-size: 20px;
+        color: white;
+        font-family: pnReg;
+        font-style: normal;
+        line-height: 24px;
+        padding-bottom: 10px;
+        letter-spacing: 1.3px;
       }
-    }
 
-    .flip {
-      transition: 0.6s;
-      transform-style: preserve-3d;
-      position: relative;
-    }
-
-    .logo {
-      position: absolute;
-      top: 9px;
-      right: 20px;
-      width: 60px;
-
-      svg {
-        width: 100%;
-        height: auto;
-        fill: #fff;
+      h3 {
+        font-size: 14px;
+        font-family: pnReg;
+        color: white;
+        font-weight: 600;
+        padding-bottom: 25px;
       }
-    }
-
-    .front {
-      z-index: 2;
-      transform: rotateY(0deg);
-    }
-
-    .back {
-      transform: rotateY(180deg);
-
-      .logo {
-        top: 185px;
+      p {
+        font-family: pnReg;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #9186be;
+        padding-bottom: 25px;
       }
-    }
-
-    .chip {
-      position: absolute;
-      width: 60px;
-      height: 45px;
-      top: 20px;
-      left: 20px;
-      background: linear-gradient(
-        135deg,
-        hsl(269, 54%, 87%) 0%,
-        hsl(200, 64%, 89%) 44%,
-        hsl(18, 55%, 94%) 100%
-      );
-      border-radius: 8px;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        border: 4px solid hsla(0, 0, 50, 0.1);
-        width: 80%;
-        height: 70%;
-        border-radius: 5px;
-      }
-    }
-
-    .strip {
-      background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
-      position: absolute;
-      width: 100%;
-      height: 50px;
-      top: 30px;
-      left: 0;
-    }
-
-    .number {
-      position: absolute;
-      margin: 0 auto;
-      top: 103px;
-      left: 19px;
-      font-size: 38px;
-    }
-
-    .card-holder,
-    .back {
-      label {
-        font-size: 30px;
+      span {
+        background: #1f183e;
+        padding: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+        color: #24e3ae;
         font-family: pnBold;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-      }
-    }
-    .card-expiration-date {
-      position: absolute;
-      margin: 0 auto;
-      top: 180px;
-      left: 19px;
-      font-size: 22px;
-      text-transform: capitalize;
-      text-align: right;
-      left: auto;
-      right: 20px;
-    }
-
-    .ccv {
-      height: 36px;
-      background: #fff;
-      width: 91%;
-      border-radius: 5px;
-      top: 110px;
-      left: 0;
-      right: 0;
-      position: absolute;
-      margin: 0 auto;
-      color: #000;
-      text-align: right;
-      padding: 10px;
-
-      label {
-        margin: -25px 0 14px;
-        color: #fff;
+        font-weight: bold;
+        font-size: 15px;
       }
     }
   }
+}
 
-  .the-most {
-    position: fixed;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    width: 50vw;
-    max-width: 200px;
-    padding: 10px;
+//? card 3
 
-    img {
-      max-width: 100%;
+.cardHolder3 {
+  .card {
+    width: 230px;
+    height: 230px;
+    background: #2b2352;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    border-top: 7px solid #c0c0c0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .items {
+      h2 {
+        font-size: 20px;
+        color: white;
+        font-family: pnReg;
+        font-style: normal;
+        line-height: 24px;
+        padding-bottom: 10px;
+        letter-spacing: 1.3px;
+      }
+
+      h3 {
+        font-size: 14px;
+        font-family: pnReg;
+        color: white;
+        font-weight: 600;
+        padding-bottom: 25px;
+      }
+      p {
+        font-family: pnReg;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #9186be;
+        padding-bottom: 25px;
+      }
+      span {
+        background: #1f183e;
+        padding: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+        color: #24e3ae;
+        font-family: pnBold;
+        font-weight: bold;
+        font-size: 15px;
+      }
     }
   }
 }

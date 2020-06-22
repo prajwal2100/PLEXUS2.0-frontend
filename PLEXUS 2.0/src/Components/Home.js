@@ -6,7 +6,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      redirect: false
+      redirect: false,
     };
     this.logout = this.logout.bind(this);
   }
@@ -48,7 +48,7 @@ export default class Home extends Component {
           <div className="mainpage">
             <div className="nav">
               <p className="title">
-                <a href="/">Plexus</a>
+                <a href="/">Zealicon</a>
               </p>
               <p className="login">
                 <a href="/login">Login</a>

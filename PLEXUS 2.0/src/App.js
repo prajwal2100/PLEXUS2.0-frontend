@@ -7,7 +7,9 @@ import CoverPage from "./Components/CoverPage";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
 import SignupPage from "./Components/SignupPage";
-import Card from "./Components/Card";
+import Card1 from "./Components/Card1";
+import Card2 from "./Components/Card2";
+import Card3 from "./Components/Card3";
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/signup" component={SignupPage} />
-        <Route exact path="/card" component={Card} />
+        <Route exact path="/card1" component={Card1} />
+        <Route exact path="/card2" component={Card2} />
+        <Route exact path="/card3" component={Card3} />
       </Switch>
     </div>
   );
