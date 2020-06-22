@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { PostData } from "../services/PostData";
 import { Redirect } from "react-router-dom";
+import logo from "../images/Logo-Final.png";
+import vector from "../images/vector.png";
+import Footer from "./Footer";
 
 export default class Login extends Component {
   constructor(props) {
@@ -43,7 +46,65 @@ export default class Login extends Component {
 
     return (
       <div>
-        <div class="loginPage">
+        <div className="loginPage">
+          <div className="nav">
+            <div className="logo">
+              <a href="/">
+                <img src={logo} alt="logo" />
+              </a>
+            </div>
+            <div className="heading">
+              <h2>Zealicon</h2>
+            </div>
+            <div className="signup">
+              <a href="/signup">Sign up</a>
+            </div>
+          </div>
+
+          <div className="loginBody">
+            <img src={vector} alt="vector" />
+
+            <div className="loginContainer">
+              <div className="text">
+                <h2>Log into your account</h2>
+                <input
+                  id="user"
+                  name="username"
+                  type="text"
+                  onChange={this.onChange}
+                  placeholder="Username / Email address"
+                />
+                <br />
+                <input
+                  id="pass"
+                  name="password"
+                  type="password"
+                  data-type="password"
+                  onChange={this.onChange}
+                  placeholder="Password"
+                />
+                <p>Forgot password?</p>
+                <button type="submit" value="Sign In" onClick={this.login}>
+                  Login
+                </button>
+                <h3>
+                  Don't have an account? <span> Sign Up</span>
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer">
+            <Footer />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+{
+  /* <div class="loginPage">
           <div class="loginnav">
             <p class="title">
               <a href="/">Plexus</a>
@@ -120,48 +181,9 @@ export default class Login extends Component {
                       <br />
                     </div>
                   </div>
-
-                  {/* sign up */}
-                  {/* 
-                  <div class="sign-up-htm">
-                    <div class="group">
-                      <label for="user" class="label">
-                        Username
-                      </label>
-                      <input id="user" type="text" class="input" />
-                    </div>
-                    <div class="group">
-                      <label for="pass" class="label">
-                        Password
-                      </label>
-                      <input
-                        id="pass"
-                        type="password"
-                        class="input"
-                        data-type="password"
-                      />
-                    </div>
-
-                    <div class="group">
-                      <label for="pass" class="label">
-                        Email Address
-                      </label>
-                      <input id="pass" type="text" class="input" />
-                    </div>
-                    <div class="group">
-                      <input type="submit" class="button" value="Sign Up" />
-                    </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                      <label for="tab-1">Already Member? </label>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    );
-  }
+        </div> */
 }

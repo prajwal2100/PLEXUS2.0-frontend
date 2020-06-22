@@ -149,23 +149,6 @@
   color: #24e3ae;
 }
 
-.wrapper .footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 83.35%;
-  float: right;
-}
-
-.wrapper .footer p {
-  color: white;
-  font-size: 16px;
-  font-family: pnReg;
-  text-align: right;
-  background-color: #1d1739;
-  padding: 20px;
-}
-
 @media only screen and (max-width: 375px) {
   .wrapper .sidebar {
     width: 0%;
@@ -227,275 +210,205 @@
   }
 }
 
-.loginPage {
-  height: 100%;
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 83.35%;
+  float: right;
 }
 
-.loginPage .loginmsg {
-  font-size: 20px;
-  color: black;
-  visibility: hidden;
+.footer p {
+  color: white;
+  font-size: 16px;
+  font-family: pnReg;
+  text-align: right;
+  background-color: #1d1739;
+  padding: 20px;
 }
 
-.loginPage .loginnav {
+.loginPage .nav {
+  background-color: #1d1739;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #020110;
-  background: -webkit-gradient(linear, left top, right top, from(#020110), color-stop(50%, #6959e2), to(#42dfff));
-  background: linear-gradient(90deg, #020110 0%, #6959e2 50%, #42dfff 100%);
   width: 100%;
-  height: 5%;
 }
 
-.loginPage .loginnav .title {
-  padding: 20px;
-}
-
-.loginPage .loginnav .title a {
-  font-size: 35px;
-  color: white;
-  font-family: pnBold;
-  text-decoration: none;
-}
-
-.loginPage .loginnav .login {
-  padding: 20px;
-}
-
-.loginPage .loginnav .login a {
-  font-size: 35px;
-  color: #050315;
-  font-family: pnBold;
-  text-decoration: none;
+.loginPage .nav .logo a img {
+  max-width: 177px;
+  height: 55px;
   position: absolute;
-  right: 2.2rem;
+  left: 1rem;
+  top: 0rem;
 }
 
-.loginPage .body {
-  padding: 24px;
-  background: #020110;
-  background: -webkit-gradient(linear, left top, right top, from(#020110), color-stop(50%, #6959e2), to(#42dfff));
-  background: linear-gradient(90deg, #020110 0%, #6959e2 50%, #42dfff 100%);
+.loginPage .nav .heading {
+  margin: 0 auto;
 }
 
-.loginPage .body body {
-  margin: 0;
-  color: #6a6f8c;
-  background: #c8c8c8;
-  font: 600 16px/18px "Open Sans", sans-serif;
+.loginPage .nav .heading h2 {
+  font-family: pnbold;
+  color: #24e3ae;
+  font-size: 24px;
+  padding-top: 15px;
+  padding-bottom: 20px;
 }
 
-.loginPage .body *,
-.loginPage .body :after,
-.loginPage .body :before {
+.loginPage .nav .signup a {
+  text-decoration: none;
+  color: #24e3ae;
+  font-family: pnReg;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+}
+
+.loginPage .loginBody {
+  background-color: #130e25;
+  height: 90vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 100px;
+}
+
+.loginPage .loginBody img {
+  height: 23.15px;
+  width: 23.15px;
+  position: absolute;
+  top: 9.2rem;
+  right: 37rem;
+}
+
+.loginPage .loginBody .loginContainer {
+  width: 320px;
+  height: 346px;
+  background-color: #1d1739;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.loginPage .loginBody .loginContainer .text {
+  padding: 25px;
+}
+
+.loginPage .loginBody .loginContainer .text h2 {
+  font-family: pnReg;
+  font-weight: bold;
+  font-size: 20px;
+  color: #24e3ae;
+  float: left;
+  margin-bottom: 30px;
+}
+
+.loginPage .loginBody .loginContainer .text input {
+  background: #151029;
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 3.66667px;
+  width: 271.33px;
+  height: 36.61px;
+  margin-bottom: 12px;
+  color: white;
+  padding-left: 10px;
+  font-family: pnBold;
 }
 
-.loginPage .body .clearfix:after,
-.loginPage .body .clearfix:before {
-  content: "";
-  display: table;
+.loginPage .loginBody .loginContainer .text input::-webkit-input-placeholder {
+  font-family: pnBold;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 10px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.loginPage .body .clearfix:after {
-  clear: both;
-  display: block;
+.loginPage .loginBody .loginContainer .text input:-ms-input-placeholder {
+  font-family: pnBold;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 10px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.loginPage .body a {
-  color: inherit;
+.loginPage .loginBody .loginContainer .text input::-ms-input-placeholder {
+  font-family: pnBold;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.loginPage .loginBody .loginContainer .text input::placeholder {
+  font-family: pnBold;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.loginPage .loginBody .loginContainer .text p {
+  color: white;
+  font-family: pnBold;
+  float: right;
+  font-size: 14.6667px;
+}
+
+.loginPage .loginBody .loginContainer .text button {
   text-decoration: none;
-}
-
-.loginPage .body .login-wrap {
-  width: 100%;
-  margin: auto;
-  max-width: 525px;
-  min-height: 670px;
-  position: relative;
-  background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
-  -webkit-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-.loginPage .body .login-html {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  padding: 90px 70px 50px 70px;
-  background: rgba(40, 57, 101, 0.9);
-}
-
-.loginPage .body .login-html .sign-in-htm,
-.loginPage .body .login-html .sign-up-htm {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transition: all 0.4s linear;
-  transition: all 0.4s linear;
-}
-
-.loginPage .body .login-html .sign-in,
-.loginPage .body .login-html .sign-up,
-.loginPage .body .login-form .group .check {
-  display: none;
-}
-
-.loginPage .body .login-html .tab,
-.loginPage .body .login-form .group .label,
-.loginPage .body .login-form .group .button {
-  text-transform: uppercase;
-}
-
-.loginPage .body .login-html .tab {
-  font-size: 22px;
-  margin-right: 15px;
-  padding-bottom: 5px;
-  margin: 0 15px 10px 0;
-  display: inline-block;
-  border-bottom: 2px solid transparent;
-}
-
-.loginPage .body .login-html .sign-in:checked + .tab,
-.loginPage .body .login-html .sign-up:checked + .tab {
-  color: #fff;
-  border-color: #1161ee;
-}
-
-.loginPage .body .login-form {
-  min-height: 345px;
-  position: relative;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-
-.loginPage .body .login-form .group {
-  margin-bottom: 15px;
-}
-
-.loginPage .body .login-form .group .label,
-.loginPage .body .login-form .group .input,
-.loginPage .body .login-form .group .button {
-  width: 100%;
-  color: #fff;
-  display: block;
-}
-
-.loginPage .body .login-form .group .input,
-.loginPage .body .login-form .group .button {
+  background-color: #24e3ae;
+  width: 271px;
+  height: 37px;
   border: none;
-  padding: 15px 20px;
-  border-radius: 25px;
-  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-family: pnBold;
+  color: #130e25;
+  font-size: 15px;
+  margin-top: 15px;
 }
 
-.loginPage .body .login-form .group input[data-type="password"] {
-  text-security: circle;
-  -webkit-text-security: circle;
+.loginPage .loginBody .loginContainer .text button:hover {
+  background-color: #1f183e;
+  color: #24e3ae;
+  border: 2.5px solid #24e3ae;
 }
 
-.loginPage .body .login-form .group .label {
-  color: #aaa;
-  font-size: 20px;
-}
-
-.loginPage .body .login-form .group .button {
-  background: #1161ee;
-}
-
-.loginPage .body .login-form .group label .icon {
-  width: 15px;
-  height: 15px;
-  border-radius: 2px;
-  position: relative;
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.loginPage .body .login-form .group label .icon:before,
-.loginPage .body .login-form .group label .icon:after {
-  content: "";
-  width: 10px;
-  height: 2px;
-  background: #fff;
-  position: absolute;
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s;
-}
-
-.loginPage .body .login-form .group label .icon:before {
-  left: 3px;
-  width: 5px;
-  bottom: 6px;
-  -webkit-transform: scale(0) rotate(0);
-          transform: scale(0) rotate(0);
-}
-
-.loginPage .body .login-form .group label .icon:after {
-  top: 6px;
-  right: 0;
-  -webkit-transform: scale(0) rotate(0);
-          transform: scale(0) rotate(0);
-}
-
-.loginPage .body .login-form .group .check:checked + label {
-  color: #fff;
-}
-
-.loginPage .body .login-form .group .check:checked + label .icon {
-  background: #1161ee;
-}
-
-.loginPage .body .login-form .group .check:checked + label .icon:before {
-  -webkit-transform: scale(1) rotate(45deg);
-          transform: scale(1) rotate(45deg);
-}
-
-.loginPage .body .login-form .group .check:checked + label .icon:after {
-  -webkit-transform: scale(1) rotate(-45deg);
-          transform: scale(1) rotate(-45deg);
-}
-
-.loginPage .body .login-html
-.sign-in:checked
-+ .tab
-+ .sign-up
-+ .tab
-+ .login-form
-.sign-in-htm {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-}
-
-.loginPage .body .login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-}
-
-.loginPage .body .hr {
-  height: 2px;
-  margin: 60px 0 50px 0;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.loginPage .body .foot-lnk {
+.loginPage .loginBody .loginContainer .text h3 {
+  font-family: pnBold;
+  font-size: 14.6667px;
+  color: white;
+  margin-top: 40px;
   text-align: center;
 }
 
-.loginPage .body .foot-lnk .foot-lnk2 {
-  font-size: 20px;
-  color: white;
-  padding: 20px;
+.loginPage .loginBody .loginContainer .text h3 span {
+  font-family: pnBold;
+  font-size: 14.6667px;
+  color: #24e3ae;
+}
+
+.loginPage .footer {
+  width: 100%;
+}
+
+@media only screen and (max-width: 375px) {
+  .loginPage .loginBody img {
+    position: absolute;
+    top: 9.2rem;
+    left: 20.5rem;
+  }
 }
 
 .wrapper .mainpage .logoutButton .group input {
