@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { PostData } from "../services/PostData";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import logo from "../images/Logo-Final.png";
 import vector from "../images/vector.png";
 import Footer from "./Footer";
@@ -25,8 +25,6 @@ export default class Login extends Component {
         if (responseJSON.userData) {
           sessionStorage.setItem("userData", responseJSON);
           this.setState({ redirect: true });
-        } else {
-          document.getElementById("msg").style.visibility = "visible";
         }
       });
     }
@@ -49,15 +47,15 @@ export default class Login extends Component {
         <div className="loginPage">
           <div className="nav">
             <div className="logo">
-              <a href="/">
+              <Link to="/dashboard">
                 <img src={logo} alt="logo" />
-              </a>
+              </Link>
             </div>
             <div className="heading">
               <h2>Zealicon</h2>
             </div>
             <div className="signup">
-              <a href="/signup">Sign up</a>
+              <Link to="/signup">Sign up</Link>
             </div>
           </div>
 
@@ -88,7 +86,11 @@ export default class Login extends Component {
                   Login
                 </button>
                 <h3>
-                  Don't have an account? <span> Sign Up</span>
+                  Don't have an account?{" "}
+                  <span>
+                    {" "}
+                    <Link to="/signup">Sign up</Link>
+                  </span>
                 </h3>
               </div>
             </div>

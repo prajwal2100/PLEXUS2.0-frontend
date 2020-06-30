@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import logo from "../images/Logo-Final.png";
 import Card1 from "./Card1";
@@ -17,22 +18,22 @@ export default class CoverPage extends Component {
             <img src={logo} alt="logo" />
             <div className="navlist">
               <ul>
-                <a href="/">
+                <Link to="/">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Home
                   </li>
-                </a>
+                </Link>
               </ul>
             </div>
           </div>
           <div className="mainpage">
             <div className="nav">
               <p className="title">
-                <a href="/">Zealicon</a>
+                <Link to="/">Zealicon</Link>
               </p>
               <p className="login">
-                <a href="/login">Login</a>
+                <Link to="/login">Login</Link>
               </p>
             </div>
           </div>

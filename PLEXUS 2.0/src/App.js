@@ -10,6 +10,7 @@ import SignupPage from "./Components/SignupPage";
 import Card1 from "./Components/Card1";
 import Card2 from "./Components/Card2";
 import Card3 from "./Components/Card3";
+import Dashboard from "./Components/Dashboard";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/card1" component={Card1} />
         <Route exact path="/card2" component={Card2} />
         <Route exact path="/card3" component={Card3} />
+        <Route exact path="/dashboard" component={Dashboard} />
       </Switch>
     </div>
   );
