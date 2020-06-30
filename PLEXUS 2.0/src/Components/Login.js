@@ -25,6 +25,8 @@ export default class Login extends Component {
         if (responseJSON.userData) {
           sessionStorage.setItem("userData", responseJSON);
           this.setState({ redirect: true });
+        } else {
+          console.log("error");
         }
       });
     }

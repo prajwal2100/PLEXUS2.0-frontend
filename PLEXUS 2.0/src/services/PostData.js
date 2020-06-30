@@ -6,6 +6,10 @@ export function PostData(type, userData) {
     fetch(BaseUrl, {
       method: "POST",
       body: JSON.stringify(userData),
+      headers: new Headers({
+        accept: "application/json",
+        "content-type": "application/json",
+      }),
     })
       .then((response) => response.json())
       .then((responseJson) => {
