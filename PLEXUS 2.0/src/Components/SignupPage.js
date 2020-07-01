@@ -21,7 +21,6 @@ export default class SignupPage extends Component {
       confirmPassword: "",
       contactNumber: "",
       email: "",
-      collegeName: "",
 
       errors: [],
       usernameErr: "",
@@ -93,7 +92,7 @@ export default class SignupPage extends Component {
   };
 
   onAdmissionChange = (e) => {
-    this.setState({ admissionNo: e.target.value });
+    this.setState({ admissionNumber: e.target.value });
     this.clearValidation("name");
   };
   onUsernameChange = (e) => {
@@ -106,12 +105,12 @@ export default class SignupPage extends Component {
     this.clearValidation("password");
   };
   onConfirmpasswordChange = (e) => {
-    this.setState({ cpassword: e.target.value });
-    this.clearValidation("cpassword");
+    this.setState({ confirmPassword: e.target.value });
+    this.clearValidation("confirmPassword");
   };
   onContactNumberChange = (e) => {
-    this.setState({ mobile: e.target.value });
-    this.clearValidation("mobile");
+    this.setState({ contactNumber: e.target.value });
+    this.clearValidation("contactNumber");
   };
   onEmailChange = (e) => {
     this.setState({ email: e.target.value });
@@ -120,8 +119,8 @@ export default class SignupPage extends Component {
 
   submitRegister = (e) => {
     e.preventDefault();
-    if (this.state.admissionNo === "") {
-      this.Validation("admissionNo", "Please enter your Admission No");
+    if (this.state.admissionNumber === "") {
+      this.Validation("admissionNumber", "Please enter your Admission No");
     }
     if (this.state.username === "" || this.state.username.length < 4) {
       this.Validation("username", "Don't skip and greater than 4");
@@ -140,7 +139,7 @@ export default class SignupPage extends Component {
       this.state.contactNumber === "" ||
       this.state.contactNumber.length < 10
     ) {
-      this.Validation("mobile", "Enter Valid Mobile No.");
+      this.Validation("contactNumber", "Enter Valid Mobile No.");
     }
     if (this.state.email === "") {
       this.Validation("email", "Provide mail for ease !!!");
@@ -171,10 +170,10 @@ export default class SignupPage extends Component {
       if (err.elm === "password") {
         passwordErr = err.msg;
       }
-      if (err.elm === "cpassword") {
+      if (err.elm === "confirmPassword") {
         confirmPasswordErr = err.msg;
       }
-      if (err.elm === "mobile") {
+      if (err.elm === "contactNumber") {
         contactNumberErr = err.msg;
       }
       if (err.elm === "email") {
@@ -281,7 +280,7 @@ export default class SignupPage extends Component {
                 <button
                   type="submit"
                   value="Signup"
-                  onClick={this.submitRegister}
+                  onClick={this.onSuccessfulLogin}
                 >
                   Sign Up
                 </button>
