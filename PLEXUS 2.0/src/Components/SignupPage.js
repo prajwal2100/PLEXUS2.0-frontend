@@ -10,8 +10,6 @@ import eclipse3 from "../images/Ellipse 3.png";
 import eclipse4 from "../images/Ellipse 4.png";
 import { notify, report } from "superagent";
 
-// Using useHistory hook to redirect after successful api call
-let history = useHistory();
 
 
 // function TO VALIDATE EMAIL. You can test your regex on https://regex101.com/.
@@ -140,7 +138,6 @@ export default class SignupPage extends Component {
           if ('token' in response.data) {
             localStorage.setItem('token', response.data.token)
           }
-          history.push('/')
         })
         .catch(function (response) {
           //handle error
