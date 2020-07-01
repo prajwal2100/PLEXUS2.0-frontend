@@ -1,185 +1,169 @@
 import React, { Component } from "react";
-import { PostData1 } from "../services/PostData1";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect, Link, useHistory } from "react-router-dom";
 import logo from "../images/Logo-Final.png";
 import vector from "../images/vector.png";
 import Footer from "./Footer";
-import superagent from "superagent";
-
+import axios from 'axios'
 import eclipse1 from "../images/Ellipse 1.png";
 import eclipse2 from "../images/Ellipse 2.png";
 import eclipse3 from "../images/Ellipse 3.png";
 import eclipse4 from "../images/Ellipse 4.png";
+import { notify, report } from "superagent";
+
+// Using useHistory hook to redirect after successful api call
+let history = useHistory();
+
+
+// function TO VALIDATE EMAIL. You can test your regex on https://regex101.com/.
+
+// Take a quick look at https://regexr.com/ or just google to know basic about regex
+
+const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+const validateForm = (errors) => {
+  let valid = true;
+  Object.values(errors).forEach(
+    (val) => val.length > 0 && (valid = false)
+  );
+  return valid;
+}
 
 export default class SignupPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: "",
-      admissionNumber: "",
-      password: "",
-      confirmPassword: "",
-      contactNumber: "",
-      email: "",
 
-      errors: [],
-      usernameErr: "",
-      passwordErr: "",
-      confirmPasswordErr: "",
-      contactNumberErr: "",
-      emailErr: "",
-      usernameres: "",
-      emailres: "",
+    // states and the error validation that are used in function below are defined here.
+    this.state = {
+      username: null,
+      email: null,
+      password: null,
+      confirmPassword: null,
+      contactNumber: null,
+      admissionNumber: null,
+      errors: {
+        username: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        contactNumber: '',
+        admissionNumber: ''
+      }
     };
   }
 
-  handelJwt = () => {
-    const payload = {
-      username: this.state.username,
-      email: this.state.email,
-      password: this.state.password,
-      contactNumber: this.state.contactNumber,
-      confirmPassword: this.state.confirmPassword,
-      admissionNumber: this.state.admissionNumber,
-    };
 
-    superagent
-      .post(
-        "https://cors-anywhere.herokuapp.com/https://ncs-plexus.herokuapp.com/api/register/player_register/"
-      )
-      .set("Content-Type", "application/json")
-      .send(payload)
-      .then((res) => {
-        localStorage.setItem("logintoken", res.body.token.access);
-        if (res.body.token.access && res.body.token.access.length > 10) {
-          this.props.onSuccessfulLogin();
-          window.location.reload();
-        }
+  // This is the actual method that validates the input field. You have to add more custom validations like in confirm password to matchh the original typed password. 
+  // I have added only basic validation just to show. You have to add phone number validation as well. This methos checks the validation on each change.
+
+
+  // If adding custom validation is tiresome you can use FORMIK a great react validation library. Or you any UI framework like ant design or reactstrap(They all come with form and validation)
+
+  handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    let errors = this.state.errors;
+
+    switch (name) {
+      case 'username':
+        errors.username =
+          value.length < 5
+            ? 'Username must be 5 characters long!'
+            : '';
+        break;
+      // IF THERE IS AN ERROR THEN SHOW MESSAGE OTHERWISE EMPTY STRING 
+
+      case 'email':
+        errors.email =
+          validEmailRegex.test(value)
+            ? ''
+            : 'Email is not valid!';
+        break;
+      case 'password':
+        errors.password =
+          value.length < 8
+            ? 'Password must be 8 characters long!'
+            : '';
+        break;
+      case 'confirmPassword':
+        errors.confirmPassword =
+          value.length < 8
+            ? 'Password must be 8 characters long!'
+            : '';
+        break;
+      case 'contactNumber':
+        errors.contactNumber =
+          value.length < 9
+            ? 'Enter a valid number'
+            : '';
+        break;
+      case 'admissionNumber':
+        errors.admissionNumber =
+          value.length < 5
+            ? 'Admission number is required!'
+            : '';
+        break;
+      default:
+        break;
+    }
+
+    this.setState({ errors, [name]: value });
+  }
+
+
+  // This method get called when the user press create button. This button checks if there are errors are notify. If not then prints payload. Payload is the actual data to be setInterval. 
+  // If the form is validated we will  make api call
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    if (validateForm(this.state.errors)) {
+      const payload = {
+        username: this.state.username,
+        email: this.state.email,
+        password: this.state.password,
+        contactNumber: this.state.contactNumber,
+        confirmPassword: this.state.confirmPassword,
+        admissionNumber: this.state.admissionNumber,
+      };
+      console.info('Valid Form')
+
+      // make api call. I've made api call with axios but you can make it with fetch or superagent(That kunal sir used in tech-trek). It will be a post call
+      // myurl  === Server api = hosted backend API
+
+      axios({
+        method: 'post',
+        url: 'myurl',
+        data: payload,
       })
-      .catch((err) => {
-        console.log(err);
-        if (err && err.response && err.response.body) {
-          if (err.response.body.username) {
-            this.setState({
-              usernameres: err.response.body.username,
-            });
+        .then(function (response) {
+          //handle success 
+          console.log(response);
+          // Now if a token comes in response. Then store it in localStorage and redirect to homepage.
+          if ('token' in response.data) {
+            localStorage.setItem('token', response.data.token)
           }
-          if (err.response.body.email) {
-            this.setState({
-              emailres: err.response.body.email,
-            });
-          }
-        }
-      });
-  };
+          history.push('/')
+        })
+        .catch(function (response) {
+          //handle error
+          console.log(response);
 
-  Validation = (elm, msg) => {
-    this.setState((prevState) => ({
-      errors: [...prevState.errors, { elm, msg }],
-    }));
-  };
+          // Show error to user. Like ALREADY REGISTERD Or anything. I'm just consoling the messgae
 
-  clearValidation = (elm) => {
-    this.setState((prevState) => {
-      let newArr = [];
-      for (let err of prevState.errors) {
-        if (err.elm !== elm) {
-          newArr.push(err);
-        }
-      }
-      return { errors: newArr };
-    });
-  };
+          console.log(response.data.message)
+        });
 
-  onAdmissionChange = (e) => {
-    this.setState({ admissionNumber: e.target.value });
-    this.clearValidation("name");
-  };
-  onUsernameChange = (e) => {
-    this.setState({ username: e.target.value });
-    this.clearValidation("username");
-  };
+    } else {
+      console.error('Invalid Form')
+    }
+  }
 
-  onPasswordChange = (e) => {
-    this.setState({ password: e.target.value });
-    this.clearValidation("password");
-  };
-  onConfirmpasswordChange = (e) => {
-    this.setState({ confirmPassword: e.target.value });
-    this.clearValidation("confirmPassword");
-  };
-  onContactNumberChange = (e) => {
-    this.setState({ contactNumber: e.target.value });
-    this.clearValidation("contactNumber");
-  };
-  onEmailChange = (e) => {
-    this.setState({ email: e.target.value });
-    this.clearValidation("email");
-  };
 
-  submitRegister = (e) => {
-    e.preventDefault();
-    if (this.state.admissionNumber === "") {
-      this.Validation("admissionNumber", "Please enter your Admission No");
-    }
-    if (this.state.username === "" || this.state.username.length < 4) {
-      this.Validation("username", "Don't skip and greater than 4");
-    }
-    if (this.state.password === "") {
-      this.Validation("password", "Password length should be greater than 6");
-    }
-    if (
-      this.state.confirmPassword === "" ||
-      this.state.confirmPassword !== this.state.password
-    ) {
-      this.Validation("confirmPassword", "Password didn't matched !!");
-    }
 
-    if (
-      this.state.contactNumber === "" ||
-      this.state.contactNumber.length < 10
-    ) {
-      this.Validation("contactNumber", "Enter Valid Mobile No.");
-    }
-    if (this.state.email === "") {
-      this.Validation("email", "Provide mail for ease !!!");
-    }
-    if (
-      this.state.admissionNumber !== "" &&
-      this.state.username.length > 4 &&
-      this.state.password !== "" &&
-      this.state.confirmPassword !== "" &&
-      this.state.contactNumber !== "" &&
-      this.state.email !== ""
-    ) {
-      this.handleJwt();
-    }
-  };
 
   render() {
-    let admissionNumberErr = null,
-      usernameErr = null,
-      passwordErr = null,
-      confirmPasswordErr = null,
-      contactNumberErr = null,
-      emailErr = null;
-    for (let err of this.state.errors) {
-      if (err.elm === "username") {
-        usernameErr = err.msg;
-      }
-      if (err.elm === "password") {
-        passwordErr = err.msg;
-      }
-      if (err.elm === "confirmPassword") {
-        confirmPasswordErr = err.msg;
-      }
-      if (err.elm === "contactNumber") {
-        contactNumberErr = err.msg;
-      }
-      if (err.elm === "email") {
-        emailErr = err.msg;
-      }
-    }
+
+
+    const { errors } = this.state;
+
 
     return (
       <div>
@@ -211,79 +195,48 @@ export default class SignupPage extends Component {
                   <img src={eclipse3} alt="avatar3" />
                   <img src={eclipse4} alt="avatar4" />
                 </div>
+                <form onSubmit={this.handleSubmit} >
+                  <div className='username'>
+                    <input type='text' name='username' onChange={this.handleChange} required placeholder="Username" />
+                    {/* This span shows error. You can style it as you want */}
+                    {errors.username.length > 0 &&
+                      <span className='error'>{errors.username}</span>}
+                  </div>
+                  <div className='email'>
+                    <input type='email' name='email' onChange={this.handleChange} required placeholder="Email" />
+                    {/* This span shows error. You can style it as you want */}
+                    {errors.email.length > 0 &&
+                      <span className='error'>{errors.email}</span>}
+                  </div>
+                  <div className='password'>
+                    <input type='password' name='password' onChange={this.handleChange} required placeholder="Password" />
+                    {/* This span shows error. You can style it as you want */}
+                    {errors.password.length > 0 &&
+                      <span className='error'>{errors.password}</span>}
+                  </div>
+                  <div className='confirmPassword'>
+                    <input type='password' name='confirmPassword' onChange={this.handleChange} required placeholder="Confirm Password" />
+                    {/* This span shows error. You can style it as you want */}
+                    {errors.confirmPassword.length > 0 &&
+                      <span className='error'>{errors.confirmPassword}</span>}
+                  </div>
+                  <div className='contact'>
+                    <input type='number' name='contactNumber' onChange={this.handleChange} required placeholder="Contact Number" />
+                    {/* This span shows error. You can style it as you want */}
+                    {errors.contactNumber.length > 0 &&
+                      <span className='error'>{errors.contactNumber}</span>}
+                  </div>
+                  <div className='admission'>
+                    <input type='text' name='admissionNumber' onChange={this.handleChange} required placeholder="Admission Number" />
+                    {/* This span shows error. You can style it as you want */}
+                    {errors.admissionNumber.length > 0 &&
+                      <span className='error'>{errors.admissionNumber}</span>}
+                  </div>
+                  <div className='submit'>
+                    <button>Create</button>
+                  </div>
+                </form>
 
-                <input
-                  // id="email"
-                  name="email"
-                  type="text"
-                  onChange={this.onEmailChange}
-                  placeholder="Email address"
-                />
-                <br />
-
-                <input
-                  // id="username"
-                  name="username"
-                  type="text"
-                  onChange={this.onUsernameChange}
-                  placeholder="Name"
-                />
-                <br />
-
-                <input
-                  // id="pass"
-                  name="password"
-                  type="password"
-                  data-type="password"
-                  onChange={this.onPasswordChange}
-                  placeholder="Password"
-                />
-
-                <input
-                  // id="confirmpass"
-                  name="confirmPassword"
-                  type="password"
-                  onChange={this.onConfirmpasswordChange}
-                  placeholder="Confirm Password"
-                />
-                <br />
-                <br />
-                <br />
-
-                {/* <input
-                  id="collegeName"
-                  name="collegeName"
-                  type="text"
-                  onChange={this.onChange}
-                  placeholder="College Name"
-                />
-                <br /> */}
-
-                <input
-                  // id="admissionNumber"
-                  name="admissionNumber"
-                  type="text"
-                  onChange={this.onAdmissionChange}
-                  placeholder="Admission Number"
-                />
-                <br />
-
-                <input
-                  // id="contactNumber"
-                  name="contactNumber"
-                  type="text"
-                  onChange={this.onContactNumberChange}
-                  placeholder="Contact Number"
-                />
-                <br />
-
-                <button
-                  type="submit"
-                  value="Signup"
-                  onClick={this.onSuccessfulLogin}
-                >
-                  Sign Up
-                </button>
                 <h3>
                   Already have an account!{" "}
                   <span>
