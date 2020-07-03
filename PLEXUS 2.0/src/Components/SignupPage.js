@@ -3,27 +3,25 @@ import { Redirect, Link, useHistory } from "react-router-dom";
 import logo from "../images/Logo-Final.png";
 import vector from "../images/vector.png";
 import Footer from "./Footer";
-import axios from 'axios'
+import axios from "axios";
 import eclipse1 from "../images/Ellipse 1.png";
 import eclipse2 from "../images/Ellipse 2.png";
 import eclipse3 from "../images/Ellipse 3.png";
 import eclipse4 from "../images/Ellipse 4.png";
 import { notify, report } from "superagent";
 
-
-
 // function TO VALIDATE EMAIL. You can test your regex on https://regex101.com/.
 
 // Take a quick look at https://regexr.com/ or just google to know basic about regex
 
-const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+const validEmailRegex = RegExp(
+  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+);
 const validateForm = (errors) => {
   let valid = true;
-  Object.values(errors).forEach(
-    (val) => val.length > 0 && (valid = false)
-  );
+  Object.values(errors).forEach((val) => val.length > 0 && (valid = false));
   return valid;
-}
+};
 
 export default class SignupPage extends Component {
   constructor(props) {
@@ -38,20 +36,18 @@ export default class SignupPage extends Component {
       contactNumber: null,
       admissionNumber: null,
       errors: {
-        username: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        contactNumber: '',
-        admissionNumber: ''
-      }
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        contactNumber: "",
+        admissionNumber: "",
+      },
     };
   }
 
-
-  // This is the actual method that validates the input field. You have to add more custom validations like in confirm password to matchh the original typed password. 
+  // This is the actual method that validates the input field. You have to add more custom validations like in confirm password to matchh the original typed password.
   // I have added only basic validation just to show. You have to add phone number validation as well. This methos checks the validation on each change.
-
 
   // If adding custom validation is tiresome you can use FORMIK a great react validation library. Or you any UI framework like ant design or reactstrap(They all come with form and validation)
 
@@ -61,53 +57,38 @@ export default class SignupPage extends Component {
     let errors = this.state.errors;
 
     switch (name) {
-      case 'username':
+      case "username":
         errors.username =
-          value.length < 5
-            ? 'Username must be 5 characters long!'
-            : '';
+          value.length < 5 ? "Username must be 5 characters long!" : "";
         break;
-      // IF THERE IS AN ERROR THEN SHOW MESSAGE OTHERWISE EMPTY STRING 
+      // IF THERE IS AN ERROR THEN SHOW MESSAGE OTHERWISE EMPTY STRING
 
-      case 'email':
-        errors.email =
-          validEmailRegex.test(value)
-            ? ''
-            : 'Email is not valid!';
+      case "email":
+        errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
         break;
-      case 'password':
+      case "password":
         errors.password =
-          value.length < 8
-            ? 'Password must be 8 characters long!'
-            : '';
+          value.length < 8 ? "Password must be 8 characters long!" : "";
         break;
-      case 'confirmPassword':
+      case "confirmPassword":
         errors.confirmPassword =
-          value.length < 8
-            ? 'Password must be 8 characters long!'
-            : '';
+          value.length < 8 ? "Password must be 8 characters long!" : "";
         break;
-      case 'contactNumber':
-        errors.contactNumber =
-          value.length < 9
-            ? 'Enter a valid number'
-            : '';
+      case "contactNumber":
+        errors.contactNumber = value.length < 9 ? "Enter a valid number" : "";
         break;
-      case 'admissionNumber':
+      case "admissionNumber":
         errors.admissionNumber =
-          value.length < 5
-            ? 'Admission number is required!'
-            : '';
+          value.length < 5 ? "Admission number is required!" : "";
         break;
       default:
         break;
     }
 
     this.setState({ errors, [name]: value });
-  }
+  };
 
-
-  // This method get called when the user press create button. This button checks if there are errors are notify. If not then prints payload. Payload is the actual data to be setInterval. 
+  // This method get called when the user press create button. This button checks if there are errors are notify. If not then prints payload. Payload is the actual data to be setInterval.
   // If the form is validated we will  make api call
 
   handleSubmit = (event) => {
@@ -121,46 +102,42 @@ export default class SignupPage extends Component {
         confirmPassword: this.state.confirmPassword,
         admissionNumber: this.state.admissionNumber,
       };
-      console.info('Valid Form')
+      console.info("Valid Form");
 
       // make api call. I've made api call with axios but you can make it with fetch or superagent(That kunal sir used in tech-trek). It will be a post call
       // myurl  === Server api = hosted backend API
 
       axios({
-        method: 'post',
-        url: 'myurl',
+        method: "post",
+        url:
+          "https://cors-anywhere.herokuapp.com/https://ncs-plexus.herokuapp.com/api/register/player_register/",
         data: payload,
+        // headers: { "Content-Type": "application/json" },
       })
         .then(function (response) {
-          //handle success 
+          //handle success
           console.log(response);
           // Now if a token comes in response. Then store it in localStorage and redirect to homepage.
-          if ('token' in response.data) {
-            localStorage.setItem('token', response.data.token)
+          if ("token" in response.data) {
+            localStorage.setItem("token", response.data.token);
           }
         })
-        .catch(function (response) {
+        .catch(function (error) {
           //handle error
-          console.log(response);
+          console.log(error.response);
 
           // Show error to user. Like ALREADY REGISTERD Or anything. I'm just consoling the messgae
 
-          console.log(response.data.message)
+          // console.log(response.data.message);
+          console.log("error");
         });
-
     } else {
-      console.error('Invalid Form')
+      console.error("Invalid Form");
     }
-  }
-
-
-
+  };
 
   render() {
-
-
     const { errors } = this.state;
-
 
     return (
       <div>
@@ -192,44 +169,86 @@ export default class SignupPage extends Component {
                   <img src={eclipse3} alt="avatar3" />
                   <img src={eclipse4} alt="avatar4" />
                 </div>
-                <form onSubmit={this.handleSubmit} >
-                  <div className='username'>
-                    <input type='text' name='username' onChange={this.handleChange} required placeholder="Username" />
+                <form onSubmit={this.handleSubmit}>
+                  <div className="username">
+                    <input
+                      type="text"
+                      name="username"
+                      onChange={this.handleChange}
+                      required
+                      placeholder="Username"
+                    />
                     {/* This span shows error. You can style it as you want */}
-                    {errors.username.length > 0 &&
-                      <span className='error'>{errors.username}</span>}
+                    {errors.username.length > 0 && (
+                      <span className="error">{errors.username}</span>
+                    )}
                   </div>
-                  <div className='email'>
-                    <input type='email' name='email' onChange={this.handleChange} required placeholder="Email" />
+                  <div className="email">
+                    <input
+                      type="email"
+                      name="email"
+                      onChange={this.handleChange}
+                      required
+                      placeholder="Email"
+                    />
                     {/* This span shows error. You can style it as you want */}
-                    {errors.email.length > 0 &&
-                      <span className='error'>{errors.email}</span>}
+                    {errors.email.length > 0 && (
+                      <span className="error">{errors.email}</span>
+                    )}
                   </div>
-                  <div className='password'>
-                    <input type='password' name='password' onChange={this.handleChange} required placeholder="Password" />
+                  <div className="password">
+                    <input
+                      type="password"
+                      name="password"
+                      onChange={this.handleChange}
+                      required
+                      placeholder="Password"
+                    />
                     {/* This span shows error. You can style it as you want */}
-                    {errors.password.length > 0 &&
-                      <span className='error'>{errors.password}</span>}
+                    {errors.password.length > 0 && (
+                      <span className="error">{errors.password}</span>
+                    )}
                   </div>
-                  <div className='confirmPassword'>
-                    <input type='password' name='confirmPassword' onChange={this.handleChange} required placeholder="Confirm Password" />
+                  <div className="confirmPassword">
+                    <input
+                      type="password"
+                      name="confirmPassword"
+                      onChange={this.handleChange}
+                      required
+                      placeholder="Confirm Password"
+                    />
                     {/* This span shows error. You can style it as you want */}
-                    {errors.confirmPassword.length > 0 &&
-                      <span className='error'>{errors.confirmPassword}</span>}
+                    {errors.confirmPassword.length > 0 && (
+                      <span className="error">{errors.confirmPassword}</span>
+                    )}
                   </div>
-                  <div className='contact'>
-                    <input type='number' name='contactNumber' onChange={this.handleChange} required placeholder="Contact Number" />
+                  <div className="contact">
+                    <input
+                      type="number"
+                      name="contactNumber"
+                      onChange={this.handleChange}
+                      required
+                      placeholder="Contact Number"
+                    />
                     {/* This span shows error. You can style it as you want */}
-                    {errors.contactNumber.length > 0 &&
-                      <span className='error'>{errors.contactNumber}</span>}
+                    {errors.contactNumber.length > 0 && (
+                      <span className="error">{errors.contactNumber}</span>
+                    )}
                   </div>
-                  <div className='admission'>
-                    <input type='text' name='admissionNumber' onChange={this.handleChange} required placeholder="Admission Number" />
+                  <div className="admission">
+                    <input
+                      type="text"
+                      name="admissionNumber"
+                      onChange={this.handleChange}
+                      required
+                      placeholder="Admission Number"
+                    />
                     {/* This span shows error. You can style it as you want */}
-                    {errors.admissionNumber.length > 0 &&
-                      <span className='error'>{errors.admissionNumber}</span>}
+                    {errors.admissionNumber.length > 0 && (
+                      <span className="error">{errors.admissionNumber}</span>
+                    )}
                   </div>
-                  <div className='submit'>
+                  <div className="submit">
                     <button>Create</button>
                   </div>
                 </form>
