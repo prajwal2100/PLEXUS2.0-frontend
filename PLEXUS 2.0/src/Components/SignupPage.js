@@ -29,19 +29,23 @@ export default class SignupPage extends Component {
 
     // states and the error validation that are used in function below are defined here.
     this.state = {
-      username: null,
+      user: null,
+      name: null,
       email: null,
       password: null,
+      college: null,
       confirmPassword: null,
-      contactNumber: null,
-      admissionNumber: null,
+      contact: null,
+      admissionNo: null,
       errors: {
-        username: "",
+        user: "",
+        name: "",
         email: "",
+        college: "",
         password: "",
         confirmPassword: "",
-        contactNumber: "",
-        admissionNumber: "",
+        contact: "",
+        admissionNo: "",
       },
     };
   }
@@ -58,10 +62,18 @@ export default class SignupPage extends Component {
 
     switch (name) {
       case "username":
-        errors.username =
+        errors.user =
           value.length < 5 ? "Username must be 5 characters long!" : "";
         break;
+
+      case "name":
+        errors.name = value.length < 3 ? "Name must be 3 characters long!" : "";
+        break;
       // IF THERE IS AN ERROR THEN SHOW MESSAGE OTHERWISE EMPTY STRING
+      case "college":
+        errors.college =
+          value.length < 2 ? "college must be 2 characters long!" : "";
+        break;
 
       case "email":
         errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
@@ -74,11 +86,11 @@ export default class SignupPage extends Component {
         errors.confirmPassword =
           value.length < 8 ? "Password must be 8 characters long!" : "";
         break;
-      case "contactNumber":
-        errors.contactNumber = value.length < 9 ? "Enter a valid number" : "";
+      case "contact":
+        errors.contact = value.length < 10 ? "Enter a valid number" : "";
         break;
-      case "admissionNumber":
-        errors.admissionNumber =
+      case "admissionNo":
+        errors.admissionNo =
           value.length < 5 ? "Admission number is required!" : "";
         break;
       default:
@@ -95,12 +107,14 @@ export default class SignupPage extends Component {
     event.preventDefault();
     if (validateForm(this.state.errors)) {
       const payload = {
-        username: this.state.username,
+        user: this.state.user,
+        name: this.state.name,
         email: this.state.email,
+        college: this.state.college,
         password: this.state.password,
-        contactNumber: this.state.contactNumber,
+        contact: this.state.contact,
         confirmPassword: this.state.confirmPassword,
-        admissionNumber: this.state.admissionNumber,
+        admissionNo: this.state.admissionNo,
       };
       console.info("Valid Form");
 
@@ -170,17 +184,44 @@ export default class SignupPage extends Component {
                   <img src={eclipse4} alt="avatar4" />
                 </div>
                 <form onSubmit={this.handleSubmit}>
-                  <div className="username">
+                  <div className="name">
                     <input
                       type="text"
-                      name="username"
+                      name="name"
+                      onChange={this.handleChange}
+                      required
+                      placeholder="Name"
+                    />
+                    {/* This span shows error. You can style it as you want */}
+                    {errors.name.length > 0 && (
+                      <span className="error">{errors.name}</span>
+                    )}
+                  </div>
+
+                  <div className="user">
+                    <input
+                      type="text"
+                      name="user"
                       onChange={this.handleChange}
                       required
                       placeholder="Username"
                     />
                     {/* This span shows error. You can style it as you want */}
-                    {errors.username.length > 0 && (
-                      <span className="error">{errors.username}</span>
+                    {errors.user.length > 0 && (
+                      <span className="error">{errors.user}</span>
+                    )}
+                  </div>
+                  <div className="college">
+                    <input
+                      type="text"
+                      name="college"
+                      onChange={this.handleChange}
+                      required
+                      placeholder="College"
+                    />
+                    {/* This span shows error. You can style it as you want */}
+                    {errors.college.length > 0 && (
+                      <span className="error">{errors.college}</span>
                     )}
                   </div>
                   <div className="email">
@@ -225,27 +266,27 @@ export default class SignupPage extends Component {
                   <div className="contact">
                     <input
                       type="number"
-                      name="contactNumber"
+                      name="contact"
                       onChange={this.handleChange}
                       required
                       placeholder="Contact Number"
                     />
                     {/* This span shows error. You can style it as you want */}
-                    {errors.contactNumber.length > 0 && (
-                      <span className="error">{errors.contactNumber}</span>
+                    {errors.contact.length > 0 && (
+                      <span className="error">{errors.contact}</span>
                     )}
                   </div>
                   <div className="admission">
                     <input
                       type="text"
-                      name="admissionNumber"
+                      name="admissionNo"
                       onChange={this.handleChange}
                       required
                       placeholder="Admission Number"
                     />
                     {/* This span shows error. You can style it as you want */}
-                    {errors.admissionNumber.length > 0 && (
-                      <span className="error">{errors.admissionNumber}</span>
+                    {errors.admissionNo.length > 0 && (
+                      <span className="error">{errors.admissionNo}</span>
                     )}
                   </div>
                   <div className="submit">
