@@ -381,23 +381,157 @@
   }
 }
 //home page
-.wrapper {
-  .mainpage {
-    .logoutButton {
-      .group {
-        input {
-          border-radius: 25px;
-          background-color: blue;
-          color: white;
-          width: 25%;
-          font-size: 25px;
-          font-family: pnBold;
+.homePage {
+  .wrapper {
+    .sidebar {
+      background-color: #151029;
+      height: 150vh;
+      width: 20%;
+      .navlist {
+        .selected {
+          background-color: #24e3ae;
+          li {
+            color: #2d2c2c;
+          }
+        }
+        ul {
+          padding: 8px;
+          margin-bottom: 10px;
+          position: relative;
+          top: 5rem;
+          background-color: #151029;
+          border: none;
+          a {
+            text-decoration: none;
+            li {
+              color: white;
+              font-size: 17px;
+              font-family: pnReg;
+              display: inline-block;
+              .icon1 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+              }
+            }
+          }
+
+          &:hover {
+            background-color: #24e3ae;
+            li {
+              color: #2d2c2c;
+            }
+          }
+        }
+      }
+    }
+
+    .mainbody {
+      position: absolute;
+      top: 8%;
+      left: 18%;
+
+      .event {
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.9);
+        font-family: pnBold;
+        padding-top: 30px;
+        padding-bottom: 20px;
+      }
+
+      .welcomeText {
+        color: white;
+        h2 {
+          font-family: pnReg;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        p {
+          padding-top: 10px;
+          font-family: pnReg;
+          font-size: 18px;
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+      .cardEvents {
+        display: flex;
+        .card1 {
+          padding-right: 30px;
         }
       }
     }
   }
-}
 
+  @media only screen and (max-width: 400px) {
+    .sidebar {
+      img {
+        height: 50px;
+        width: 126px;
+        position: absolute;
+        top: 0.2rem;
+        left: 1rem;
+      }
+      width: 0%;
+      .navlist {
+        display: none;
+      }
+    }
+
+    .mainpage {
+      background-color: #1f183e;
+      height: 310vh;
+
+      .nav {
+        height: 2.5%;
+        .title {
+          display: none;
+        }
+        .login {
+          display: none;
+        }
+      }
+    }
+
+    .mainbody {
+      left: 5%;
+      width: 90%;
+      .welcomeText {
+        h2 {
+          padding-top: 10px;
+          font-size: 22px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+      .event {
+        font-size: 22px;
+      }
+      .cardEvents {
+        display: block;
+        width: 100%;
+        .card1 {
+          padding-bottom: 25px;
+        }
+      }
+    }
+    .cardHolder1,
+    .cardHolder2,
+    .cardHolder3 {
+      .card {
+        width: 343px;
+      }
+    }
+
+    .footer {
+      width: 100%;
+      p {
+        text-align: center;
+      }
+    }
+
+    //? bracket of media query
+  }
+}
 //signup page
 .signupPage {
   .nav {
@@ -455,7 +589,7 @@
       width: 23.15px;
       position: absolute;
       top: 6.7rem;
-      right: 30.4rem;
+      right: 34.5rem;
     }
     .signupContainer {
       width: 396px;
@@ -773,6 +907,12 @@
       height: 150vh;
       width: 20%;
       .navlist {
+        .selected {
+          background-color: #24e3ae;
+          li {
+            color: #2d2c2c;
+          }
+        }
         ul {
           padding: 8px;
           margin-bottom: 10px;
@@ -780,13 +920,16 @@
           top: 5rem;
           background-color: #151029;
           border: none;
+
           a {
             text-decoration: none;
+
             li {
               color: white;
               font-size: 17px;
               font-family: pnReg;
               display: inline-block;
+
               .icon1 {
                 padding-left: 1rem;
                 padding-right: 1rem;
@@ -834,6 +977,68 @@
             font-size: 16px;
             line-height: 19px;
             color: #24e3ae;
+          }
+        }
+      }
+    }
+
+    .mainbody {
+      .heading {
+        h2 {
+          font-family: pnBold;
+          color: #24e3ae;
+          font-size: 24px;
+        }
+      }
+      .questionBox {
+        position: absolute;
+        top: 3rem;
+
+        width: 723px;
+        height: 189px;
+        background: #2b2352;
+        box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        .content {
+          padding: 20px;
+          h4 {
+            font-size: 18px;
+            color: white;
+            font-family: pnReg;
+          }
+          input {
+            background: #151029;
+            border: 0.5px solid rgba(255, 255, 255, 0.2);
+            box-sizing: border-box;
+            border-radius: 3.66667px;
+            width: 549px;
+            height: 40px;
+            margin-top: 20px;
+            &::placeholder {
+              color: rgba(255, 255, 255, 0.4);
+              font-family: 14px;
+              font-family: pnReg;
+              padding-left: 20px;
+            }
+          }
+
+          button {
+            border: none;
+            width: 109px;
+            height: 40px;
+            color: #103d30;
+            font-family: pnBold;
+            font-size: 15px;
+            margin-left: 15px;
+            background: #24e3ae;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+          }
+          p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 14px;
+            font-family: pnReg;
+            margin-top: 10px;
           }
         }
       }

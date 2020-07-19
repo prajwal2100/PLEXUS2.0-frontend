@@ -411,13 +411,153 @@
   }
 }
 
-.wrapper .mainpage .logoutButton .group input {
-  border-radius: 25px;
-  background-color: blue;
+.homePage .wrapper .sidebar {
+  background-color: #151029;
+  height: 150vh;
+  width: 20%;
+}
+
+.homePage .wrapper .sidebar .navlist .selected {
+  background-color: #24e3ae;
+}
+
+.homePage .wrapper .sidebar .navlist .selected li {
+  color: #2d2c2c;
+}
+
+.homePage .wrapper .sidebar .navlist ul {
+  padding: 8px;
+  margin-bottom: 10px;
+  position: relative;
+  top: 5rem;
+  background-color: #151029;
+  border: none;
+}
+
+.homePage .wrapper .sidebar .navlist ul a {
+  text-decoration: none;
+}
+
+.homePage .wrapper .sidebar .navlist ul a li {
   color: white;
-  width: 25%;
-  font-size: 25px;
+  font-size: 17px;
+  font-family: pnReg;
+  display: inline-block;
+}
+
+.homePage .wrapper .sidebar .navlist ul a li .icon1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.homePage .wrapper .sidebar .navlist ul:hover {
+  background-color: #24e3ae;
+}
+
+.homePage .wrapper .sidebar .navlist ul:hover li {
+  color: #2d2c2c;
+}
+
+.homePage .wrapper .mainbody {
+  position: absolute;
+  top: 8%;
+  left: 18%;
+}
+
+.homePage .wrapper .mainbody .event {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.9);
   font-family: pnBold;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.homePage .wrapper .mainbody .welcomeText {
+  color: white;
+}
+
+.homePage .wrapper .mainbody .welcomeText h2 {
+  font-family: pnReg;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.homePage .wrapper .mainbody .welcomeText p {
+  padding-top: 10px;
+  font-family: pnReg;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.homePage .wrapper .mainbody .cardEvents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.homePage .wrapper .mainbody .cardEvents .card1 {
+  padding-right: 30px;
+}
+
+@media only screen and (max-width: 400px) {
+  .homePage .sidebar {
+    width: 0%;
+  }
+  .homePage .sidebar img {
+    height: 50px;
+    width: 126px;
+    position: absolute;
+    top: 0.2rem;
+    left: 1rem;
+  }
+  .homePage .sidebar .navlist {
+    display: none;
+  }
+  .homePage .mainpage {
+    background-color: #1f183e;
+    height: 310vh;
+  }
+  .homePage .mainpage .nav {
+    height: 2.5%;
+  }
+  .homePage .mainpage .nav .title {
+    display: none;
+  }
+  .homePage .mainpage .nav .login {
+    display: none;
+  }
+  .homePage .mainbody {
+    left: 5%;
+    width: 90%;
+  }
+  .homePage .mainbody .welcomeText h2 {
+    padding-top: 10px;
+    font-size: 22px;
+  }
+  .homePage .mainbody .welcomeText p {
+    font-size: 16px;
+  }
+  .homePage .mainbody .event {
+    font-size: 22px;
+  }
+  .homePage .mainbody .cardEvents {
+    display: block;
+    width: 100%;
+  }
+  .homePage .mainbody .cardEvents .card1 {
+    padding-bottom: 25px;
+  }
+  .homePage .cardHolder1 .card,
+  .homePage .cardHolder2 .card,
+  .homePage .cardHolder3 .card {
+    width: 343px;
+  }
+  .homePage .footer {
+    width: 100%;
+  }
+  .homePage .footer p {
+    text-align: center;
+  }
 }
 
 .signupPage .nav {
@@ -481,7 +621,7 @@
   width: 23.15px;
   position: absolute;
   top: 6.7rem;
-  right: 30.4rem;
+  right: 34.5rem;
 }
 
 .signupPage .signupBody .signupContainer {
@@ -843,6 +983,14 @@
   width: 20%;
 }
 
+.dashboardWrapper .wrapper .sidebar .navlist .selected {
+  background-color: #24e3ae;
+}
+
+.dashboardWrapper .wrapper .sidebar .navlist .selected li {
+  color: #2d2c2c;
+}
+
 .dashboardWrapper .wrapper .sidebar .navlist ul {
   padding: 8px;
   margin-bottom: 10px;
@@ -910,6 +1058,93 @@
   font-size: 16px;
   line-height: 19px;
   color: #24e3ae;
+}
+
+.dashboardWrapper .wrapper .mainbody .heading h2 {
+  font-family: pnBold;
+  color: #24e3ae;
+  font-size: 24px;
+}
+
+.dashboardWrapper .wrapper .mainbody .questionBox {
+  position: absolute;
+  top: 3rem;
+  width: 723px;
+  height: 189px;
+  background: #2b2352;
+  -webkit-box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.dashboardWrapper .wrapper .mainbody .questionBox .content {
+  padding: 20px;
+}
+
+.dashboardWrapper .wrapper .mainbody .questionBox .content h4 {
+  font-size: 18px;
+  color: white;
+  font-family: pnReg;
+}
+
+.dashboardWrapper .wrapper .mainbody .questionBox .content input {
+  background: #151029;
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 3.66667px;
+  width: 549px;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.dashboardWrapper .wrapper .mainbody .questionBox .content input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 14px;
+  font-family: pnReg;
+  padding-left: 20px;
+}
+
+.dashboardWrapper .wrapper .mainbody .questionBox .content input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 14px;
+  font-family: pnReg;
+  padding-left: 20px;
+}
+
+.dashboardWrapper .wrapper .mainbody .questionBox .content input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 14px;
+  font-family: pnReg;
+  padding-left: 20px;
+}
+
+.dashboardWrapper .wrapper .mainbody .questionBox .content input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 14px;
+  font-family: pnReg;
+  padding-left: 20px;
+}
+
+.dashboardWrapper .wrapper .mainbody .questionBox .content button {
+  border: none;
+  width: 109px;
+  height: 40px;
+  color: #103d30;
+  font-family: pnBold;
+  font-size: 15px;
+  margin-left: 15px;
+  background: #24e3ae;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+}
+
+.dashboardWrapper .wrapper .mainbody .questionBox .content p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  font-family: pnReg;
+  margin-top: 10px;
 }
 
 @media only screen and (max-width: 400px) {

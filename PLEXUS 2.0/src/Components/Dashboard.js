@@ -20,11 +20,11 @@ export default function Dashboard() {
                   </li>
                 </Link>
               </ul>
-              <ul>
+              <ul className="selected">
                 <Link to="/dashboard">
                   <li>
                     {" "}
-                    <AiOutlineHome className="icon1" /> Dashboard
+                    <AiOutlineHome className="icon1 " /> Dashboard
                   </li>
                 </Link>
               </ul>
@@ -72,7 +72,23 @@ export default function Dashboard() {
               </p>
             </div>
           </div>
-          <div className="mainbody"></div>
+          <div className="mainbody">
+            <div className="heading">
+              <h2>Question</h2>
+            </div>
+            <div className="questionBox">
+              <div className="content">
+                <h4>
+                  {" "}
+                  I follow you all the time and copy your every move, but you
+                  cant touch me or catch me. What am i !{" "}
+                </h4>
+                <input type="text" placeholder="I seek an Answer" />
+                <button>Submit</button>
+                <p> Wrong Answer! Time to think outside the box! </p>
+              </div>
+            </div>
+          </div>
 
           <Footer />
         </div>
