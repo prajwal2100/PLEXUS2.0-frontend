@@ -30,7 +30,7 @@ export default class SignupPage extends Component {
     // states and the error validation that are used in function below are defined here.
     this.state = {
       user: null,
-      name: null,
+      username: null,
       email: null,
       password: null,
       college: null,
@@ -77,7 +77,6 @@ export default class SignupPage extends Component {
 
       case "email":
         errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
-        break;
       case "password":
         errors.password =
           value.length < 8 ? "Password must be 8 characters long!" : "";
@@ -108,10 +107,10 @@ export default class SignupPage extends Component {
     if (validateForm(this.state.errors)) {
       const payload = {
         user: {
-          name: this.state.name,
+          username: this.state.username,
           password: this.state.password,
         },
-        // name: this.state.name,
+        name: this.state.name,
         email: this.state.email,
         college: this.state.college,
         // password: this.state.password,
@@ -126,18 +125,28 @@ export default class SignupPage extends Component {
 
       axios({
         method: "post",
-        url: "https://ncs-plexus.herokuapp.com/api/register/player_register/",
+        url: "https://plexus-2.herokuapp.com/api/register/player_register/",
         // url: "register/player_register/",
         data: payload,
         headers: { "Content-Type": "application/json" },
       })
         .then(function (response) {
           //handle success
+          const history = useHistory();
+
           console.log(response);
-          // Now if a token comes in response. Then store it in localStorage and redirect to homepage.
-          if ("token" in response.data) {
-            localStorage.setItem("token", response.data.token);
+          console.log(response.statusText);
+
+          if (response.statusText === "Created") {
+            console.log("hi");
+            history.push("/login");
           }
+
+          // Now if a token comes in response. Then store it in localStorage and redirect to homepage.
+          // if ("token" in response.data) {
+          //   localStorage.setItem("token", response.data.token);
+          //   console.log(response.data);
+          // }
         })
         .catch(function (error) {
           //handle error
@@ -204,7 +213,7 @@ export default class SignupPage extends Component {
                   <div className="user">
                     <input
                       type="text"
-                      name="user"
+                      name="username"
                       onChange={this.handleChange}
                       required
                       placeholder="Username"

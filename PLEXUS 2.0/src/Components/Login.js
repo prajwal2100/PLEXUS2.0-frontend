@@ -22,8 +22,10 @@ export default class Login extends Component {
       PostData("login", this.state).then((result) => {
         let responseJSON = result;
 
+        console.log(responseJSON);
+
         if (responseJSON.userData) {
-          sessionStorage.setItem("userData", responseJSON);
+          localStorage.getItem("userData", responseJSON);
           this.setState({ redirect: true });
         } else {
           console.log("error");
@@ -40,7 +42,7 @@ export default class Login extends Component {
     if (this.state.redirect) {
       return <Redirect to={"/home"} />;
     }
-    if (sessionStorage.getItem("userData")) {
+    if (localStorage.getItem("userData")) {
       return <Redirect to={"/home"} />;
     }
 
