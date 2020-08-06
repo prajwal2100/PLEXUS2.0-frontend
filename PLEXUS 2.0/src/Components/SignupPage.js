@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect, Link, useHistory } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import logo from "../images/Logo-Final.png";
 import vector from "../images/vector.png";
 import Footer from "./Footer";
@@ -23,11 +23,14 @@ const validateForm = (errors) => {
   return valid;
 };
 
+
+
 export default class SignupPage extends Component {
   constructor(props) {
     super(props);
 
     // states and the error validation that are used in function below are defined here.
+
     this.state = {
       user: null,
       username: null,
@@ -103,6 +106,8 @@ export default class SignupPage extends Component {
   // If the form is validated we will  make api call
 
   handleSubmit = (event) => {
+    console.log(this.props)
+
     event.preventDefault();
     if (validateForm(this.state.errors)) {
       const payload = {
@@ -130,23 +135,15 @@ export default class SignupPage extends Component {
         data: payload,
         headers: { "Content-Type": "application/json" },
       })
-        .then(function (response) {
-          //handle success
-          const history = useHistory();
-
+        .then(response => {
           console.log(response);
           console.log(response.statusText);
-
           if (response.statusText === "Created") {
-            console.log("hi");
-            history.push("/login");
+            console.log('sdsd');
+            this.props.history.push("/login")
+
           }
 
-          // Now if a token comes in response. Then store it in localStorage and redirect to homepage.
-          // if ("token" in response.data) {
-          //   localStorage.setItem("token", response.data.token);
-          //   console.log(response.data);
-          // }
         })
         .catch(function (error) {
           //handle error
