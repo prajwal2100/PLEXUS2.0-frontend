@@ -107,11 +107,14 @@ export default class SignupPage extends Component {
     event.preventDefault();
     if (validateForm(this.state.errors)) {
       const payload = {
-        user: this.state.user,
-        name: this.state.name,
+        user: {
+          name: this.state.name,
+          password: this.state.password,
+        },
+        // name: this.state.name,
         email: this.state.email,
         college: this.state.college,
-        password: this.state.password,
+        // password: this.state.password,
         contact: this.state.contact,
         confirmPassword: this.state.confirmPassword,
         admissionNo: this.state.admissionNo,
@@ -123,10 +126,10 @@ export default class SignupPage extends Component {
 
       axios({
         method: "post",
-        url:
-          "https://cors-anywhere.herokuapp.com/https://ncs-plexus.herokuapp.com/api/register/player_register/",
+        url: "https://ncs-plexus.herokuapp.com/api/register/player_register/",
+        // url: "register/player_register/",
         data: payload,
-        // headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" },
       })
         .then(function (response) {
           //handle success
