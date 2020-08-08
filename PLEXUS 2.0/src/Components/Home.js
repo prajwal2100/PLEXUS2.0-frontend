@@ -61,7 +61,7 @@ export default class Home extends Component {
                 </Link>
               </ul>
               <ul>
-                <Link to="/">
+                <Link to="/home">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Leaderboard
@@ -69,7 +69,7 @@ export default class Home extends Component {
                 </Link>
               </ul>
               <ul>
-                <Link to="/">
+                <Link to="/home">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Abount event
@@ -77,7 +77,7 @@ export default class Home extends Component {
                 </Link>
               </ul>
               <ul>
-                <Link to="/">
+                <Link to="/home">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Forum
@@ -85,7 +85,7 @@ export default class Home extends Component {
                 </Link>
               </ul>
               <ul>
-                <Link to="/">
+                <Link to="/home">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Edit Profile
