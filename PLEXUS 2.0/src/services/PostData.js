@@ -13,9 +13,11 @@ export function PostData(type, userData) {
       .then((response) => response.json())
       .then((responseJson) => {
         resolve(responseJson);
+        console.log(responseJson);
       })
       .catch((error) => {
         reject(error);
+        console.log("error");
       });
   });
 }

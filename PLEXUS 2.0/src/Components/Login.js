@@ -9,8 +9,10 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: "",
-      password: "",
+      user: {
+        username: "",
+        password: "",
+      },
       redirect: false,
     };
     this.login = this.login.bind(this);
@@ -18,24 +20,32 @@ export default class Login extends Component {
   }
 
   login() {
-    if (this.state.user && this.state.password) {
+    console.log(this.state.username);
+    console.log(this.state.password);
+
+    if (this.state.username && this.state.password) {
       PostData("login", this.state).then((result) => {
         let responseJSON = result;
-
         console.log(responseJSON);
+        console.log("response from backend");
 
-        if (responseJSON.userData) {
-          localStorage.getItem("userData", responseJSON);
-          this.setState({ redirect: true });
-        } else {
-          console.log("error");
+        if (responseJSON.access != null) {
+          localStorage.setItem("login", responseJSON.access);
+          this.props.history.push("/home");
         }
+
+        // if (responseJSON.userData) {
+        //   localStorage.getItem("userData", responseJSON);
+        //   this.setState({ redirect: true });
+        // } else {
+        //   console.log("error");
+        // }
       });
     }
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   render() {
@@ -71,7 +81,7 @@ export default class Login extends Component {
                 <h2>Log into your account</h2>
                 <input
                   id="user"
-                  name="user"
+                  name="username"
                   type="text"
                   onChange={this.onChange}
                   placeholder="Username / Email address"
