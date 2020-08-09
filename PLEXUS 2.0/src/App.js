@@ -11,6 +11,9 @@ import Card1 from "./Components/Card1";
 import Card2 from "./Components/Card2";
 import Card3 from "./Components/Card3";
 import Dashboard from "./Components/Dashboard";
+import Leaderboard from "./Components/Leaderboard";
+import AboutEvent from "./Components/AboutEvent";
+import Editprofile from "./Components/Editprofile";
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
         <Route exact path="/card2" component={Card2} />
         <Route exact path="/card3" component={Card3} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/leaderboard" component={Leaderboard} />
+        <Route exact path="/event" component={AboutEvent} />
+        <Route exact path="/profile" component={Editprofile} />
       </Switch>
     </div>
   );

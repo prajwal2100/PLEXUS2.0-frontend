@@ -4,10 +4,10 @@ import logo from "../images/Logo-Final.png";
 import vector from "../images/vector.png";
 import Footer from "./Footer";
 import axios from "axios";
-import eclipse1 from "../images/Ellipse 1.png";
-import eclipse2 from "../images/Ellipse 2.png";
-import eclipse3 from "../images/Ellipse 3.png";
-import eclipse4 from "../images/Ellipse 4.png";
+import eclipse1 from "../images/Ellipse1.png";
+import eclipse2 from "../images/Ellipse2.png";
+import eclipse3 from "../images/Ellipse3.png";
+import eclipse4 from "../images/Ellipse4.png";
 import { notify, report } from "superagent";
 
 // function TO VALIDATE EMAIL. You can test your regex on https://regex101.com/.
@@ -22,8 +22,6 @@ const validateForm = (errors) => {
   Object.values(errors).forEach((val) => val.length > 0 && (valid = false));
   return valid;
 };
-
-
 
 export default class SignupPage extends Component {
   constructor(props) {
@@ -106,7 +104,7 @@ export default class SignupPage extends Component {
   // If the form is validated we will  make api call
 
   handleSubmit = (event) => {
-    console.log(this.props)
+    console.log(this.props);
 
     event.preventDefault();
     if (validateForm(this.state.errors)) {
@@ -135,15 +133,13 @@ export default class SignupPage extends Component {
         data: payload,
         headers: { "Content-Type": "application/json" },
       })
-        .then(response => {
+        .then((response) => {
           console.log(response);
           console.log(response.statusText);
           if (response.statusText === "Created") {
-            console.log('sdsd');
-            this.props.history.push("/login")
-
+            console.log("sdsd");
+            this.props.history.push("/login");
           }
-
         })
         .catch(function (error) {
           //handle error

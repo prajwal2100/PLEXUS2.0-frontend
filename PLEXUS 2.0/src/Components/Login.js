@@ -5,6 +5,8 @@ import logo from "../images/Logo-Final.png";
 import vector from "../images/vector.png";
 import Footer from "./Footer";
 
+import "../App.css";
+
 export default class Login extends Component {
   constructor(props) {
     super(props);

@@ -4,6 +4,8 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import logo from "../images/Logo-Final.png";
 
+import "../App.css";
+
 export default function Dashboard() {
   return (
     <>
@@ -29,7 +31,7 @@ export default function Dashboard() {
                 </Link>
               </ul>
               <ul>
-                <Link to="/">
+                <Link to="/leaderboard">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Leaderboard
@@ -37,7 +39,7 @@ export default function Dashboard() {
                 </Link>
               </ul>
               <ul>
-                <Link to="/">
+                <Link to="/event">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Abount event
@@ -53,7 +55,7 @@ export default function Dashboard() {
                 </Link>
               </ul>
               <ul>
-                <Link to="/">
+                <Link to="/profile">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Edit Profile
@@ -62,6 +64,7 @@ export default function Dashboard() {
               </ul>
             </div>
           </div>
+
           <div className="mainpage">
             <div className="nav">
               <p className="title">

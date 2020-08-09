@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Card1 from "./Card1";
 import Card2 from "./Card2";
 import Card3 from "./Card3";
+import "../App.css";
 
 export default class Home extends Component {
   // constructor(props) {
@@ -61,7 +62,7 @@ export default class Home extends Component {
                 </Link>
               </ul>
               <ul>
-                <Link to="/home">
+                <Link to="/leaderboard">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Leaderboard
@@ -69,7 +70,7 @@ export default class Home extends Component {
                 </Link>
               </ul>
               <ul>
-                <Link to="/home">
+                <Link to="/event">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Abount event
@@ -77,7 +78,7 @@ export default class Home extends Component {
                 </Link>
               </ul>
               <ul>
-                <Link to="/home">
+                <Link to="/forum">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Forum
@@ -85,7 +86,7 @@ export default class Home extends Component {
                 </Link>
               </ul>
               <ul>
-                <Link to="/home">
+                <Link to="/profile">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Edit Profile
@@ -94,11 +95,9 @@ export default class Home extends Component {
               </ul>
             </div>
           </div>
+
           <div className="mainpage">
             <div className="nav">
-              <p className="title">
-                <a href="/">Zealicon</a>
-              </p>
               <p className="login">
                 <a href="/login">Log out</a>
               </p>
