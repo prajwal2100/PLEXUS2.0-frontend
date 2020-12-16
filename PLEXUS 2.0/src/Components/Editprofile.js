@@ -49,14 +49,7 @@ export default function Editprofile() {
                     </li>
                   </Link>
                 </ul>
-                <ul>
-                  <Link to="/">
-                    <li>
-                      {" "}
-                      <AiOutlineHome className="icon1" /> Forum
-                    </li>
-                  </Link>
-                </ul>
+
                 <ul className="selected">
                   <Link to="/profile">
                     <li>

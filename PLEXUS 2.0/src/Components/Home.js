@@ -77,14 +77,14 @@ export default class Home extends Component {
                   </li>
                 </Link>
               </ul>
-              <ul>
+              {/* <ul>
                 <Link to="/forum">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Forum
                   </li>
                 </Link>
-              </ul>
+              </ul> */}
               <ul>
                 <Link to="/profile">
                   <li>

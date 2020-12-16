@@ -46,14 +46,7 @@ export default function Dashboard() {
                   </li>
                 </Link>
               </ul>
-              <ul>
-                <Link to="/">
-                  <li>
-                    {" "}
-                    <AiOutlineHome className="icon1" /> Forum
-                  </li>
-                </Link>
-              </ul>
+      
               <ul>
                 <Link to="/profile">
                   <li>
