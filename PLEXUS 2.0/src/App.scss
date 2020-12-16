@@ -78,7 +78,7 @@
     .sidebar {
       background-color: #151029;
       height: 150vh;
-      width: 20%;
+      width: 17.5%;
       .navlist {
         ul {
           border: 1px solid green;
@@ -877,8 +877,62 @@
   //* add here home css
 
   @media only screen and (max-width: 400px) {
-    .home-sidebar {
-      display: none;
+    .wrapper {
+      .home-sidebar {
+        img {
+          position: relative;
+          top: 0.2rem;
+          left: 1rem;
+        }
+        width: 0%;
+        .navlist {
+          display: none;
+        }
+      }
+
+      .mainpage {
+        background-color: #1f183e;
+        height: 350vh;
+      }
+
+      .mainbody {
+        left: 5%;
+        width: 90%;
+        .welcomeText {
+          h2 {
+            padding-top: 10px;
+            font-size: 22px;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+
+        .event {
+          font-size: 22px;
+        }
+        .cardEvents {
+          display: block;
+          width: 100%;
+          .card1 {
+            padding-bottom: 25px;
+          }
+        }
+      }
+
+      .cardHolder1,
+      .cardHolder2,
+      .cardHolder3 {
+        .card {
+          width: 343px;
+        }
+      }
+    }
+    .footer {
+      width: 100%;
+      p {
+        text-align: center;
+      }
     }
   }
 }

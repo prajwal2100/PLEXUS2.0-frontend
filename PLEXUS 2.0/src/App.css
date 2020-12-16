@@ -84,7 +84,7 @@
 .coverPage .wrapper .sidebar {
   background-color: #151029;
   height: 150vh;
-  width: 20%;
+  width: 17.5%;
 }
 
 .coverPage .wrapper .sidebar .navlist ul {
@@ -949,8 +949,52 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .homePage .home-sidebar {
+  .homePage .wrapper .home-sidebar {
+    width: 0%;
+  }
+  .homePage .wrapper .home-sidebar img {
+    position: relative;
+    top: 0.2rem;
+    left: 1rem;
+  }
+  .homePage .wrapper .home-sidebar .navlist {
     display: none;
+  }
+  .homePage .wrapper .mainpage {
+    background-color: #1f183e;
+    height: 350vh;
+  }
+  .homePage .wrapper .mainbody {
+    left: 5%;
+    width: 90%;
+  }
+  .homePage .wrapper .mainbody .welcomeText h2 {
+    padding-top: 10px;
+    font-size: 22px;
+  }
+  .homePage .wrapper .mainbody .welcomeText p {
+    font-size: 16px;
+  }
+  .homePage .wrapper .mainbody .event {
+    font-size: 22px;
+  }
+  .homePage .wrapper .mainbody .cardEvents {
+    display: block;
+    width: 100%;
+  }
+  .homePage .wrapper .mainbody .cardEvents .card1 {
+    padding-bottom: 25px;
+  }
+  .homePage .wrapper .cardHolder1 .card,
+  .homePage .wrapper .cardHolder2 .card,
+  .homePage .wrapper .cardHolder3 .card {
+    width: 343px;
+  }
+  .homePage .footer {
+    width: 100%;
+  }
+  .homePage .footer p {
+    text-align: center;
   }
 }
 
