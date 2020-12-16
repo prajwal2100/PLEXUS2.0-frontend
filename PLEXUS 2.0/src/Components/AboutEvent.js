@@ -62,7 +62,7 @@ export default function AboutEvent() {
             <div className="mainpage">
               <div className="nav">
                 <p className="title">
-                  <Link to="/">Zealicon</Link>
+                  <Link to="/">zealicon</Link>
                 </p>
                 <p className="login">
                   <Link to="/">LogOut</Link>

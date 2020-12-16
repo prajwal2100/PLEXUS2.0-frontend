@@ -12,7 +12,7 @@ export default function Editprofile() {
   return (
     <div>
       <>
-        <div className="aboutEvent">
+        <div className="editprofile">
           <div className="wrapper">
             <div className="sidebar">
               <img src={logo} alt="logo" />

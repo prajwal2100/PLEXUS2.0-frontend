@@ -63,7 +63,7 @@ export default class Login extends Component {
         <div className="loginPage">
           <div className="nav">
             <div className="logo">
-              <Link to="/home">
+              <Link to="/">
                 <img src={logo} alt="logo" />
               </Link>
             </div>

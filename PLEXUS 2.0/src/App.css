@@ -24,21 +24,21 @@
   src: url(./fonts/ProximaNova-Regular.otf) format(opentype);
 }
 
-.wrapper {
+.coverPage .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background: #1f183e;
-  height: 143vh;
+  height: 150vh;
 }
 
-.wrapper .mainbody {
+.coverPage .wrapper .mainbody {
   position: absolute;
   top: 8%;
   left: 18%;
 }
 
-.wrapper .mainbody .event {
+.coverPage .wrapper .mainbody .event {
   font-size: 24px;
   color: rgba(255, 255, 255, 0.9);
   font-family: pnBold;
@@ -46,34 +46,34 @@
   padding-bottom: 20px;
 }
 
-.wrapper .mainbody .welcomeText {
+.coverPage .wrapper .mainbody .welcomeText {
   color: white;
 }
 
-.wrapper .mainbody .welcomeText h2 {
+.coverPage .wrapper .mainbody .welcomeText h2 {
   font-family: pnReg;
   font-size: 28px;
   font-weight: bold;
 }
 
-.wrapper .mainbody .welcomeText p {
+.coverPage .wrapper .mainbody .welcomeText p {
   padding-top: 10px;
   font-family: pnReg;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.wrapper .mainbody .cardEvents {
+.coverPage .wrapper .mainbody .cardEvents {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.wrapper .mainbody .cardEvents .card1 {
+.coverPage .wrapper .mainbody .cardEvents .card1 {
   padding-right: 30px;
 }
 
-.wrapper img {
+.coverPage .wrapper img {
   max-width: 177px;
   height: 45px;
   position: relative;
@@ -81,13 +81,13 @@
   top: 2rem;
 }
 
-.wrapper .sidebar {
+.coverPage .wrapper .sidebar {
   background-color: #151029;
   height: 150vh;
   width: 20%;
 }
 
-.wrapper .sidebar .navlist ul {
+.coverPage .wrapper .sidebar .navlist ul {
   border: 1px solid green;
   padding: 8px;
   position: relative;
@@ -95,11 +95,11 @@
   background-color: #24e3ae;
 }
 
-.wrapper .sidebar .navlist ul a {
+.coverPage .wrapper .sidebar .navlist ul a {
   text-decoration: none;
 }
 
-.wrapper .sidebar .navlist ul a li {
+.coverPage .wrapper .sidebar .navlist ul a li {
   color: #2d2c2c;
   font-size: 17px;
   font-weight: 600;
@@ -107,17 +107,17 @@
   display: inline-block;
 }
 
-.wrapper .sidebar .navlist ul a li .icon1 {
+.coverPage .wrapper .sidebar .navlist ul a li .icon1 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.wrapper .mainpage {
+.coverPage .wrapper .mainpage {
   height: 100vh;
   width: 100%;
 }
 
-.wrapper .mainpage .nav {
+.coverPage .wrapper .mainpage .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,7 +127,7 @@
   border-bottom: 1px solid #524396;
 }
 
-.wrapper .mainpage .nav .title a {
+.coverPage .wrapper .mainpage .nav .title a {
   padding-left: 20px;
   font-size: 26px;
   position: absolute;
@@ -137,7 +137,7 @@
   color: #24e3ae;
 }
 
-.wrapper .mainpage .nav .login a {
+.coverPage .wrapper .mainpage .nav .login a {
   position: absolute;
   right: 2rem;
   top: 0.6rem;
@@ -149,62 +149,57 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .wrapper .sidebar {
+  .coverPage .wrapper .sidebar {
     width: 0%;
   }
-  .wrapper .sidebar img {
-    height: 50px;
-    width: 126px;
+  .coverPage .wrapper .sidebar img {
     position: absolute;
     top: 0.2rem;
     left: 1rem;
   }
-  .wrapper .sidebar .navlist {
+  .coverPage .wrapper .sidebar .navlist {
     display: none;
   }
-  .wrapper .mainpage {
+  .coverPage .wrapper .mainpage {
     background-color: #1f183e;
-    height: 310vh;
+    height: 350vh;
   }
-  .wrapper .mainpage .nav {
+  .coverPage .wrapper .mainpage .nav {
     height: 2.5%;
   }
-  .wrapper .mainpage .nav .title {
+  .coverPage .wrapper .mainpage .nav .title {
     display: none;
   }
-  .wrapper .mainpage .nav .login {
-    display: none;
-  }
-  .wrapper .mainbody {
+  .coverPage .wrapper .mainbody {
     left: 5%;
     width: 90%;
   }
-  .wrapper .mainbody .welcomeText h2 {
+  .coverPage .wrapper .mainbody .welcomeText h2 {
     padding-top: 10px;
     font-size: 22px;
   }
-  .wrapper .mainbody .welcomeText p {
+  .coverPage .wrapper .mainbody .welcomeText p {
     font-size: 16px;
   }
-  .wrapper .mainbody .event {
+  .coverPage .wrapper .mainbody .event {
     font-size: 22px;
   }
-  .wrapper .mainbody .cardEvents {
+  .coverPage .wrapper .mainbody .cardEvents {
     display: block;
     width: 100%;
   }
-  .wrapper .mainbody .cardEvents .card1 {
+  .coverPage .wrapper .mainbody .cardEvents .card1 {
     padding-bottom: 25px;
   }
-  .wrapper .cardHolder1 .card,
-  .wrapper .cardHolder2 .card,
-  .wrapper .cardHolder3 .card {
+  .coverPage .wrapper .cardHolder1 .card,
+  .coverPage .wrapper .cardHolder2 .card,
+  .coverPage .wrapper .cardHolder3 .card {
     width: 343px;
   }
-  .wrapper .footer {
+  .coverPage .wrapper .footer {
     width: 100%;
   }
-  .wrapper .footer p {
+  .coverPage .wrapper .footer p {
     text-align: center;
   }
 }
@@ -213,7 +208,7 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 83.35%;
+  width: 85%;
   float: right;
 }
 
@@ -227,8 +222,7 @@
 }
 
 .loginPage {
-  height: 100%;
-  padding-bottom: 250px;
+  height: 100vh;
   background-color: #130e25;
 }
 
@@ -292,7 +286,7 @@
   width: 23.15px;
   position: absolute;
   top: 9.2rem;
-  right: 37rem;
+  right: 43rem;
 }
 
 .loginPage .loginBody .loginContainer {
@@ -419,137 +413,11 @@
   .loginPage .loginBody img {
     position: absolute;
     top: 9.2rem;
-    left: 21.5rem;
+    left: 20.5rem;
     height: 30px;
   }
   .loginPage .footer p {
     text-align: center;
-  }
-}
-
-.homePage .wrapper {
-  background-color: #1f183e;
-  height: 150vh;
-}
-
-.homePage .wrapper .sidebar {
-  background-color: #151029;
-  height: 150vh;
-  width: 15%;
-  position: fixed;
-}
-
-.homePage .wrapper .sidebar img {
-  height: 50px;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-
-.homePage .wrapper .sidebar .navlist .selected {
-  background-color: #24e3ae;
-}
-
-.homePage .wrapper .sidebar .navlist .selected li {
-  color: #2d2c2c;
-}
-
-.homePage .wrapper .sidebar .navlist ul {
-  padding: 8px;
-  margin-bottom: 10px;
-  position: relative;
-  top: 5rem;
-  background-color: #151029;
-  border: none;
-}
-
-.homePage .wrapper .sidebar .navlist ul a {
-  text-decoration: none;
-}
-
-.homePage .wrapper .sidebar .navlist ul a li {
-  color: white;
-  font-size: 17px;
-  font-family: pnReg;
-  display: inline-block;
-}
-
-.homePage .wrapper .sidebar .navlist ul a li .icon1 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.homePage .wrapper .sidebar .navlist ul:hover {
-  background-color: #24e3ae;
-}
-
-.homePage .wrapper .sidebar .navlist ul:hover li {
-  color: #2d2c2c;
-}
-
-.homePage .wrapper .mainpage .nav {
-  background-color: #1d1739;
-  width: 100%;
-  height: 3rem;
-}
-
-.homePage .wrapper .mainpage .nav .login a {
-  color: #24e3ae;
-  position: absolute;
-  text-decoration: none;
-  font-family: pnBold;
-  font-size: 20px;
-  top: 0.7rem;
-  right: 1.5rem;
-}
-
-.homePage .wrapper .mainbody {
-  position: absolute;
-  top: 8%;
-  left: 18%;
-}
-
-.homePage .wrapper .mainbody .event {
-  font-size: 24px;
-  color: rgba(255, 255, 255, 0.9);
-  font-family: pnBold;
-  padding-top: 30px;
-  padding-bottom: 20px;
-}
-
-.homePage .wrapper .mainbody .welcomeText {
-  color: white;
-}
-
-.homePage .wrapper .mainbody .welcomeText h2 {
-  font-family: pnReg;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.homePage .wrapper .mainbody .welcomeText p {
-  padding-top: 10px;
-  font-family: pnReg;
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.homePage .wrapper .mainbody .cardEvents {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.homePage .wrapper .mainbody .cardEvents .card1 {
-  padding-right: 30px;
-}
-
-@media only screen and (max-width: 400px) {
-  .homePage .sidebar {
-    display: none;
-  }
-  .homePage .cardEvents {
-    display: block;
   }
 }
 
@@ -619,7 +487,7 @@
   width: 23.15px;
   position: absolute;
   top: 6.7rem;
-  right: 34.5rem;
+  right: 40rem;
 }
 
 .signupPage .signupBody .signupContainer {
@@ -962,6 +830,130 @@
   font-size: 15px;
 }
 
+.homePage .wrapper {
+  background-color: #1f183e;
+  height: 150vh;
+}
+
+.homePage .wrapper .home-sidebar {
+  background-color: #151029;
+  height: 150vh;
+  width: 15%;
+  position: fixed;
+}
+
+.homePage .wrapper .home-sidebar img {
+  height: 50px;
+  position: absolute;
+  top: 1rem;
+  left: 2.5rem;
+}
+
+.homePage .wrapper .home-sidebar .navlist .selected {
+  margin-top: 50px;
+  background-color: #24e3ae;
+}
+
+.homePage .wrapper .home-sidebar .navlist .selected li {
+  color: #2d2c2c;
+}
+
+.homePage .wrapper .home-sidebar .navlist ul {
+  padding: 8px;
+  margin-bottom: 10px;
+  position: relative;
+  top: 5rem;
+  background-color: #151029;
+  border: none;
+}
+
+.homePage .wrapper .home-sidebar .navlist ul a {
+  text-decoration: none;
+}
+
+.homePage .wrapper .home-sidebar .navlist ul a li {
+  color: white;
+  font-size: 17px;
+  font-family: pnBold;
+  display: inline-block;
+}
+
+.homePage .wrapper .home-sidebar .navlist ul a li .icon1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.homePage .wrapper .home-sidebar .navlist ul:hover {
+  background-color: #24e3ae;
+}
+
+.homePage .wrapper .home-sidebar .navlist ul:hover li {
+  color: #2d2c2c;
+}
+
+.homePage .wrapper .mainpage .nav {
+  background-color: #1d1739;
+  width: 100%;
+  height: 3rem;
+}
+
+.homePage .wrapper .mainpage .nav .login a {
+  color: #24e3ae;
+  position: absolute;
+  text-decoration: none;
+  font-family: pnBold;
+  font-size: 20px;
+  top: 0.7rem;
+  right: 1.5rem;
+}
+
+.homePage .wrapper .mainbody {
+  position: absolute;
+  top: 8%;
+  left: 18%;
+}
+
+.homePage .wrapper .mainbody .event {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: pnBold;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.homePage .wrapper .mainbody .welcomeText {
+  color: white;
+}
+
+.homePage .wrapper .mainbody .welcomeText h2 {
+  font-family: pnReg;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.homePage .wrapper .mainbody .welcomeText p {
+  padding-top: 10px;
+  font-family: pnReg;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.homePage .wrapper .mainbody .cardEvents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.homePage .wrapper .mainbody .cardEvents .card1 {
+  padding-right: 30px;
+}
+
+@media only screen and (max-width: 400px) {
+  .homePage .home-sidebar {
+    display: none;
+  }
+}
+
 .dashboardWrapper .wrapper {
   background: #1f183e;
   height: 100%;
@@ -978,7 +970,7 @@
 .dashboardWrapper .wrapper .sidebar {
   background-color: #151029;
   height: 100vh;
-  width: 20%;
+  width: 15%;
 }
 
 .dashboardWrapper .wrapper .sidebar .navlist .selected {
@@ -1005,7 +997,7 @@
 .dashboardWrapper .wrapper .sidebar .navlist ul a li {
   color: white;
   font-size: 17px;
-  font-family: pnReg;
+  font-family: pnBold;
   display: inline-block;
 }
 
@@ -1041,9 +1033,11 @@
   font-size: 26px;
   position: absolute;
   top: 0.3rem;
+  left: 22rem;
   font-family: pnBold;
   text-decoration: none;
   color: #24e3ae;
+  display: none;
 }
 
 .dashboardWrapper .wrapper .mainpage .nav .login a {
@@ -1057,9 +1051,14 @@
   color: #24e3ae;
 }
 
+.dashboardWrapper .wrapper .mainbody {
+  position: absolute;
+  top: 8%;
+  left: 18%;
+}
+
 .dashboardWrapper .wrapper .mainbody .heading h2 {
   font-family: pnBold;
-  position: absolute;
   color: #24e3ae;
   font-size: 24px;
 }
@@ -1146,14 +1145,39 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .dashboardWrapper .wrapper .mainpage .nav {
-    height: 7%;
+  .dashboardWrapper .wrapper .sidebar {
+    width: 0%;
+  }
+  .dashboardWrapper .wrapper .sidebar img {
+    position: absolute;
+    top: 0.2rem;
+    left: 1rem;
+  }
+  .dashboardWrapper .wrapper .sidebar .navlist {
+    display: none;
+  }
+  .dashboardWrapper .wrapper .mainbody {
+    left: 5%;
+  }
+  .dashboardWrapper .wrapper .mainbody .heading h2 {
+    margin-top: 10px;
   }
   .dashboardWrapper .wrapper .mainbody .questionBox {
-    width: 100%;
+    width: 343px;
+    height: 235px;
   }
   .dashboardWrapper .wrapper .mainbody .questionBox .content input {
+    width: 300px;
+  }
+  .dashboardWrapper .wrapper .mainbody .questionBox .content button {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  .dashboardWrapper .wrapper .footer {
     width: 100%;
+  }
+  .dashboardWrapper .wrapper .footer p {
+    text-align: center;
   }
 }
 
@@ -1173,7 +1197,7 @@
 .Leaderboard .wrapper .sidebar {
   background-color: #151029;
   height: 100vh;
-  width: 20%;
+  width: 15%;
 }
 
 .Leaderboard .wrapper .sidebar .navlist .selected {
@@ -1200,7 +1224,7 @@
 .Leaderboard .wrapper .sidebar .navlist ul a li {
   color: white;
   font-size: 17px;
-  font-family: pnReg;
+  font-family: pnBold;
   display: inline-block;
 }
 
@@ -1239,6 +1263,7 @@
   font-family: pnBold;
   text-decoration: none;
   color: #24e3ae;
+  display: none;
 }
 
 .Leaderboard .wrapper .mainpage .nav .login a {
@@ -1252,9 +1277,16 @@
   color: #24e3ae;
 }
 
+.Leaderboard .wrapper .mainbody {
+  position: absolute;
+  top: 8%;
+  left: 18%;
+}
+
 .Leaderboard .wrapper .mainbody .heading h2 {
   font-family: pnBold;
   position: absolute;
+  top: 0rem;
   color: #24e3ae;
   font-size: 24px;
 }
@@ -1266,7 +1298,7 @@
   border-radius: 7px;
   width: 40vw;
   position: absolute;
-  top: 2rem;
+  top: 3rem;
 }
 
 .Leaderboard .wrapper .mainbody .leaderTable .row1,
@@ -1340,9 +1372,38 @@
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
 }
 
+@media only screen and (max-width: 400px) {
+  .Leaderboard .wrapper .sidebar {
+    width: 0%;
+  }
+  .Leaderboard .wrapper .sidebar img {
+    position: absolute;
+    top: 0.2rem;
+    left: 1rem;
+  }
+  .Leaderboard .wrapper .sidebar .navlist {
+    display: none;
+  }
+  .Leaderboard .wrapper .mainbody {
+    left: 5%;
+  }
+  .Leaderboard .wrapper .mainbody .heading h2 {
+    margin-top: 10px;
+  }
+  .Leaderboard .wrapper .mainbody .leaderTable {
+    width: 91vw;
+  }
+  .Leaderboard .wrapper .footer {
+    width: 100%;
+  }
+  .Leaderboard .wrapper .footer p {
+    text-align: center;
+  }
+}
+
 .aboutEvent .wrapper {
   background: #1f183e;
-  height: 100%;
+  height: 100vh;
 }
 
 .aboutEvent .wrapper img {
@@ -1356,7 +1417,7 @@
 .aboutEvent .wrapper .sidebar {
   background-color: #151029;
   height: 100vh;
-  width: 20%;
+  width: 15%;
 }
 
 .aboutEvent .wrapper .sidebar .navlist .selected {
@@ -1383,7 +1444,7 @@
 .aboutEvent .wrapper .sidebar .navlist ul a li {
   color: white;
   font-size: 17px;
-  font-family: pnReg;
+  font-family: pnBold;
   display: inline-block;
 }
 
@@ -1408,10 +1469,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  height: 5%;
-  background-color: #1d1739;
-  border-bottom: 1px solid #524396;
 }
 
 .aboutEvent .wrapper .mainpage .nav .title a {
@@ -1422,6 +1479,7 @@
   font-family: pnBold;
   text-decoration: none;
   color: #24e3ae;
+  display: none;
 }
 
 .aboutEvent .wrapper .mainpage .nav .login a {
@@ -1433,6 +1491,12 @@
   font-size: 16px;
   line-height: 19px;
   color: #24e3ae;
+}
+
+.aboutEvent .wrapper .mainbody {
+  position: absolute;
+  top: 8%;
+  left: 18%;
 }
 
 .aboutEvent .wrapper .mainbody .box1 {
@@ -1538,7 +1602,7 @@
   padding: 10px;
   margin: 10px;
   position: relative;
-  left: 47rem;
+  left: 1rem;
   border-radius: 7px;
 }
 
@@ -1549,17 +1613,43 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .aboutEvent .wrapper button {
+  .aboutEvent .wrapper .sidebar {
+    width: 0%;
+    height: 145vh;
+  }
+  .aboutEvent .wrapper .sidebar img {
+    position: absolute;
+    top: 0.2rem;
+    left: 1rem;
+  }
+  .aboutEvent .wrapper .sidebar .navlist {
     display: none;
+  }
+  .aboutEvent .wrapper .mainbody {
+    left: 0%;
+    height: 145vh;
+    background-color: #1f183e;
+  }
+  .aboutEvent .wrapper .mainbody .box1,
+  .aboutEvent .wrapper .mainbody .box2,
+  .aboutEvent .wrapper .mainbody .box3 {
+    width: 90%;
+    margin-left: 20px;
+  }
+  .aboutEvent .wrapper .footer {
+    width: 100%;
+  }
+  .aboutEvent .wrapper .footer p {
+    text-align: center;
   }
 }
 
-.aboutEvent .wrapper {
+.editprofile .wrapper {
   background: #1f183e;
   height: 100%;
 }
 
-.aboutEvent .wrapper img {
+.editprofile .wrapper img {
   max-width: 177px;
   height: 45px;
   position: relative;
@@ -1567,21 +1657,21 @@
   top: 2rem;
 }
 
-.aboutEvent .wrapper .sidebar {
+.editprofile .wrapper .sidebar {
   background-color: #151029;
   height: 100vh;
-  width: 20%;
+  width: 15%;
 }
 
-.aboutEvent .wrapper .sidebar .navlist .selected {
+.editprofile .wrapper .sidebar .navlist .selected {
   background-color: #24e3ae;
 }
 
-.aboutEvent .wrapper .sidebar .navlist .selected li {
+.editprofile .wrapper .sidebar .navlist .selected li {
   color: #2d2c2c;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul {
+.editprofile .wrapper .sidebar .navlist ul {
   padding: 8px;
   margin-bottom: 10px;
   position: relative;
@@ -1590,45 +1680,35 @@
   border: none;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul a {
+.editprofile .wrapper .sidebar .navlist ul a {
   text-decoration: none;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul a li {
+.editprofile .wrapper .sidebar .navlist ul a li {
   color: white;
   font-size: 17px;
-  font-family: pnReg;
+  font-family: pnBold;
   display: inline-block;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul a li .icon1 {
+.editprofile .wrapper .sidebar .navlist ul a li .icon1 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul:hover {
+.editprofile .wrapper .sidebar .navlist ul:hover {
   background-color: #24e3ae;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul:hover li {
+.editprofile .wrapper .sidebar .navlist ul:hover li {
   color: #2d2c2c;
 }
 
-.aboutEvent .wrapper .mainpage {
+.editprofile .wrapper .mainpage {
   width: 100%;
 }
 
-.aboutEvent .wrapper .mainpage .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 5%;
-  background-color: #1d1739;
-  border-bottom: 1px solid #524396;
-}
-
-.aboutEvent .wrapper .mainpage .nav .title a {
+.editprofile .wrapper .mainpage .nav .title a {
   padding-left: 20px;
   font-size: 26px;
   position: absolute;
@@ -1636,9 +1716,10 @@
   font-family: pnBold;
   text-decoration: none;
   color: #24e3ae;
+  display: none;
 }
 
-.aboutEvent .wrapper .mainpage .nav .login a {
+.editprofile .wrapper .mainpage .nav .login a {
   position: absolute;
   right: 2rem;
   top: 0.6rem;
@@ -1649,13 +1730,19 @@
   color: #24e3ae;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card {
+.editprofile .wrapper .mainbody {
+  position: absolute;
+  top: 8%;
+  left: 18%;
+}
+
+.editprofile .wrapper .mainbody .edit .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .smallcard .topbox {
+.editprofile .wrapper .mainbody .edit .card .smallcard .topbox {
   background: url(./images/background.jpg);
   border-radius: 4px 4px 0px 0px;
   width: 343px;
@@ -1663,7 +1750,7 @@
   margin-left: 20px;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .smallcard .circleimg {
+.editprofile .wrapper .mainbody .edit .card .smallcard .circleimg {
   width: 90px;
   height: 90px;
   background-color: red;
@@ -1674,7 +1761,7 @@
   background: url(./images/Ellipse3.png);
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .smallcard .bottombox {
+.editprofile .wrapper .mainbody .edit .card .smallcard .bottombox {
   width: 343px;
   height: 200px;
   margin-left: 20px;
@@ -1684,8 +1771,8 @@
   border-radius: 4px;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .smallcard .bottombox h2,
-.aboutEvent .wrapper .mainbody .edit .card .smallcard .bottombox h3 {
+.editprofile .wrapper .mainbody .edit .card .smallcard .bottombox h2,
+.editprofile .wrapper .mainbody .edit .card .smallcard .bottombox h3 {
   font-size: 20px;
   font-family: pnBold;
   color: white;
@@ -1694,7 +1781,7 @@
   top: 4em;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard {
+.editprofile .wrapper .mainbody .edit .card .maincard {
   width: 666px;
   height: 320px;
   margin-left: 20px;
@@ -1704,7 +1791,7 @@
   border-radius: 4px;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard button {
+.editprofile .wrapper .mainbody .edit .card .maincard button {
   font-family: pnBold;
   font-size: 15px;
   width: 157px;
@@ -1720,7 +1807,7 @@
   bottom: 1.5rem;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard h2 {
+.editprofile .wrapper .mainbody .edit .card .maincard h2 {
   font-family: pnBold;
   font-size: 20px;
   color: #24e3ae;
@@ -1728,23 +1815,23 @@
   padding-bottom: 0px;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set1 .change {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set1 .change {
   padding: 20px;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set1 .change p {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set1 .change p {
   font-family: pnBold;
   font-size: 15px;
   color: #ffffff;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set1 .change input {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set1 .change input {
   width: 296px;
   height: 37px;
   background: #151029;
@@ -1756,41 +1843,41 @@
   color: white;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set1 .change input::-webkit-input-placeholder {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set1 .change input::-webkit-input-placeholder {
   padding-left: 10px;
   color: rgba(255, 255, 255, 0.4);
   font-family: pnBold;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set1 .change input:-ms-input-placeholder {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set1 .change input:-ms-input-placeholder {
   padding-left: 10px;
   color: rgba(255, 255, 255, 0.4);
   font-family: pnBold;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set1 .change input::-ms-input-placeholder {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set1 .change input::-ms-input-placeholder {
   padding-left: 10px;
   color: rgba(255, 255, 255, 0.4);
   font-family: pnBold;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set1 .change input::placeholder {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set1 .change input::placeholder {
   padding-left: 10px;
   color: rgba(255, 255, 255, 0.4);
   font-family: pnBold;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set2 .change {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set2 .change {
   padding: 20px;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set2 .change p {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set2 .change p {
   font-family: pnBold;
   font-size: 15px;
   color: #ffffff;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set2 .change input {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set2 .change input {
   width: 296px;
   height: 37px;
   font-family: pnBold;
@@ -1802,33 +1889,66 @@
   border-radius: 3.66667px;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set2 .change input::-webkit-input-placeholder {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set2 .change input::-webkit-input-placeholder {
   padding-left: 10px;
   color: rgba(255, 255, 255, 0.4);
   font-family: pnBold;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set2 .change input:-ms-input-placeholder {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set2 .change input:-ms-input-placeholder {
   padding-left: 10px;
   color: rgba(255, 255, 255, 0.4);
   font-family: pnBold;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set2 .change input::-ms-input-placeholder {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set2 .change input::-ms-input-placeholder {
   padding-left: 10px;
   color: rgba(255, 255, 255, 0.4);
   font-family: pnBold;
 }
 
-.aboutEvent .wrapper .mainbody .edit .card .maincard .sets .set2 .change input::placeholder {
+.editprofile .wrapper .mainbody .edit .card .maincard .sets .set2 .change input::placeholder {
   padding-left: 10px;
   color: rgba(255, 255, 255, 0.4);
   font-family: pnBold;
 }
 
 @media only screen and (max-width: 400px) {
-  .aboutEvent .wrapper button {
+  .editprofile .wrapper .sidebar {
+    width: 0%;
+  }
+  .editprofile .wrapper .sidebar img {
+    position: absolute;
+    top: 0.2rem;
+    left: 1rem;
+  }
+  .editprofile .wrapper .sidebar .navlist {
     display: none;
+  }
+  .editprofile .wrapper .mainpage {
+    height: 40vh;
+  }
+  .editprofile .wrapper .mainbody {
+    left: 4%;
+  }
+  .editprofile .wrapper .mainbody .edit .card {
+    display: block;
+  }
+  .editprofile .wrapper .mainbody .edit .card .smallcard {
+    padding-bottom: 20px;
+  }
+  .editprofile .wrapper .mainbody .edit .card .maincard {
+    width: 340px;
+    height: 500px;
+  }
+  .editprofile .wrapper .mainbody .edit .card .maincard .sets {
+    display: block;
+  }
+  .editprofile .wrapper .footer {
+    width: 100%;
+  }
+  .editprofile .wrapper .footer p {
+    text-align: center;
   }
 }
 /*# sourceMappingURL=App.css.map */

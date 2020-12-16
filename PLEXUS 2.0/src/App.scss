@@ -26,190 +26,190 @@
 }
 
 // cover page
-// .coverPage {
-.wrapper {
-  display: flex;
-  background: #1f183e;
-  height: 143vh;
-
-  .mainbody {
-    position: absolute;
-    top: 8%;
-    left: 18%;
-
-    .event {
-      font-size: 24px;
-      color: rgba(255, 255, 255, 0.9);
-      font-family: pnBold;
-      padding-top: 30px;
-      padding-bottom: 20px;
-    }
-
-    .welcomeText {
-      color: white;
-      h2 {
-        font-family: pnReg;
-        font-size: 28px;
-        font-weight: bold;
-      }
-      p {
-        padding-top: 10px;
-        font-family: pnReg;
-        font-size: 18px;
-        color: rgba(255, 255, 255, 0.8);
-      }
-    }
-    .cardEvents {
-      display: flex;
-      .card1 {
-        padding-right: 30px;
-      }
-    }
-  }
-
-  img {
-    max-width: 177px;
-    height: 45px;
-    position: relative;
-    left: 3rem;
-    top: 2rem;
-  }
-
-  .sidebar {
-    background-color: #151029;
+.coverPage {
+  .wrapper {
+    display: flex;
+    background: #1f183e;
     height: 150vh;
-    width: 20%;
-    .navlist {
-      ul {
-        border: 1px solid green;
-        padding: 8px;
-        position: relative;
-        top: 5rem;
-        background-color: #24e3ae;
-        a {
-          text-decoration: none;
-          li {
-            color: #2d2c2c;
-            font-size: 17px;
-            font-weight: 600;
-            font-family: pnReg;
-            display: inline-block;
-            .icon1 {
-              padding-left: 1rem;
-              padding-right: 1rem;
+
+    .mainbody {
+      position: absolute;
+      top: 8%;
+      left: 18%;
+
+      .event {
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.9);
+        font-family: pnBold;
+        padding-top: 30px;
+        padding-bottom: 20px;
+      }
+
+      .welcomeText {
+        color: white;
+        h2 {
+          font-family: pnReg;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        p {
+          padding-top: 10px;
+          font-family: pnReg;
+          font-size: 18px;
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+      .cardEvents {
+        display: flex;
+        .card1 {
+          padding-right: 30px;
+        }
+      }
+    }
+
+    img {
+      max-width: 177px;
+      height: 45px;
+      position: relative;
+      left: 3rem;
+      top: 2rem;
+    }
+
+    .sidebar {
+      background-color: #151029;
+      height: 150vh;
+      width: 20%;
+      .navlist {
+        ul {
+          border: 1px solid green;
+          padding: 8px;
+          position: relative;
+          top: 5rem;
+          background-color: #24e3ae;
+          a {
+            text-decoration: none;
+            li {
+              color: #2d2c2c;
+              font-size: 17px;
+              font-weight: 600;
+              font-family: pnReg;
+              display: inline-block;
+              .icon1 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+              }
             }
           }
         }
       }
     }
-  }
-
-  .mainpage {
-    height: 100vh;
-    width: 100%;
-    .nav {
-      display: flex;
-      width: 100%;
-      height: 5%;
-      background-color: #1d1739;
-      border-bottom: 1px solid #524396;
-      .title {
-        a {
-          padding-left: 20px;
-          font-size: 26px;
-          position: absolute;
-          top: 0.3rem;
-          font-family: pnBold;
-          text-decoration: none;
-          color: #24e3ae;
-        }
-      }
-      .login {
-        a {
-          position: absolute;
-          right: 2rem;
-          top: 0.6rem;
-          text-decoration: none;
-          font-family: pnBold;
-          font-size: 16px;
-          line-height: 19px;
-          color: #24e3ae;
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: 400px) {
-    .sidebar {
-      img {
-        height: 50px;
-        width: 126px;
-        position: absolute;
-        top: 0.2rem;
-        left: 1rem;
-      }
-      width: 0%;
-      .navlist {
-        display: none;
-      }
-    }
 
     .mainpage {
-      background-color: #1f183e;
-      height: 310vh;
-
+      height: 100vh;
+      width: 100%;
       .nav {
-        height: 2.5%;
+        display: flex;
+        width: 100%;
+        height: 5%;
+        background-color: #1d1739;
+        border-bottom: 1px solid #524396;
         .title {
-          display: none;
+          a {
+            padding-left: 20px;
+            font-size: 26px;
+            position: absolute;
+            top: 0.3rem;
+            font-family: pnBold;
+            text-decoration: none;
+            color: #24e3ae;
+          }
         }
         .login {
+          a {
+            position: absolute;
+            right: 2rem;
+            top: 0.6rem;
+            text-decoration: none;
+            font-family: pnBold;
+            font-size: 16px;
+            line-height: 19px;
+            color: #24e3ae;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      .sidebar {
+        img {
+          // height: 50px;
+          // width: 126px;
+          position: absolute;
+          top: 0.2rem;
+          left: 1rem;
+        }
+        width: 0%;
+        .navlist {
           display: none;
         }
       }
-    }
 
-    .mainbody {
-      left: 5%;
-      width: 90%;
-      .welcomeText {
-        h2 {
-          padding-top: 10px;
+      .mainpage {
+        background-color: #1f183e;
+        height: 350vh;
+
+        .nav {
+          height: 2.5%;
+          .title {
+            display: none;
+          }
+          .login {
+            // display: none;
+          }
+        }
+      }
+
+      .mainbody {
+        left: 5%;
+        width: 90%;
+        .welcomeText {
+          h2 {
+            padding-top: 10px;
+            font-size: 22px;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+        .event {
           font-size: 22px;
         }
-        p {
-          font-size: 16px;
+        .cardEvents {
+          display: block;
+          width: 100%;
+          .card1 {
+            padding-bottom: 25px;
+          }
         }
       }
-      .event {
-        font-size: 22px;
-      }
-      .cardEvents {
-        display: block;
-        width: 100%;
-        .card1 {
-          padding-bottom: 25px;
+      .cardHolder1,
+      .cardHolder2,
+      .cardHolder3 {
+        .card {
+          width: 343px;
         }
       }
-    }
-    .cardHolder1,
-    .cardHolder2,
-    .cardHolder3 {
-      .card {
-        width: 343px;
-      }
-    }
 
-    .footer {
-      width: 100%;
-      p {
-        text-align: center;
+      .footer {
+        width: 100%;
+        p {
+          text-align: center;
+        }
       }
     }
   }
+  //? bracket of media query
 }
-//? bracket of media query
-// }
 
 //footer
 .footer {
@@ -224,14 +224,14 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 83.35%;
+  width: 85%;
   float: right;
 }
 
 //login page
 .loginPage {
-  height: 100%;
-  padding-bottom: 250px;
+  height: 100vh;
+  // padding-bottom: 350px;
   background-color: #130e25;
   .nav {
     background-color: #1d1739;
@@ -287,7 +287,7 @@
       width: 23.15px;
       position: absolute;
       top: 9.2rem;
-      right: 37rem;
+      right: 43rem;
     }
     .loginContainer {
       width: 320px;
@@ -385,7 +385,7 @@
       img {
         position: absolute;
         top: 9.2rem;
-        left: 21.5rem;
+        left: 20.5rem;
         height: 30px;
       }
     }
@@ -397,130 +397,7 @@
     }
   }
 }
-//home page
-.homePage {
-  .wrapper {
-    background-color: #1f183e;
-    height: 150vh;
-    .sidebar {
-      background-color: #151029;
-      height: 150vh;
-      width: 15%;
-      position: fixed;
 
-      img {
-        height: 50px;
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-      }
-
-      .navlist {
-        .selected {
-          background-color: #24e3ae;
-          li {
-            color: #2d2c2c;
-          }
-        }
-        ul {
-          padding: 8px;
-          margin-bottom: 10px;
-          position: relative;
-          top: 5rem;
-          background-color: #151029;
-          border: none;
-          a {
-            text-decoration: none;
-            li {
-              color: white;
-              font-size: 17px;
-              font-family: pnReg;
-              display: inline-block;
-              .icon1 {
-                padding-left: 1rem;
-                padding-right: 1rem;
-              }
-            }
-          }
-
-          &:hover {
-            background-color: #24e3ae;
-            li {
-              color: #2d2c2c;
-            }
-          }
-        }
-      }
-    }
-
-    .mainpage {
-      .nav {
-        background-color: #1d1739;
-        // background-color: red;
-        width: 100%;
-        height: 3rem;
-        .login {
-          a {
-            color: #24e3ae;
-            position: absolute;
-            text-decoration: none;
-            font-family: pnBold;
-            font-size: 20px;
-            top: 0.7rem;
-            right: 1.5rem;
-          }
-        }
-      }
-    }
-
-    .mainbody {
-      position: absolute;
-      top: 8%;
-      left: 18%;
-
-      .event {
-        font-size: 24px;
-        color: rgba(255, 255, 255, 0.9);
-        font-family: pnBold;
-        padding-top: 30px;
-        padding-bottom: 20px;
-      }
-
-      .welcomeText {
-        color: white;
-        h2 {
-          font-family: pnReg;
-          font-size: 28px;
-          font-weight: bold;
-        }
-        p {
-          padding-top: 10px;
-          font-family: pnReg;
-          font-size: 18px;
-          color: rgba(255, 255, 255, 0.8);
-        }
-      }
-      .cardEvents {
-        display: flex;
-        .card1 {
-          padding-right: 30px;
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: 400px) {
-    .sidebar {
-      display: none;
-    }
-
-    .cardEvents {
-      display: block;
-    }
-
-    //? bracket of media query
-  }
-}
 //signup page
 .signupPage {
   height: 100%;
@@ -580,7 +457,7 @@
       width: 23.15px;
       position: absolute;
       top: 6.7rem;
-      right: 34.5rem;
+      right: 40rem;
     }
     .signupContainer {
       width: 396px;
@@ -884,6 +761,128 @@
   }
 }
 
+//home page
+.homePage {
+  .wrapper {
+    background-color: #1f183e;
+    height: 150vh;
+
+    .home-sidebar {
+      background-color: #151029;
+      height: 150vh;
+      width: 15%;
+      position: fixed;
+
+      img {
+        height: 50px;
+        position: absolute;
+        top: 1rem;
+        left: 2.5rem;
+      }
+
+      .navlist {
+        .selected {
+          margin-top: 50px;
+          background-color: #24e3ae;
+          li {
+            color: #2d2c2c;
+          }
+        }
+        ul {
+          padding: 8px;
+          margin-bottom: 10px;
+          position: relative;
+          top: 5rem;
+          background-color: #151029;
+          border: none;
+          a {
+            text-decoration: none;
+            li {
+              color: white;
+              font-size: 17px;
+              font-family: pnBold;
+              display: inline-block;
+              .icon1 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+              }
+            }
+          }
+
+          &:hover {
+            background-color: #24e3ae;
+            li {
+              color: #2d2c2c;
+            }
+          }
+        }
+      }
+    }
+
+    .mainpage {
+      .nav {
+        background-color: #1d1739;
+        // background-color: red;
+        width: 100%;
+        height: 3rem;
+        .login {
+          a {
+            color: #24e3ae;
+            position: absolute;
+            text-decoration: none;
+            font-family: pnBold;
+            font-size: 20px;
+            top: 0.7rem;
+            right: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .mainbody {
+      position: absolute;
+      top: 8%;
+      left: 18%;
+
+      .event {
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.9);
+        font-family: pnBold;
+        padding-top: 30px;
+        padding-bottom: 20px;
+      }
+
+      .welcomeText {
+        color: white;
+        h2 {
+          font-family: pnReg;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        p {
+          padding-top: 10px;
+          font-family: pnReg;
+          font-size: 18px;
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+      .cardEvents {
+        display: flex;
+        .card1 {
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+  //* add here home css
+
+  @media only screen and (max-width: 400px) {
+    .home-sidebar {
+      display: none;
+    }
+  }
+}
+
 // ? Dashboard page
 .dashboardWrapper {
   .wrapper {
@@ -901,7 +900,7 @@
     .sidebar {
       background-color: #151029;
       height: 100vh;
-      width: 20%;
+      width: 15%;
       .navlist {
         .selected {
           background-color: #24e3ae;
@@ -923,7 +922,7 @@
             li {
               color: white;
               font-size: 17px;
-              font-family: pnReg;
+              font-family: pnBold;
               display: inline-block;
 
               .icon1 {
@@ -958,9 +957,11 @@
             font-size: 26px;
             position: absolute;
             top: 0.3rem;
+            left: 22rem;
             font-family: pnBold;
             text-decoration: none;
             color: #24e3ae;
+            display: none;
           }
         }
         .login {
@@ -979,11 +980,12 @@
     }
 
     .mainbody {
+      position: absolute;
+      top: 8%;
+      left: 18%;
       .heading {
         h2 {
           font-family: pnBold;
-          position: absolute;
-
           color: #24e3ae;
           font-size: 24px;
         }
@@ -991,7 +993,6 @@
       .questionBox {
         position: absolute;
         top: 3rem;
-
         width: 723px;
         height: 189px;
         background: #2b2352;
@@ -1043,22 +1044,47 @@
     }
 
     @media only screen and (max-width: 400px) {
-      .mainpage {
-        .nav {
-          height: 7%;
+      .sidebar {
+        img {
+          position: absolute;
+          top: 0.2rem;
+          left: 1rem;
+        }
+        width: 0%;
+        .navlist {
+          display: none;
         }
       }
 
       .mainbody {
+        left: 5%;
+        .heading {
+          h2 {
+            margin-top: 10px;
+          }
+        }
         .questionBox {
-          width: 100%;
+          width: 343px;
+          height: 235px;
           .content {
             input {
-              width: 100%;
+              width: 300px;
+            }
+            button {
+              margin-top: 10px;
+              margin-left: 0;
             }
           }
         }
       }
+
+      .footer {
+        width: 100%;
+        p {
+          text-align: center;
+        }
+      }
+
       //? bracket of media query
     }
   }
@@ -1081,7 +1107,7 @@
     .sidebar {
       background-color: #151029;
       height: 100vh;
-      width: 20%;
+      width: 15%;
       .navlist {
         .selected {
           background-color: #24e3ae;
@@ -1103,7 +1129,7 @@
             li {
               color: white;
               font-size: 17px;
-              font-family: pnReg;
+              font-family: pnBold;
               display: inline-block;
 
               .icon1 {
@@ -1141,6 +1167,7 @@
             font-family: pnBold;
             text-decoration: none;
             color: #24e3ae;
+            display: none;
           }
         }
         .login {
@@ -1159,11 +1186,14 @@
     }
 
     .mainbody {
+      position: absolute;
+      top: 8%;
+      left: 18%;
       .heading {
         h2 {
           font-family: pnBold;
           position: absolute;
-
+          top: 0rem;
           color: #24e3ae;
           font-size: 24px;
         }
@@ -1176,7 +1206,7 @@
         border-radius: 7px;
         width: 40vw;
         position: absolute;
-        top: 2rem;
+        top: 3rem;
 
         .row1,
         .row2,
@@ -1230,6 +1260,36 @@
     }
 
     @media only screen and (max-width: 400px) {
+      .sidebar {
+        img {
+          position: absolute;
+          top: 0.2rem;
+          left: 1rem;
+        }
+        width: 0%;
+        .navlist {
+          display: none;
+        }
+      }
+
+      .mainbody {
+        .heading {
+          h2 {
+            margin-top: 10px;
+          }
+        }
+        left: 5%;
+        .leaderTable {
+          width: 91vw;
+        }
+      }
+
+      .footer {
+        width: 100%;
+        p {
+          text-align: center;
+        }
+      }
       //? bracket of media query
     }
   }
@@ -1239,7 +1299,8 @@
 .aboutEvent {
   .wrapper {
     background: #1f183e;
-    height: 100%;
+    // background: red;
+    height: 100vh;
 
     img {
       max-width: 177px;
@@ -1252,7 +1313,7 @@
     .sidebar {
       background-color: #151029;
       height: 100vh;
-      width: 20%;
+      width: 15%;
       .navlist {
         .selected {
           background-color: #24e3ae;
@@ -1274,7 +1335,7 @@
             li {
               color: white;
               font-size: 17px;
-              font-family: pnReg;
+              font-family: pnBold;
               display: inline-block;
 
               .icon1 {
@@ -1299,10 +1360,10 @@
       width: 100%;
       .nav {
         display: flex;
-        width: 100%;
-        height: 5%;
-        background-color: #1d1739;
-        border-bottom: 1px solid #524396;
+        // width: 100%;
+        // height: 5%;
+        // background-color: #1d1739;
+        // border-bottom: 1px solid #524396;
         .title {
           a {
             padding-left: 20px;
@@ -1312,6 +1373,7 @@
             font-family: pnBold;
             text-decoration: none;
             color: #24e3ae;
+            display: none;
           }
         }
         .login {
@@ -1324,12 +1386,16 @@
             font-size: 16px;
             line-height: 19px;
             color: #24e3ae;
+            // display: none;
           }
         }
       }
     }
 
     .mainbody {
+      position: absolute;
+      top: 8%;
+      left: 18%;
       .box1 {
         width: 70%;
         background: #2b2352;
@@ -1423,7 +1489,7 @@
           padding: 10px;
           margin: 10px;
           position: relative;
-          left: 47rem;
+          left: 1rem;
           border-radius: 7px;
           &:hover {
             border: 2px solid #24e3ae;
@@ -1435,16 +1501,45 @@
     }
 
     @media only screen and (max-width: 400px) {
-      button {
-        display: none;
+      .sidebar {
+        img {
+          position: absolute;
+          top: 0.2rem;
+          left: 1rem;
+        }
+        width: 0%;
+        height: 145vh;
+        .navlist {
+          display: none;
+        }
       }
+
+      .mainbody {
+        left: 0%;
+        height: 145vh;
+        background-color: #1f183e;
+        .box1,
+        .box2,
+        .box3 {
+          width: 90%;
+          margin-left: 20px;
+        }
+      }
+
+      .footer {
+        width: 100%;
+        p {
+          text-align: center;
+        }
+      }
+
       //? bracket of media query
     }
   }
 }
 
 // * edit ur profiles
-.aboutEvent {
+.editprofile {
   .wrapper {
     background: #1f183e;
     height: 100%;
@@ -1460,7 +1555,7 @@
     .sidebar {
       background-color: #151029;
       height: 100vh;
-      width: 20%;
+      width: 15%;
       .navlist {
         .selected {
           background-color: #24e3ae;
@@ -1482,7 +1577,7 @@
             li {
               color: white;
               font-size: 17px;
-              font-family: pnReg;
+              font-family: pnBold;
               display: inline-block;
 
               .icon1 {
@@ -1503,14 +1598,8 @@
     }
 
     .mainpage {
-      // height: 100vh;
       width: 100%;
       .nav {
-        display: flex;
-        width: 100%;
-        height: 5%;
-        background-color: #1d1739;
-        border-bottom: 1px solid #524396;
         .title {
           a {
             padding-left: 20px;
@@ -1520,6 +1609,7 @@
             font-family: pnBold;
             text-decoration: none;
             color: #24e3ae;
+            display: none;
           }
         }
         .login {
@@ -1538,6 +1628,10 @@
     }
 
     .mainbody {
+      position: absolute;
+      top: 8%;
+      left: 18%;
+
       .edit {
         .card {
           display: flex;
@@ -1673,8 +1767,45 @@
     }
 
     @media only screen and (max-width: 400px) {
-      button {
-        display: none;
+      .sidebar {
+        img {
+          position: absolute;
+          top: 0.2rem;
+          left: 1rem;
+        }
+        width: 0%;
+        .navlist {
+          display: none;
+        }
+      }
+
+      .mainpage {
+        height: 40vh;
+      }
+      .mainbody {
+        left: 4%;
+        .edit {
+          .card {
+            display: block;
+            .smallcard {
+              padding-bottom: 20px;
+            }
+            .maincard {
+              width: 340px;
+              height: 500px;
+              .sets {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      .footer {
+        width: 100%;
+        p {
+          text-align: center;
+        }
       }
       //? bracket of media query
     }

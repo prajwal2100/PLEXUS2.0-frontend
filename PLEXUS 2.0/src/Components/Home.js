@@ -42,7 +42,7 @@ export default class Home extends Component {
     return (
       <div className="homePage">
         <div className="wrapper">
-          <div className="sidebar">
+          <div className="home-sidebar">
             <img src={logo} alt="logo" />
             <div className="navlist">
               <ul className="selected">
@@ -103,6 +103,7 @@ export default class Home extends Component {
               </p>
             </div>
           </div>
+          
           <div className="mainbody">
             <div className="welcomeText">
               <h2>Welcome</h2>
