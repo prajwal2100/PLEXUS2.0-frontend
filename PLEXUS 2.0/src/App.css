@@ -509,6 +509,12 @@
   padding: 25px;
 }
 
+.signupPage .signupBody .signupContainer .text span {
+  color: white;
+  font-family: pnBold;
+  font-size: 13px;
+}
+
 .signupPage .signupBody .signupContainer .text h2 {
   font-family: pnReg;
   font-weight: bold;
@@ -962,9 +968,7 @@
     width: 0%;
   }
   .homePage .wrapper .home-sidebar img {
-    position: relative;
-    top: 0.2rem;
-    left: 1rem;
+    display: none;
   }
   .homePage .wrapper .home-sidebar .navlist {
     display: none;
@@ -972,6 +976,15 @@
   .homePage .wrapper .mainpage {
     background-color: #1f183e;
     height: 350vh;
+  }
+  .homePage .wrapper .mainpage .title a {
+    font-family: pnBold;
+    text-decoration: none;
+    color: #24e3ae;
+    font-size: 30px;
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
   }
   .homePage .wrapper .mainpage .login {
     display: none;

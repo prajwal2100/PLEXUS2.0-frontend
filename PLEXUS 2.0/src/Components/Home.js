@@ -11,13 +11,9 @@ import Card3 from "./Card3";
 import "../App.css";
 
 export default class Home extends Component {
-
-  
   openNav = () => {
     console.log("hi whats up");
-    if (
-      document.getElementById("mySidebar")
-    ) {
+    if (document.getElementById("mySidebar")) {
       document.getElementById("mySidebar").style.width = "250px";
     }
   };
@@ -36,7 +32,6 @@ export default class Home extends Component {
       document.getElementById("collapse-main").style.marginLeft = "0";
     }
   };
-
 
   // constructor(props) {
   //   super(props);
@@ -69,25 +64,25 @@ export default class Home extends Component {
     return (
       <div className="homePage">
         <div className="wrapper">
+          <div id="mySidebar" className="collapse-sidebar">
+            <a href="" className="closebtn" onClick={this.closeNav}>
+              ×
+            </a>
+            <a href="/home">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/leaderboard">Leaderboard</a>
+            <a href="/event">About Event</a>
+            <a href="/profile">Edit Profile</a>
+            <a href="/login">
+              <button>Logout</button>
+            </a>
+          </div>
 
-
-        <div id="mySidebar" className="collapse-sidebar">
-              <a href="" className="closebtn" onClick={this.closeNav}>×</a>
-              <a href="/home">Home</a>
-              <a href="/dashboard">Dashboard</a>
-              <a href="/leaderboard">Leaderboard</a> 
-              <a href="/event">About Event</a>
-              <a href="/profile">Edit Profile</a>
-              <a href="/login"><button>Logout</button></a>
-              
-              
-            </div>
-
-            <div id="collapse-main">
-              <button className="openbtn" onClick={this.openNav}>☰</button>
-            </div>
-
-
+          <div id="collapse-main">
+            <button className="openbtn" onClick={this.openNav}>
+              ☰
+            </button>
+          </div>
 
           <div className="home-sidebar">
             <img src={logo} alt="logo" />
@@ -145,12 +140,16 @@ export default class Home extends Component {
 
           <div className="mainpage">
             <div className="nav">
+              <p className="title">
+                <Link to="/">Plexus</Link>
+              </p>
+
               <p className="login">
                 <a href="/login">Log out</a>
               </p>
             </div>
           </div>
-          
+
           <div className="mainbody">
             <div className="welcomeText">
               <h2>Welcome</h2>
