@@ -1944,7 +1944,7 @@
 
 .collapse-sidebar button {
   margin-top: 20px;
-  margin-left: 70px;
+  // margin-left: 30px;
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
@@ -1996,5 +1996,38 @@
   }
   .collapse-sidebar a {
     font-size: 18px;
+  }
+}
+
+#loader {
+  border: 5px solid #130e25;
+  border-radius: 50%;
+  border-top: 5px solid #24e3ae;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  position: relative;
+  top: 2rem;
+  left: 8rem;
+  display: none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

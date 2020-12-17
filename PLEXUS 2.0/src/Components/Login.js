@@ -6,6 +6,7 @@ import vector from "../images/vector.png";
 import Footer from "./Footer";
 
 import "../App.css";
+import "../ldbtn.min.css";
 
 export default class Login extends Component {
   constructor(props) {
@@ -25,6 +26,19 @@ export default class Login extends Component {
     console.log(this.state.username);
     console.log(this.state.password);
 
+    if (this.state.username == undefined || this.state.password == undefined) {
+      alert("Fill the credentials");
+      window.location.reload();
+    }
+
+    if (document.getElementById("btnid")) {
+      document.getElementById("btnid").style.display = "none";
+    }
+
+    if (document.getElementById("loader")) {
+      document.getElementById("loader").style.display = "block";
+    }
+
     if (this.state.username && this.state.password) {
       PostData("login", this.state).then((result) => {
         let responseJSON = result;
@@ -34,6 +48,9 @@ export default class Login extends Component {
         if (responseJSON.access != null) {
           localStorage.setItem("login", responseJSON.access);
           this.props.history.push("/home");
+        } else {
+          alert("Invalid Credentials OR not Registered");
+          window.location.reload();
         }
 
         // if (responseJSON.userData) {
@@ -98,7 +115,15 @@ export default class Login extends Component {
                   placeholder="Password"
                 />
                 <p>Forgot password?</p>
-                <button type="submit" value="Sign In" onClick={this.login}>
+
+                <div id="loader"></div>
+
+                <button
+                  id="btnid"
+                  type="submit"
+                  value="Sign In"
+                  onClick={this.login}
+                >
                   Login
                 </button>
                 <h3>

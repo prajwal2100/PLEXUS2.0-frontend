@@ -47,7 +47,7 @@ export default class AboutEvent extends Component {
               <a href="/leaderboard">Leaderboard</a> 
               <a href="/event">About Event</a>
               <a href="/profile">Edit Profile</a>
-              <button>Logout</button>
+              <a href="/login"><button>Logout</button></a>
               
              </div>
 
