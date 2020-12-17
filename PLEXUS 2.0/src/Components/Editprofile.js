@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from 'react'
 import { AiOutlineHome } from "react-icons/ai";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
@@ -8,12 +8,54 @@ import background from "../images/background.gif";
 
 import "../App.css";
 
-export default function Editprofile() {
-  return (
-    <div>
+export default class Editprofile extends Component {
+
+  
+  openNav = () => {
+    console.log("hi whats up");
+    if (
+      document.getElementById("mySidebar")
+    ) {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+  };
+
+  closeNav = () => {
+    if (
+      document.getElementById("mySidebar") &&
+      document.getElementById("collapse-main")
+    ) {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("collapse-main").style.marginLeft = "0";
+    }
+  };
+
+
+
+  render() {
+    return (
+      <div>
       <>
         <div className="editprofile">
           <div className="wrapper">
+
+            
+          <div id="mySidebar" className="collapse-sidebar">
+              <a href="" className="closebtn" onClick={this.closeNav}>×</a>
+              <a href="/home">Home</a>
+              <a href="/dashboard">Dashboard</a>
+              <a href="/leaderboard">Leaderboard</a> 
+              <a href="/event">About Event</a>
+              <a href="/profile">Edit Profile</a>
+              <button>Logout</button>
+              
+             </div>
+
+             <div id="collapse-main">
+               <button className="openbtn" onClick={this.openNav}>☰</button>
+             </div>
+
+
             <div className="sidebar">
               <img src={logo} alt="logo" />
               <div className="navlist">
@@ -120,5 +162,15 @@ export default function Editprofile() {
         </div>
       </>
     </div>
-  );
+    )
+  }
 }
+
+
+// import React from "react";
+
+// export default function Editprofile() {
+//   return (
+   
+//   );
+// }

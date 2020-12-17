@@ -140,6 +140,9 @@
     }
 
     @media only screen and (max-width: 400px) {
+      .openbtn {
+        display: block;
+      }
       .sidebar {
         img {
           // height: 50px;
@@ -164,7 +167,7 @@
             display: none;
           }
           .login {
-            // display: none;
+            display: none;
           }
         }
       }
@@ -877,6 +880,10 @@
   //* add here home css
 
   @media only screen and (max-width: 400px) {
+    .openbtn {
+      display: block;
+    }
+
     .wrapper {
       .home-sidebar {
         img {
@@ -893,6 +900,9 @@
       .mainpage {
         background-color: #1f183e;
         height: 350vh;
+        .login {
+          display: none;
+        }
       }
 
       .mainbody {
@@ -1098,6 +1108,9 @@
     }
 
     @media only screen and (max-width: 400px) {
+      .openbtn {
+        display: block;
+      }
       .sidebar {
         img {
           position: absolute;
@@ -1106,6 +1119,12 @@
         }
         width: 0%;
         .navlist {
+          display: none;
+        }
+      }
+
+      .mainpage {
+        .login {
           display: none;
         }
       }
@@ -1314,6 +1333,10 @@
     }
 
     @media only screen and (max-width: 400px) {
+      .openbtn {
+        display: block;
+      }
+
       .sidebar {
         img {
           position: absolute;
@@ -1322,6 +1345,12 @@
         }
         width: 0%;
         .navlist {
+          display: none;
+        }
+      }
+
+      .mainpage {
+        .login {
           display: none;
         }
       }
@@ -1555,6 +1584,10 @@
     }
 
     @media only screen and (max-width: 400px) {
+      .openbtn {
+        display: block;
+      }
+
       .sidebar {
         img {
           position: absolute;
@@ -1577,6 +1610,12 @@
         .box3 {
           width: 90%;
           margin-left: 20px;
+        }
+      }
+
+      .mainpage {
+        .login {
+          display: none;
         }
       }
 
@@ -1821,6 +1860,9 @@
     }
 
     @media only screen and (max-width: 400px) {
+      .openbtn {
+        display: block;
+      }
       .sidebar {
         img {
           position: absolute;
@@ -1835,6 +1877,9 @@
 
       .mainpage {
         height: 40vh;
+        .login {
+          display: none;
+        }
       }
       .mainbody {
         left: 4%;
@@ -1863,5 +1908,93 @@
       }
       //? bracket of media query
     }
+  }
+}
+
+// ! Overall
+
+.collapse-sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #151029;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.collapse-sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  font-family: pnBold;
+  display: block;
+  transition: 0.3s;
+}
+
+.collapse-sidebar {
+  .selected {
+    background-color: #24e3ae;
+  }
+}
+
+.collapse-sidebar button {
+  margin-top: 20px;
+  margin-left: 70px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: pnBold;
+  font-size: 18px;
+  background-color: #24e3ae;
+  border-radius: 4px;
+  border: none;
+}
+
+.collapse-sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.collapse-sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #1f183e;
+  color: #24e3ae;
+  padding: 10px 15px;
+  border: none;
+  position: absolute;
+  right: 1.5rem;
+  top: 0.5rem;
+  display: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#collapse-main {
+  transition: margin-left 0.5s;
+  // padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .collapse-sidebar {
+    padding-top: 15px;
+  }
+  .collapse-sidebar a {
+    font-size: 18px;
   }
 }

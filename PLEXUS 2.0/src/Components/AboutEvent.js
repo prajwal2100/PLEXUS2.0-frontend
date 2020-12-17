@@ -1,17 +1,65 @@
-import React from "react";
+import React, { Component } from 'react'
+
 import { AiOutlineHome } from "react-icons/ai";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import logo from "../images/Logo-Final.png";
 
 import "../App.css";
+export default class AboutEvent extends Component {
 
-export default function AboutEvent() {
-  return (
-    <div>
+
+  
+  openNav = () => {
+    console.log("hi whats up");
+    if (
+      document.getElementById("mySidebar")
+    ) {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+  };
+
+  closeNav = () => {
+    if (
+      document.getElementById("mySidebar") &&
+      document.getElementById("collapse-main")
+    ) {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("collapse-main").style.marginLeft = "0";
+    }
+  };
+
+
+  render() {
+    return (
+      <div>
       <>
         <div className="aboutEvent">
           <div className="wrapper">
+
+
+
+
+          <div id="mySidebar" className="collapse-sidebar">
+              <a href="" className="closebtn" onClick={this.closeNav}>×</a>
+              <a href="/home">Home</a>
+              <a href="/dashboard">Dashboard</a>
+              <a href="/leaderboard">Leaderboard</a> 
+              <a href="/event">About Event</a>
+              <a href="/profile">Edit Profile</a>
+              <button>Logout</button>
+              
+             </div>
+
+             <div id="collapse-main">
+               <button className="openbtn" onClick={this.openNav}>☰</button>
+             </div>
+
+
+
+
+
+
             <div className="sidebar">
               <img src={logo} alt="logo" />
               <div className="navlist">
@@ -135,5 +183,8 @@ export default function AboutEvent() {
         </div>
       </>
     </div>
-  );
+    )
+  }
 }
+
+
