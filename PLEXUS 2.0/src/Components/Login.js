@@ -26,17 +26,14 @@ export default class Login extends Component {
     console.log(this.state.username);
     console.log(this.state.password);
 
-    if (this.state.username == undefined || this.state.password == undefined) {
-      alert("Fill the credentials");
-      window.location.reload();
-    }
+    if (this.state.username != undefined || this.state.password != undefined) {
+      if (document.getElementById("btnid")) {
+        document.getElementById("btnid").style.display = "none";
+      }
 
-    if (document.getElementById("btnid")) {
-      document.getElementById("btnid").style.display = "none";
-    }
-
-    if (document.getElementById("loader")) {
-      document.getElementById("loader").style.display = "block";
+      if (document.getElementById("loader")) {
+        document.getElementById("loader").style.display = "block";
+      }
     }
 
     if (this.state.username && this.state.password) {
@@ -50,7 +47,10 @@ export default class Login extends Component {
           this.props.history.push("/home");
         } else {
           alert("Invalid Credentials OR not Registered");
-          window.location.reload();
+          document.getElementById("user").value = "";
+          document.getElementById("pass").value = "";
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("btnid").style.display = "block";
         }
 
         // if (responseJSON.userData) {
@@ -74,6 +74,12 @@ export default class Login extends Component {
     if (localStorage.getItem("userData")) {
       return <Redirect to={"/home"} />;
     }
+
+    const something = (event) => {
+      if (event.keyCode === 13) {
+        this.login();
+      }
+    };
 
     return (
       <div>
@@ -113,6 +119,7 @@ export default class Login extends Component {
                   data-type="password"
                   onChange={this.onChange}
                   placeholder="Password"
+                  onKeyDown={(e) => something(e)}
                 />
                 <p>Forgot password?</p>
 

@@ -28,9 +28,9 @@
 // cover page
 .coverPage {
   .wrapper {
-    display: flex;
+    // display: flex;
     background: #1f183e;
-    height: 150vh;
+    height: 135vh;
 
     .mainbody {
       position: absolute;
@@ -77,8 +77,10 @@
 
     .sidebar {
       background-color: #151029;
-      height: 150vh;
-      width: 17.5%;
+      height: 135vh;
+      width: 15%;
+      position: fixed;
+
       .navlist {
         ul {
           border: 1px solid green;
@@ -119,6 +121,7 @@
             font-size: 26px;
             position: absolute;
             top: 0.3rem;
+            display: none;
             font-family: pnBold;
             text-decoration: none;
             color: #24e3ae;
@@ -147,7 +150,7 @@
         img {
           // height: 50px;
           // width: 126px;
-          position: absolute;
+          // position: absolute;
           top: 0.2rem;
           left: 1rem;
         }
@@ -259,6 +262,7 @@
         font-size: 24px;
         padding-top: 15px;
         padding-bottom: 20px;
+        display: none;
       }
       margin: 0 auto;
     }
@@ -383,6 +387,13 @@
       bottom: 0;
       left: 0;
       right: 0;
+      .nav {
+        .heading {
+          h2 {
+            display: none;
+          }
+        }
+      }
     }
     .loginBody {
       img {
@@ -511,7 +522,7 @@
           border-radius: 3.66667px;
           width: 346px;
           height: 36.61px;
-          margin-bottom: 12px;
+          margin-top: 12px;
           color: white;
           padding-left: 10px;
           font-family: pnBold;
@@ -774,7 +785,7 @@
 .homePage {
   .wrapper {
     background-color: #1f183e;
-    height: 150vh;
+    height: 135vh;
 
     .home-sidebar {
       background-color: #151029;
@@ -1091,6 +1102,9 @@
             border-radius: 3.66667px;
             width: 549px;
             height: 40px;
+            color: white;
+            font-family: pnBold;
+            padding-left: 10px;
             margin-top: 20px;
             &::placeholder {
               color: rgba(255, 255, 255, 0.4);
@@ -1804,6 +1818,7 @@
               position: absolute;
               right: 2rem;
               bottom: 1.5rem;
+              cursor: pointer;
             }
 
             h2 {
@@ -1827,7 +1842,7 @@
                   input {
                     width: 296px;
                     height: 37px;
-
+                    padding-left: 10px;
                     background: #151029;
                     border: 0.5px solid rgba(255, 255, 255, 0.2);
                     box-sizing: border-box;
@@ -1859,7 +1874,7 @@
                     border: 0.5px solid rgba(255, 255, 255, 0.2);
                     box-sizing: border-box;
                     border-radius: 3.66667px;
-
+                    padding-left: 10px;
                     &::placeholder {
                       padding-left: 10px;
                       color: rgba(255, 255, 255, 0.4);

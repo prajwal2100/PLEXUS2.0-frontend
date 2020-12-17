@@ -149,6 +149,8 @@ export default class SignupPage extends Component {
 
           // console.log(response.data.message);
           console.log("error");
+          alert("A user with that username already exists.");
+          window.location.reload();
         });
     } else {
       console.error("Invalid Form");
@@ -157,6 +159,12 @@ export default class SignupPage extends Component {
 
   render() {
     const { errors } = this.state;
+
+    const something = (event) => {
+      if (event.keyCode === 13) {
+        this.handleChange.bind(this);
+      }
+    };
 
     return (
       <div>
@@ -270,7 +278,7 @@ export default class SignupPage extends Component {
                   </div>
                   <div className="contact">
                     <input
-                      type="number"
+                      type="tel"
                       name="contact"
                       onChange={this.handleChange}
                       required
@@ -288,6 +296,7 @@ export default class SignupPage extends Component {
                       onChange={this.handleChange}
                       required
                       placeholder="Admission Number"
+                      onKeyDown={(e) => something(e)}
                     />
                     {/* This span shows error. You can style it as you want */}
                     {errors.admissionNo.length > 0 && (
