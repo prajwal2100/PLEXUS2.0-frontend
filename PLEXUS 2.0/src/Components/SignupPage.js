@@ -124,6 +124,14 @@ export default class SignupPage extends Component {
       };
       console.info("Valid Form");
 
+      if (document.getElementById("createbtn")) {
+        document.getElementById("createbtn").style.display = "none";
+      }
+
+      if (document.getElementById("loader")) {
+        document.getElementById("loader").style.display = "block";
+      }
+
       // make api call. I've made api call with axios but you can make it with fetch or superagent(That kunal sir used in tech-trek). It will be a post call
       // myurl  === Server api = hosted backend API
 
@@ -167,7 +175,22 @@ export default class SignupPage extends Component {
           // console.log(response.data.message);
           console.log("error");
           alert("A user with that username already exists.");
-          window.location.reload();
+
+          document.getElementById("name").value = "";
+          document.getElementById("username").value = "";
+          document.getElementById("college").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("password").value = "";
+          document.getElementById("confirmPassword").value = "";
+          document.getElementById("contact").value = "";
+          document.getElementById("adminssionNO").value = "";
+
+          document.getElementById("loader").style.display = "none";
+
+          if (document.getElementById("createbtn")) {
+            document.getElementById("createbtn").style.display = "block";
+          }
+          // window.location.reload();
         });
     } else {
       console.error("Invalid Form");
@@ -216,6 +239,7 @@ export default class SignupPage extends Component {
                 <form onSubmit={this.handleSubmit}>
                   <div className="name">
                     <input
+                      id="name"
                       type="text"
                       name="name"
                       onChange={this.handleChange}
@@ -230,6 +254,7 @@ export default class SignupPage extends Component {
 
                   <div className="user">
                     <input
+                      id="username"
                       type="text"
                       name="username"
                       onChange={this.handleChange}
@@ -243,6 +268,7 @@ export default class SignupPage extends Component {
                   </div>
                   <div className="college">
                     <input
+                      id="college"
                       type="text"
                       name="college"
                       onChange={this.handleChange}
@@ -256,6 +282,7 @@ export default class SignupPage extends Component {
                   </div>
                   <div className="email">
                     <input
+                      id="email"
                       type="email"
                       name="email"
                       onChange={this.handleChange}
@@ -269,6 +296,7 @@ export default class SignupPage extends Component {
                   </div>
                   <div className="password">
                     <input
+                      id="password"
                       type="password"
                       name="password"
                       onChange={this.handleChange}
@@ -282,6 +310,7 @@ export default class SignupPage extends Component {
                   </div>
                   <div className="confirmPassword">
                     <input
+                      id="confirmPassword"
                       type="password"
                       name="confirmPassword"
                       onChange={this.handleChange}
@@ -295,6 +324,7 @@ export default class SignupPage extends Component {
                   </div>
                   <div className="contact">
                     <input
+                      id="contact"
                       type="number"
                       name="contact"
                       onChange={this.handleChange}
@@ -308,6 +338,7 @@ export default class SignupPage extends Component {
                   </div>
                   <div className="admission">
                     <input
+                      id="adminssionNO"
                       type="text"
                       name="admissionNo"
                       onChange={this.handleChange}
@@ -320,8 +351,9 @@ export default class SignupPage extends Component {
                       <span className="error">{errors.admissionNo}</span>
                     )}
                   </div>
+                  <div id="loader"></div>
                   <div className="submit">
-                    <button>Create</button>
+                    <button id="createbtn">Create</button>
                   </div>
                 </form>
 
