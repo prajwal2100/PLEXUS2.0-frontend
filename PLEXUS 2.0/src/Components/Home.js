@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
-
+import Axios from "axios";
 import Card1 from "./Card1";
 import Card2 from "./Card2";
 import Card3 from "./Card3";
@@ -12,17 +12,10 @@ import "../App.css";
 
 export default class Home extends Component {
   openNav = () => {
-    console.log("hi whats up");
     if (document.getElementById("mySidebar")) {
       document.getElementById("mySidebar").style.width = "250px";
     }
   };
-
-  // function closeNav() {
-  //   document.getElementById("mySidebar").style.width = "0";
-  //   document.getElementById("collapse-main").style.marginLeft = "0";
-  // }
-
   closeNav = () => {
     if (
       document.getElementById("mySidebar") &&
@@ -33,11 +26,29 @@ export default class Home extends Component {
     }
   };
 
-  render() {
-    // if (this.state.redirect) {
-    //   return <Redirect to={"/login"} />;
-    // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: null,
+    };
+  }
 
+  async componentDidMount() {
+    const response = await fetch(
+      "https://random-data-api.com/api/cannabis/random_cannabis?size=2"
+    );
+    const data = await response.json();
+    this.setState({
+      brand: data[0].brand,
+    });
+    // var EventName = data[0].brand;
+    console.log(data);
+    console.log(data.length);
+    // console.log(EventName);
+  }
+
+  render() {
+    const { brand } = this.state;
     return (
       <div className="homePage">
         <div className="wrapper">
@@ -45,7 +56,7 @@ export default class Home extends Component {
             <a href="" className="closebtn" onClick={this.closeNav}>
               ×
             </a>
-            <a href="/home">Home</a>
+            <a href="/home"> Home </a>
             <a href="/dashboard">Dashboard</a>
             <a href="/leaderboard">Leaderboard</a>
             <a href="/event">About Event</a>
@@ -133,12 +144,12 @@ export default class Home extends Component {
               <p>Find all your live events put up here for you!</p>
             </div>
 
-            <h2 className="event">Ongoing Events</h2>
+            <h2 className="event"> Ongoing Events</h2>
 
             <div className="cardEvents">
               <div className="card1">
                 <Card1
-                  title="Errata"
+                  title={brand}
                   description="An online treasure hunt"
                   time="ENDS ON 30TH JUNE 7:06PM"
                 />
