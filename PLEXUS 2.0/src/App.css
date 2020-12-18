@@ -256,7 +256,7 @@
   font-size: 24px;
   padding-top: 15px;
   padding-bottom: 20px;
-  display: none;
+  visibility: hidden;
 }
 
 .loginPage .nav .signup a {
@@ -416,6 +416,7 @@
     right: 0;
   }
   .loginPage .loginPage .nav .heading h2 {
+    color: red;
     display: none;
   }
   .loginPage .loginBody img {

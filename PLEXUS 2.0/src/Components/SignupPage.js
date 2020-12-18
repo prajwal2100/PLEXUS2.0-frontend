@@ -9,6 +9,7 @@ import eclipse2 from "../images/Ellipse2.png";
 import eclipse3 from "../images/Ellipse3.png";
 import eclipse4 from "../images/Ellipse4.png";
 import { notify, report } from "superagent";
+import { PostData } from "../services/PostData";
 
 // function TO VALIDATE EMAIL. You can test your regex on https://regex101.com/.
 
@@ -137,8 +138,24 @@ export default class SignupPage extends Component {
           console.log(response);
           console.log(response.statusText);
           if (response.statusText === "Created") {
-            console.log("sdsd");
-            this.props.history.push("/login");
+            console.log("username");
+            console.log(this.state.username);
+            console.log(this.state.password);
+
+            if (this.state.username && this.state.password) {
+              PostData("login", this.state).then((result) => {
+                let responseJSON = result;
+                console.log(responseJSON);
+                console.log("response from backend");
+
+                if (responseJSON.access != null) {
+                  localStorage.setItem("login", responseJSON.access);
+                  this.props.history.push("/home");
+                }
+              });
+            }
+
+            // this.props.history.push("/login");
           }
         })
         .catch(function (error) {
@@ -278,7 +295,7 @@ export default class SignupPage extends Component {
                   </div>
                   <div className="contact">
                     <input
-                      type="tel"
+                      type="number"
                       name="contact"
                       onChange={this.handleChange}
                       required

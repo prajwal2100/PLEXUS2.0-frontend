@@ -33,29 +33,6 @@ export default class Home extends Component {
     }
   };
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     redirect: false,
-  //   };
-  //   this.logout = this.logout.bind(this);
-  // }
-
-  // componentWillMount() {
-  //   if (sessionStorage.getItem("userData")) {
-  //     console.log("call user feed");
-  //   } else {
-  //     //only to check the page home
-  //     this.setState({ redirect: true });
-  //   }
-  // }
-
-  // logout() {
-  //   sessionStorage.setItem("userData", "");
-  //   sessionStorage.clear();
-  //   this.setState({ redirect: true });
-  // }
-
   render() {
     // if (this.state.redirect) {
     //   return <Redirect to={"/login"} />;
