@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
-import Axios from "axios";
+import axios from "axios";
 import Card1 from "./Card1";
 import Card2 from "./Card2";
 import Card3 from "./Card3";
@@ -29,26 +29,60 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      brand: null,
+      postId: null,
     };
   }
 
-  async componentDidMount() {
-    const response = await fetch(
-      "https://random-data-api.com/api/cannabis/random_cannabis?size=2"
-    );
-    const data = await response.json();
-    this.setState({
-      brand: data[0].brand,
-    });
-    // var EventName = data[0].brand;
-    console.log(data);
-    console.log(data.length);
-    // console.log(EventName);
+  componentDidMount() {
+    axios
+      .get("https://plexus-2.herokuapp.com/api/dashboard/present_events/", {
+        headers: {
+          Authorization: "Bearer".concat(localStorage.getItem("login")),
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
+  // componentDidMount() {
+  //   const check = localStorage.getItem("login");
+  //   console.log(check);
+
+  //   const requestOptions = {
+  //     method: "GET",
+  //     headers: {
+  //       "content-type": "application/json",
+  //       Authorization: "Bearer" + check,
+  //     },
+  //   };
+  //   fetch(
+  //     "https://plexus-2.herokuapp.com/api/dashboard/present_events/",
+  //     requestOptions
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => this.setState({ postId: data.id }));
+  //   console.log(this.state.postId);
+  // }
+
+  // async componentDidMount() {
+  //   const response = await fetch(
+  //     " https://plexus-2.herokuapp.com/api/dashboard/present_events/"
+  //   );
+  //   const data = await response.json();
+  //   this.setState({
+  //     name: data.name,
+  //   });
+
+  //   console.log(data);
+  //   console.log(data.length);
+  // }
+
   render() {
-    const { brand } = this.state;
+    const { postId } = this.state;
     return (
       <div className="homePage">
         <div className="wrapper">
@@ -149,7 +183,7 @@ export default class Home extends Component {
             <div className="cardEvents">
               <div className="card1">
                 <Card1
-                  title={brand}
+                  title={postId}
                   description="An online treasure hunt"
                   time="ENDS ON 30TH JUNE 7:06PM"
                 />
