@@ -86,7 +86,6 @@
 }
 
 .coverPage .wrapper .sidebar .navlist ul {
-  border: 1px solid green;
   padding: 8px;
   position: relative;
   top: 5rem;
@@ -865,45 +864,41 @@
   left: 2.5rem;
 }
 
-.homePage .wrapper .home-sidebar .navlist .selected {
-  margin-top: 50px;
+.homePage .wrapper .home-sidebar .navlist a {
+  text-decoration: none;
+  position: relative;
+  top: 7rem;
+}
+
+.homePage .wrapper .home-sidebar .navlist a .selected {
   background-color: #24e3ae;
 }
 
-.homePage .wrapper .home-sidebar .navlist .selected li {
+.homePage .wrapper .home-sidebar .navlist a .selected li {
   color: #2d2c2c;
 }
 
-.homePage .wrapper .home-sidebar .navlist ul {
-  padding: 8px;
-  margin-bottom: 10px;
-  position: relative;
-  top: 5rem;
-  background-color: #151029;
-  border: none;
+.homePage .wrapper .home-sidebar .navlist a ul {
+  list-style-type: none;
 }
 
-.homePage .wrapper .home-sidebar .navlist ul a {
-  text-decoration: none;
-}
-
-.homePage .wrapper .home-sidebar .navlist ul a li {
-  color: white;
-  font-size: 17px;
+.homePage .wrapper .home-sidebar .navlist a ul li {
   font-family: pnBold;
-  display: inline-block;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
 }
 
-.homePage .wrapper .home-sidebar .navlist ul a li .icon1 {
+.homePage .wrapper .home-sidebar .navlist a ul li .icon1 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.homePage .wrapper .home-sidebar .navlist ul:hover {
+.homePage .wrapper .home-sidebar .navlist a:hover ul {
   background-color: #24e3ae;
 }
 
-.homePage .wrapper .home-sidebar .navlist ul:hover li {
+.homePage .wrapper .home-sidebar .navlist a:hover ul li {
   color: #2d2c2c;
 }
 
@@ -1033,11 +1028,10 @@
 }
 
 .dashboardWrapper .wrapper img {
-  max-width: 177px;
-  height: 45px;
-  position: relative;
-  left: 3rem;
-  top: 2rem;
+  height: 50px;
+  position: absolute;
+  top: 1rem;
+  left: 2.5rem;
 }
 
 .dashboardWrapper .wrapper .sidebar {
@@ -1046,44 +1040,41 @@
   width: 15%;
 }
 
-.dashboardWrapper .wrapper .sidebar .navlist .selected {
+.dashboardWrapper .wrapper .sidebar .navlist a {
+  text-decoration: none;
+  position: relative;
+  top: 7rem;
+}
+
+.dashboardWrapper .wrapper .sidebar .navlist a .selected {
   background-color: #24e3ae;
 }
 
-.dashboardWrapper .wrapper .sidebar .navlist .selected li {
+.dashboardWrapper .wrapper .sidebar .navlist a .selected li {
   color: #2d2c2c;
 }
 
-.dashboardWrapper .wrapper .sidebar .navlist ul {
-  padding: 8px;
-  margin-bottom: 10px;
-  position: relative;
-  top: 5rem;
-  background-color: #151029;
-  border: none;
+.dashboardWrapper .wrapper .sidebar .navlist a ul {
+  list-style-type: none;
 }
 
-.dashboardWrapper .wrapper .sidebar .navlist ul a {
-  text-decoration: none;
-}
-
-.dashboardWrapper .wrapper .sidebar .navlist ul a li {
-  color: white;
-  font-size: 17px;
+.dashboardWrapper .wrapper .sidebar .navlist a ul li {
   font-family: pnBold;
-  display: inline-block;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
 }
 
-.dashboardWrapper .wrapper .sidebar .navlist ul a li .icon1 {
+.dashboardWrapper .wrapper .sidebar .navlist a ul li .icon1 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.dashboardWrapper .wrapper .sidebar .navlist ul:hover {
+.dashboardWrapper .wrapper .sidebar .navlist a:hover ul {
   background-color: #24e3ae;
 }
 
-.dashboardWrapper .wrapper .sidebar .navlist ul:hover li {
+.dashboardWrapper .wrapper .sidebar .navlist a:hover ul li {
   color: #2d2c2c;
 }
 
@@ -1269,11 +1260,10 @@
 }
 
 .Leaderboard .wrapper img {
-  max-width: 177px;
-  height: 45px;
-  position: relative;
-  left: 3rem;
-  top: 2rem;
+  height: 50px;
+  position: absolute;
+  top: 1rem;
+  left: 2.5rem;
 }
 
 .Leaderboard .wrapper .sidebar {
@@ -1282,44 +1272,41 @@
   width: 15%;
 }
 
-.Leaderboard .wrapper .sidebar .navlist .selected {
+.Leaderboard .wrapper .sidebar .navlist a {
+  text-decoration: none;
+  position: relative;
+  top: 7rem;
+}
+
+.Leaderboard .wrapper .sidebar .navlist a .selected {
   background-color: #24e3ae;
 }
 
-.Leaderboard .wrapper .sidebar .navlist .selected li {
+.Leaderboard .wrapper .sidebar .navlist a .selected li {
   color: #2d2c2c;
 }
 
-.Leaderboard .wrapper .sidebar .navlist ul {
-  padding: 8px;
-  margin-bottom: 10px;
-  position: relative;
-  top: 5rem;
-  background-color: #151029;
-  border: none;
+.Leaderboard .wrapper .sidebar .navlist a ul {
+  list-style-type: none;
 }
 
-.Leaderboard .wrapper .sidebar .navlist ul a {
-  text-decoration: none;
-}
-
-.Leaderboard .wrapper .sidebar .navlist ul a li {
-  color: white;
-  font-size: 17px;
+.Leaderboard .wrapper .sidebar .navlist a ul li {
   font-family: pnBold;
-  display: inline-block;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
 }
 
-.Leaderboard .wrapper .sidebar .navlist ul a li .icon1 {
+.Leaderboard .wrapper .sidebar .navlist a ul li .icon1 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.Leaderboard .wrapper .sidebar .navlist ul:hover {
+.Leaderboard .wrapper .sidebar .navlist a:hover ul {
   background-color: #24e3ae;
 }
 
-.Leaderboard .wrapper .sidebar .navlist ul:hover li {
+.Leaderboard .wrapper .sidebar .navlist a:hover ul li {
   color: #2d2c2c;
 }
 
@@ -1378,7 +1365,7 @@
   -webkit-box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
           box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
-  width: 40vw;
+  width: 60vw;
   position: absolute;
   top: 3rem;
 }
@@ -1407,6 +1394,7 @@
   font-size: 18px;
   color: white;
   padding: 15px;
+  padding-right: 100px;
 }
 
 .Leaderboard .wrapper .mainbody .leaderTable .row1 .rank,
@@ -1479,7 +1467,15 @@
     margin-top: 10px;
   }
   .Leaderboard .wrapper .mainbody .leaderTable {
-    width: 91vw;
+    width: 90vw;
+  }
+  .Leaderboard .wrapper .mainbody .leaderTable .row1 h2,
+  .Leaderboard .wrapper .mainbody .leaderTable .row2 h2,
+  .Leaderboard .wrapper .mainbody .leaderTable .row3 h2,
+  .Leaderboard .wrapper .mainbody .leaderTable .row4 h2,
+  .Leaderboard .wrapper .mainbody .leaderTable .row5 h2,
+  .Leaderboard .wrapper .mainbody .leaderTable .row6 h2 {
+    padding-right: 15px;
   }
   .Leaderboard .wrapper .footer {
     width: 100%;
@@ -1495,11 +1491,10 @@
 }
 
 .aboutEvent .wrapper img {
-  max-width: 177px;
-  height: 45px;
-  position: relative;
-  left: 3rem;
-  top: 2rem;
+  height: 50px;
+  position: absolute;
+  top: 1rem;
+  left: 2.5rem;
 }
 
 .aboutEvent .wrapper .sidebar {
@@ -1508,44 +1503,41 @@
   width: 15%;
 }
 
-.aboutEvent .wrapper .sidebar .navlist .selected {
+.aboutEvent .wrapper .sidebar .navlist a {
+  text-decoration: none;
+  position: relative;
+  top: 7rem;
+}
+
+.aboutEvent .wrapper .sidebar .navlist a .selected {
   background-color: #24e3ae;
 }
 
-.aboutEvent .wrapper .sidebar .navlist .selected li {
+.aboutEvent .wrapper .sidebar .navlist a .selected li {
   color: #2d2c2c;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul {
-  padding: 8px;
-  margin-bottom: 10px;
-  position: relative;
-  top: 5rem;
-  background-color: #151029;
-  border: none;
+.aboutEvent .wrapper .sidebar .navlist a ul {
+  list-style-type: none;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul a {
-  text-decoration: none;
-}
-
-.aboutEvent .wrapper .sidebar .navlist ul a li {
-  color: white;
-  font-size: 17px;
+.aboutEvent .wrapper .sidebar .navlist a ul li {
   font-family: pnBold;
-  display: inline-block;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul a li .icon1 {
+.aboutEvent .wrapper .sidebar .navlist a ul li .icon1 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul:hover {
+.aboutEvent .wrapper .sidebar .navlist a:hover ul {
   background-color: #24e3ae;
 }
 
-.aboutEvent .wrapper .sidebar .navlist ul:hover li {
+.aboutEvent .wrapper .sidebar .navlist a:hover ul li {
   color: #2d2c2c;
 }
 
@@ -1744,11 +1736,10 @@
 }
 
 .editprofile .wrapper img {
-  max-width: 177px;
-  height: 45px;
-  position: relative;
-  left: 3rem;
-  top: 2rem;
+  height: 50px;
+  position: absolute;
+  top: 1rem;
+  left: 2.5rem;
 }
 
 .editprofile .wrapper .sidebar {
@@ -1757,44 +1748,41 @@
   width: 15%;
 }
 
-.editprofile .wrapper .sidebar .navlist .selected {
+.editprofile .wrapper .sidebar .navlist a {
+  text-decoration: none;
+  position: relative;
+  top: 7rem;
+}
+
+.editprofile .wrapper .sidebar .navlist a .selected {
   background-color: #24e3ae;
 }
 
-.editprofile .wrapper .sidebar .navlist .selected li {
+.editprofile .wrapper .sidebar .navlist a .selected li {
   color: #2d2c2c;
 }
 
-.editprofile .wrapper .sidebar .navlist ul {
-  padding: 8px;
-  margin-bottom: 10px;
-  position: relative;
-  top: 5rem;
-  background-color: #151029;
-  border: none;
+.editprofile .wrapper .sidebar .navlist a ul {
+  list-style-type: none;
 }
 
-.editprofile .wrapper .sidebar .navlist ul a {
-  text-decoration: none;
-}
-
-.editprofile .wrapper .sidebar .navlist ul a li {
-  color: white;
-  font-size: 17px;
+.editprofile .wrapper .sidebar .navlist a ul li {
   font-family: pnBold;
-  display: inline-block;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
 }
 
-.editprofile .wrapper .sidebar .navlist ul a li .icon1 {
+.editprofile .wrapper .sidebar .navlist a ul li .icon1 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.editprofile .wrapper .sidebar .navlist ul:hover {
+.editprofile .wrapper .sidebar .navlist a:hover ul {
   background-color: #24e3ae;
 }
 
-.editprofile .wrapper .sidebar .navlist ul:hover li {
+.editprofile .wrapper .sidebar .navlist a:hover ul li {
   color: #2d2c2c;
 }
 

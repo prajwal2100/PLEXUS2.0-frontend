@@ -83,7 +83,7 @@
 
       .navlist {
         ul {
-          border: 1px solid green;
+          // border: 1px solid green;
           padding: 8px;
           position: relative;
           top: 5rem;
@@ -803,27 +803,24 @@
       }
 
       .navlist {
-        .selected {
-          margin-top: 50px;
-          background-color: #24e3ae;
-          li {
-            color: #2d2c2c;
-          }
-        }
-        ul {
-          padding: 8px;
-          margin-bottom: 10px;
+        a {
+          text-decoration: none;
           position: relative;
-          top: 5rem;
-          background-color: #151029;
-          border: none;
-          a {
-            text-decoration: none;
+          top: 7rem;
+          // left: 1rem;
+          .selected {
             li {
-              color: white;
-              font-size: 17px;
+              color: #2d2c2c;
+            }
+            background-color: #24e3ae;
+          }
+          ul {
+            list-style-type: none;
+            li {
               font-family: pnBold;
-              display: inline-block;
+              font-size: 18px;
+              color: white;
+              padding: 10px;
               .icon1 {
                 padding-left: 1rem;
                 padding-right: 1rem;
@@ -832,9 +829,11 @@
           }
 
           &:hover {
-            background-color: #24e3ae;
-            li {
-              color: #2d2c2c;
+            ul {
+              background-color: #24e3ae;
+              li {
+                color: #2d2c2c;
+              }
             }
           }
         }
@@ -982,41 +981,36 @@
     height: 100%;
 
     img {
-      max-width: 177px;
-      height: 45px;
-      position: relative;
-      left: 3rem;
-      top: 2rem;
+      height: 50px;
+      position: absolute;
+      top: 1rem;
+      left: 2.5rem;
     }
 
     .sidebar {
       background-color: #151029;
       height: 100vh;
       width: 15%;
+
       .navlist {
-        .selected {
-          background-color: #24e3ae;
-          li {
-            color: #2d2c2c;
-          }
-        }
-        ul {
-          padding: 8px;
-          margin-bottom: 10px;
+        a {
+          text-decoration: none;
           position: relative;
-          top: 5rem;
-          background-color: #151029;
-          border: none;
-
-          a {
-            text-decoration: none;
-
+          top: 7rem;
+          // left: 1rem;
+          .selected {
             li {
-              color: white;
-              font-size: 17px;
+              color: #2d2c2c;
+            }
+            background-color: #24e3ae;
+          }
+          ul {
+            list-style-type: none;
+            li {
               font-family: pnBold;
-              display: inline-block;
-
+              font-size: 18px;
+              color: white;
+              padding: 10px;
               .icon1 {
                 padding-left: 1rem;
                 padding-right: 1rem;
@@ -1025,9 +1019,11 @@
           }
 
           &:hover {
-            background-color: #24e3ae;
-            li {
-              color: #2d2c2c;
+            ul {
+              background-color: #24e3ae;
+              li {
+                color: #2d2c2c;
+              }
             }
           }
         }
@@ -1201,11 +1197,10 @@
     height: 100%;
 
     img {
-      max-width: 177px;
-      height: 45px;
-      position: relative;
-      left: 3rem;
-      top: 2rem;
+      height: 50px;
+      position: absolute;
+      top: 1rem;
+      left: 2.5rem;
     }
 
     .sidebar {
@@ -1213,29 +1208,24 @@
       height: 100vh;
       width: 15%;
       .navlist {
-        .selected {
-          background-color: #24e3ae;
-          li {
-            color: #2d2c2c;
-          }
-        }
-        ul {
-          padding: 8px;
-          margin-bottom: 10px;
+        a {
+          text-decoration: none;
           position: relative;
-          top: 5rem;
-          background-color: #151029;
-          border: none;
-
-          a {
-            text-decoration: none;
-
+          top: 7rem;
+          // left: 1rem;
+          .selected {
             li {
-              color: white;
-              font-size: 17px;
+              color: #2d2c2c;
+            }
+            background-color: #24e3ae;
+          }
+          ul {
+            list-style-type: none;
+            li {
               font-family: pnBold;
-              display: inline-block;
-
+              font-size: 18px;
+              color: white;
+              padding: 10px;
               .icon1 {
                 padding-left: 1rem;
                 padding-right: 1rem;
@@ -1244,9 +1234,11 @@
           }
 
           &:hover {
-            background-color: #24e3ae;
-            li {
-              color: #2d2c2c;
+            ul {
+              background-color: #24e3ae;
+              li {
+                color: #2d2c2c;
+              }
             }
           }
         }
@@ -1308,7 +1300,7 @@
         background: #2b2352;
         box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
         border-radius: 7px;
-        width: 40vw;
+        width: 60vw;
         position: absolute;
         top: 3rem;
 
@@ -1328,6 +1320,7 @@
             font-size: 18px;
             color: white;
             padding: 15px;
+            padding-right: 100px;
           }
 
           .rank {
@@ -1394,7 +1387,17 @@
         }
         left: 5%;
         .leaderTable {
-          width: 91vw;
+          width: 90vw;
+          .row1,
+          .row2,
+          .row3,
+          .row4,
+          .row5,
+          .row6 {
+            h2 {
+              padding-right: 15px;
+            }
+          }
         }
       }
 
@@ -1417,11 +1420,10 @@
     height: 100vh;
 
     img {
-      max-width: 177px;
-      height: 45px;
-      position: relative;
-      left: 3rem;
-      top: 2rem;
+      height: 50px;
+      position: absolute;
+      top: 1rem;
+      left: 2.5rem;
     }
 
     .sidebar {
@@ -1429,29 +1431,24 @@
       height: 100vh;
       width: 15%;
       .navlist {
-        .selected {
-          background-color: #24e3ae;
-          li {
-            color: #2d2c2c;
-          }
-        }
-        ul {
-          padding: 8px;
-          margin-bottom: 10px;
+        a {
+          text-decoration: none;
           position: relative;
-          top: 5rem;
-          background-color: #151029;
-          border: none;
-
-          a {
-            text-decoration: none;
-
+          top: 7rem;
+          // left: 1rem;
+          .selected {
             li {
-              color: white;
-              font-size: 17px;
+              color: #2d2c2c;
+            }
+            background-color: #24e3ae;
+          }
+          ul {
+            list-style-type: none;
+            li {
               font-family: pnBold;
-              display: inline-block;
-
+              font-size: 18px;
+              color: white;
+              padding: 10px;
               .icon1 {
                 padding-left: 1rem;
                 padding-right: 1rem;
@@ -1460,9 +1457,11 @@
           }
 
           &:hover {
-            background-color: #24e3ae;
-            li {
-              color: #2d2c2c;
+            ul {
+              background-color: #24e3ae;
+              li {
+                color: #2d2c2c;
+              }
             }
           }
         }
@@ -1669,11 +1668,10 @@
     height: 100%;
 
     img {
-      max-width: 177px;
-      height: 45px;
-      position: relative;
-      left: 3rem;
-      top: 2rem;
+      height: 50px;
+      position: absolute;
+      top: 1rem;
+      left: 2.5rem;
     }
 
     .sidebar {
@@ -1681,29 +1679,24 @@
       height: 100vh;
       width: 15%;
       .navlist {
-        .selected {
-          background-color: #24e3ae;
-          li {
-            color: #2d2c2c;
-          }
-        }
-        ul {
-          padding: 8px;
-          margin-bottom: 10px;
+        a {
+          text-decoration: none;
           position: relative;
-          top: 5rem;
-          background-color: #151029;
-          border: none;
-
-          a {
-            text-decoration: none;
-
+          top: 7rem;
+          // left: 1rem;
+          .selected {
             li {
-              color: white;
-              font-size: 17px;
+              color: #2d2c2c;
+            }
+            background-color: #24e3ae;
+          }
+          ul {
+            list-style-type: none;
+            li {
               font-family: pnBold;
-              display: inline-block;
-
+              font-size: 18px;
+              color: white;
+              padding: 10px;
               .icon1 {
                 padding-left: 1rem;
                 padding-right: 1rem;
@@ -1712,9 +1705,11 @@
           }
 
           &:hover {
-            background-color: #24e3ae;
-            li {
-              color: #2d2c2c;
+            ul {
+              background-color: #24e3ae;
+              li {
+                color: #2d2c2c;
+              }
             }
           }
         }

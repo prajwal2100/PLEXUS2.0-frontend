@@ -1,5 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineDashboard } from "react-icons/ai";
+import { AiFillAccountBook } from "react-icons/ai";
+import { AiOutlineNotification } from "react-icons/ai";
+import { AiFillProfile } from "react-icons/ai";
+
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import logo from "../images/Logo-Final.png";
@@ -9,13 +14,9 @@ import background from "../images/background.gif";
 import "../App.css";
 
 export default class Editprofile extends Component {
-
-  
   openNav = () => {
     console.log("hi whats up");
-    if (
-      document.getElementById("mySidebar")
-    ) {
+    if (document.getElementById("mySidebar")) {
       document.getElementById("mySidebar").style.width = "250px";
     }
   };
@@ -30,147 +31,158 @@ export default class Editprofile extends Component {
     }
   };
 
-
-
   render() {
     return (
       <div>
-      <>
-        <div className="editprofile">
-          <div className="wrapper">
+        <>
+          <div className="editprofile">
+            <div className="wrapper">
+              <div id="mySidebar" className="collapse-sidebar">
+                <a href="" className="closebtn" onClick={this.closeNav}>
+                  ×
+                </a>
+                <a href="/home">Home</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/leaderboard">Leaderboard</a>
+                <a href="/event">About Event</a>
+                <a href="/profile">Edit Profile</a>
+                <a href="/login">
+                  <button>Logout</button>
+                </a>
+              </div>
 
-            
-          <div id="mySidebar" className="collapse-sidebar">
-              <a href="" className="closebtn" onClick={this.closeNav}>×</a>
-              <a href="/home">Home</a>
-              <a href="/dashboard">Dashboard</a>
-              <a href="/leaderboard">Leaderboard</a> 
-              <a href="/event">About Event</a>
-              <a href="/profile">Edit Profile</a>
-              <a href="/login"><button>Logout</button></a>
-               
-             </div>
+              <div id="collapse-main">
+                <button className="openbtn" onClick={this.openNav}>
+                  ☰
+                </button>
+              </div>
 
-             <div id="collapse-main">
-               <button className="openbtn" onClick={this.openNav}>☰</button>
-             </div>
-
-
-            <div className="sidebar">
-              <img src={logo} alt="logo" />
-              <div className="navlist">
-                <ul>
+              <div className="sidebar">
+                <Link to="/Home">
+                  <img src={logo} alt="logo" />
+                </Link>
+                <div className="navlist">
                   <Link to="/Home">
-                    <li>
-                      {" "}
-                      <AiOutlineHome className="icon1" /> Home
-                    </li>
+                    <ul>
+                      <li>
+                        {" "}
+                        <AiOutlineHome className="icon1" /> Home
+                      </li>
+                    </ul>
                   </Link>
-                </ul>
-                <ul>
+
                   <Link to="/dashboard">
-                    <li>
-                      {" "}
-                      <AiOutlineHome className="icon1 " /> Dashboard
-                    </li>
+                    <ul>
+                      <li>
+                        {" "}
+                        <AiOutlineDashboard className="icon1" /> Dashboard
+                      </li>
+                    </ul>
                   </Link>
-                </ul>
-                <ul>
+
                   <Link to="/leaderboard">
-                    <li>
-                      {" "}
-                      <AiOutlineHome className="icon1" /> Leaderboard
-                    </li>
+                    <ul>
+                      <li>
+                        {" "}
+                        <AiFillAccountBook className="icon1" /> Leaderboard
+                      </li>
+                    </ul>
                   </Link>
-                </ul>
-                <ul>
+
                   <Link to="/event">
-                    <li>
-                      {" "}
-                      <AiOutlineHome className="icon1" /> Abount event
-                    </li>
+                    <ul>
+                      <li>
+                        {" "}
+                        <AiOutlineNotification className="icon1" /> Abount event
+                      </li>
+                    </ul>
                   </Link>
-                </ul>
-
-                <ul className="selected">
+                  {/* <ul>
+                <Link to="/forum">
+                  <li>
+                    {" "}
+                    <AiOutlineHome className="icon1" /> Forum
+                  </li>
+                </Link>
+              </ul> */}
                   <Link to="/profile">
-                    <li>
-                      {" "}
-                      <AiOutlineHome className="icon1" /> Edit Profile
-                    </li>
+                    <ul className="selected">
+                      <li>
+                        {" "}
+                        <AiFillProfile className="icon1" /> Edit Profile
+                      </li>
+                    </ul>
                   </Link>
-                </ul>
+                </div>
               </div>
-            </div>
 
-            <div className="mainpage">
-              <div className="nav">
-                <p className="title">
-                  <Link to="/">Zealicon</Link>
-                </p>
-                <p className="login">
-                  <Link to="/">LogOut</Link>
-                </p>
+              <div className="mainpage">
+                <div className="nav">
+                  <p className="title">
+                    <Link to="/">Zealicon</Link>
+                  </p>
+                  <p className="login">
+                    <Link to="/">LogOut</Link>
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="mainbody">
-              <div className="edit">
-                <div className="card">
-                  <div className="smallcard">
-                    <div className="topbox"></div>
-                    <div className="circleimg"></div>
-                    <div className="bottombox">
-                      <h2>Shubham Singh</h2>
-                      <h3>rex1234@gmail.com</h3>
+              <div className="mainbody">
+                <div className="edit">
+                  <div className="card">
+                    <div className="smallcard">
+                      <div className="topbox"></div>
+                      <div className="circleimg"></div>
+                      <div className="bottombox">
+                        <h2>Shubham Singh</h2>
+                        <h3>rex1234@gmail.com</h3>
+                      </div>
                     </div>
-                  </div>
-                  <div className="maincard">
-                    <h2>Edit Profile</h2>
-                    <div className="sets">
-                      <div className="set1">
-                        <div className="change">
-                          <p>Email Address:</p>
-                          <input type="text" placeholder="rex123@gmail.com" />
+                    <div className="maincard">
+                      <h2>Edit Profile</h2>
+                      <div className="sets">
+                        <div className="set1">
+                          <div className="change">
+                            <p>Email Address:</p>
+                            <input type="text" placeholder="rex123@gmail.com" />
+                          </div>
+
+                          <div className="change">
+                            <p>Name:</p>
+                            <input type="text" placeholder="rex" />
+                          </div>
                         </div>
 
-                        <div className="change">
-                          <p>Name:</p>
-                          <input type="text" placeholder="rex" />
+                        <div className="set2">
+                          <div className="change">
+                            <p>Password:</p>
+                            <input type="password" />
+                          </div>
+                          <div className="change">
+                            <p>Contact Number:</p>
+                            <input type="text" placeholder="99999999999" />
+                          </div>
                         </div>
                       </div>
 
-                      <div className="set2">
-                        <div className="change">
-                          <p>Password:</p>
-                          <input type="password" />
-                        </div>
-                        <div className="change">
-                          <p>Contact Number:</p>
-                          <input type="text" placeholder="99999999999" />
-                        </div>
-                      </div>
+                      <button> Update Profile </button>
                     </div>
-
-                    <button> Update Profile </button>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <Footer />
+              <Footer />
+            </div>
           </div>
-        </div>
-      </>
-    </div>
-    )
+        </>
+      </div>
+    );
   }
 }
-
 
 // import React from "react";
 
 // export default function Editprofile() {
 //   return (
-   
+
 //   );
 // }

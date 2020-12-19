@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import logo from "../images/Logo-Final.png";
 import { Redirect } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineDashboard } from "react-icons/ai";
+import { AiFillAccountBook } from "react-icons/ai";
+import { AiOutlineNotification } from "react-icons/ai";
+import { AiFillProfile } from "react-icons/ai";
+
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -35,30 +40,6 @@ export default class Home extends Component {
 
   componentDidMount() {
     console.log(localStorage.getItem("login"));
-
-    // ------------------------  This api call is made using javascript native fetch. I've madee a separate header to avoid code clustering ---------------------------------------
-
-    // var myHeaders = new Headers();
-    // myHeaders.append(
-    //   "Authorization",
-    //   `Bearer ${localStorage.getItem("login")}`
-    // );
-
-    // var requestOptions = {
-    //   method: "GET",
-    //   headers: myHeaders,
-    //   redirect: "follow",
-    // };
-
-    // fetch(
-    //   "https://plexus-2.herokuapp.com/api/dashboard/present_events/",
-    //   requestOptions
-    // )
-    //   .then((response) => response.text())
-    //   .then((result) => console.log(result))
-    //   .catch((error) => console.log("error", error));
-
-    // ------------------------  This is your code just you are passing the token wrong way. ---------------------------------------
 
     axios
       .get("https://plexus-2.herokuapp.com/api/dashboard/present_events/", {
@@ -133,40 +114,45 @@ export default class Home extends Component {
           </div>
 
           <div className="home-sidebar">
-            <img src={logo} alt="logo" />
+            <Link to="/Home">
+              <img src={logo} alt="logo" />
+            </Link>
             <div className="navlist">
-              <ul className="selected">
-                <Link to="/Home">
+              <Link to="/Home">
+                <ul className="selected">
                   <li>
                     {" "}
                     <AiOutlineHome className="icon1" /> Home
                   </li>
-                </Link>
-              </ul>
-              <ul>
-                <Link to="/dashboard">
+                </ul>
+              </Link>
+
+              <Link to="/dashboard">
+                <ul>
                   <li>
                     {" "}
-                    <AiOutlineHome className="icon1" /> Dashboard
+                    <AiOutlineDashboard className="icon1" /> Dashboard
                   </li>
-                </Link>
-              </ul>
-              <ul>
-                <Link to="/leaderboard">
+                </ul>
+              </Link>
+
+              <Link to="/leaderboard">
+                <ul>
                   <li>
                     {" "}
-                    <AiOutlineHome className="icon1" /> Leaderboard
+                    <AiFillAccountBook className="icon1" /> Leaderboard
                   </li>
-                </Link>
-              </ul>
-              <ul>
-                <Link to="/event">
+                </ul>
+              </Link>
+
+              <Link to="/event">
+                <ul>
                   <li>
                     {" "}
-                    <AiOutlineHome className="icon1" /> Abount event
+                    <AiOutlineNotification className="icon1" /> Abount event
                   </li>
-                </Link>
-              </ul>
+                </ul>
+              </Link>
               {/* <ul>
                 <Link to="/forum">
                   <li>
@@ -175,14 +161,14 @@ export default class Home extends Component {
                   </li>
                 </Link>
               </ul> */}
-              <ul>
-                <Link to="/profile">
+              <Link to="/profile">
+                <ul>
                   <li>
                     {" "}
-                    <AiOutlineHome className="icon1" /> Edit Profile
+                    <AiFillProfile className="icon1" /> Edit Profile
                   </li>
-                </Link>
-              </ul>
+                </ul>
+              </Link>
             </div>
           </div>
 
