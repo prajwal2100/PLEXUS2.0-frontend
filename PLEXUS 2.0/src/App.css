@@ -949,14 +949,15 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-.homePage .wrapper .mainbody .cardEvents {
+.homePage .wrapper .mainbody .cardEvents .card1 {
+  padding-right: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.homePage .wrapper .mainbody .cardEvents .card1 {
-  padding-right: 30px;
+.homePage .wrapper .mainbody .cardEvents .card1 .card {
+  margin-right: 20px;
 }
 
 @media only screen and (max-width: 400px) {
@@ -1003,11 +1004,11 @@
     font-size: 22px;
   }
   .homePage .wrapper .mainbody .cardEvents {
-    display: block;
     width: 100%;
   }
   .homePage .wrapper .mainbody .cardEvents .card1 {
     padding-bottom: 25px;
+    display: block;
   }
   .homePage .wrapper .cardHolder1 .card,
   .homePage .wrapper .cardHolder2 .card,

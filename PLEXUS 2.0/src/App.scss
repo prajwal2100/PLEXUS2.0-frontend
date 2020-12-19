@@ -888,9 +888,13 @@
         }
       }
       .cardEvents {
-        display: flex;
+        // display: flex;
         .card1 {
           padding-right: 30px;
+          display: flex;
+          .card {
+            margin-right: 20px;
+          }
         }
       }
     }
@@ -949,10 +953,10 @@
           font-size: 22px;
         }
         .cardEvents {
-          display: block;
           width: 100%;
           .card1 {
             padding-bottom: 25px;
+            display: block;
           }
         }
       }

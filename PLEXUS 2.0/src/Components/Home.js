@@ -34,7 +34,8 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      EventName: null,
+      ongoingEvent: [],
+      futureEvent: [],
     };
   }
 
@@ -52,7 +53,23 @@ export default class Home extends Component {
         console.log(response.data);
         console.log(response.data[0].name);
         this.setState({
-          EventName: response.data[0].name,
+          ongoingEvent: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    axios
+      .get("https://plexus-2.herokuapp.com/dashboard/future-events/", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("login")}`,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        this.setState({
+          futureEvent: response.data,
         });
       })
       .catch((error) => {
@@ -94,8 +111,6 @@ export default class Home extends Component {
   // }
 
   render() {
-    const { EventName } = this.state;
-
     return (
       <div className="homePage">
         <div className="wrapper">
@@ -200,24 +215,18 @@ export default class Home extends Component {
 
             <div className="cardEvents">
               <div className="card1">
-                <div className="cardHolder1">
-                  <div className="card">
-                    <div className="items">
-                      <h2> {EventName} </h2>
-                      <h3> hi hello </h3>
-                      <p> hi hello </p>
-                      <button>Play</button>
+                {this.state.ongoingEvent.map((event) => (
+                  <div className="cardHolder1" key={event.id}>
+                    <div className="card">
+                      <div className="items">
+                        <h2> {event.name} </h2>
+                        <h3> {event.description} </h3>
+                        <p> hi hello </p>
+                        <button>Play</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div className="card1">
-                <Card1
-                  title="Algothematics"
-                  description="An online algo quiz"
-                  time="ENDS ON 30TH JUNE 7:06PM"
-                />
+                ))}
               </div>
             </div>
 
@@ -225,26 +234,18 @@ export default class Home extends Component {
 
             <div className="cardEvents">
               <div className="card1">
-                <Card2
-                  title="Khoj"
-                  description="An real online treasure hunt"
-                  time="ENDS ON 30TH JUNE 7:06PM"
-                />
-              </div>
-
-              <div className="card1">
-                <Card2
-                  title="Ovid"
-                  description="An online paint competiton"
-                  time="ENDS ON 30TH JUNE 7:06PM"
-                />
-              </div>
-              <div className="card1">
-                <Card2
-                  title="Electrohut"
-                  description="An online Quanta quiz"
-                  time="ENDS ON 30TH JUNE 7:06PM"
-                />
+                {this.state.futureEvent.map((event) => (
+                  <div className="cardHolder2" key={event.id}>
+                    <div className="card">
+                      <div className="items">
+                        <h2> {event.name} </h2>
+                        <h3> {event.description} </h3>
+                        <p> hi hello </p>
+                        <button>Play</button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
