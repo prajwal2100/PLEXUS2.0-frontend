@@ -60,14 +60,35 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-.coverPage .wrapper .mainbody .cardEvents {
+.coverPage .wrapper .mainbody .cardEvents .card1 {
+  padding-right: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.coverPage .wrapper .mainbody .cardEvents .card1 {
-  padding-right: 30px;
+.coverPage .wrapper .mainbody .cardEvents .card1 .cardHolder1 .card,
+.coverPage .wrapper .mainbody .cardEvents .card1 .cardHolder2 .card {
+  margin-right: 20px;
+}
+
+.coverPage .wrapper .mainbody .cardEvents .card1 .cardHolder1 .card button,
+.coverPage .wrapper .mainbody .cardEvents .card1 .cardHolder2 .card button {
+  padding: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-family: pnBold;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #24e3ae;
+}
+
+.coverPage .wrapper .mainbody .cardEvents .card1 .cardHolder1 .card button:hover,
+.coverPage .wrapper .mainbody .cardEvents .card1 .cardHolder2 .card button:hover {
+  background-color: #1f183e;
+  border: 2px solid #24e3ae;
+  color: #24e3ae;
 }
 
 .coverPage .wrapper img {
@@ -188,11 +209,11 @@
     font-size: 22px;
   }
   .coverPage .wrapper .mainbody .cardEvents {
-    display: block;
     width: 100%;
   }
   .coverPage .wrapper .mainbody .cardEvents .card1 {
     padding-bottom: 25px;
+    display: block;
   }
   .coverPage .wrapper .cardHolder1 .card,
   .coverPage .wrapper .cardHolder2 .card,
@@ -956,8 +977,28 @@
   display: flex;
 }
 
-.homePage .wrapper .mainbody .cardEvents .card1 .card {
+.homePage .wrapper .mainbody .cardEvents .card1 .cardHolder1 .card,
+.homePage .wrapper .mainbody .cardEvents .card1 .cardHolder2 .card {
   margin-right: 20px;
+}
+
+.homePage .wrapper .mainbody .cardEvents .card1 .cardHolder1 .card button,
+.homePage .wrapper .mainbody .cardEvents .card1 .cardHolder2 .card button {
+  padding: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-family: pnBold;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #24e3ae;
+}
+
+.homePage .wrapper .mainbody .cardEvents .card1 .cardHolder1 .card button:hover,
+.homePage .wrapper .mainbody .cardEvents .card1 .cardHolder2 .card button:hover {
+  background-color: #1f183e;
+  border: 2px solid #24e3ae;
+  color: #24e3ae;
 }
 
 @media only screen and (max-width: 400px) {

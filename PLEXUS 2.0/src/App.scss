@@ -60,9 +60,31 @@
         }
       }
       .cardEvents {
-        display: flex;
+        // display: flex;
         .card1 {
           padding-right: 30px;
+          display: flex;
+          .cardHolder1,
+          .cardHolder2 {
+            .card {
+              margin-right: 20px;
+              button {
+                padding: 10px;
+                padding-right: 25px;
+                padding-left: 25px;
+                font-family: pnBold;
+                font-size: 18px;
+                border-radius: 5px;
+                border: none;
+                background-color: #24e3ae;
+                &:hover {
+                  background-color: #1f183e;
+                  border: 2px solid #24e3ae;
+                  color: #24e3ae;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -191,10 +213,10 @@
           font-size: 22px;
         }
         .cardEvents {
-          display: block;
           width: 100%;
           .card1 {
             padding-bottom: 25px;
+            display: block;
           }
         }
       }
@@ -892,8 +914,27 @@
         .card1 {
           padding-right: 30px;
           display: flex;
-          .card {
-            margin-right: 20px;
+          .cardHolder1,
+          .cardHolder2 {
+            .card {
+              margin-right: 20px;
+
+              button {
+                padding: 10px;
+                padding-right: 25px;
+                padding-left: 25px;
+                font-family: pnBold;
+                font-size: 18px;
+                border-radius: 5px;
+                border: none;
+                background-color: #24e3ae;
+                &:hover {
+                  background-color: #1f183e;
+                  border: 2px solid #24e3ae;
+                  color: #24e3ae;
+                }
+              }
+            }
           }
         }
       }

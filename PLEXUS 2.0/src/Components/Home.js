@@ -36,6 +36,7 @@ export default class Home extends Component {
     this.state = {
       ongoingEvent: [],
       futureEvent: [],
+      pastEvent: [],
     };
   }
 
@@ -70,6 +71,22 @@ export default class Home extends Component {
         console.log(response.data);
         this.setState({
           futureEvent: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    axios
+      .get("https://plexus-2.herokuapp.com/dashboard/past-events/", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("login")}`,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        this.setState({
+          pastEvent: response.data,
         });
       })
       .catch((error) => {
@@ -221,7 +238,7 @@ export default class Home extends Component {
                       <div className="items">
                         <h2> {event.name} </h2>
                         <h3> {event.description} </h3>
-                        <p> hi hello </p>
+                        <p> {event.start_time} </p>
                         <button>Play</button>
                       </div>
                     </div>
@@ -253,26 +270,18 @@ export default class Home extends Component {
 
             <div className="cardEvents">
               <div className="card1">
-                <Card3
-                  title="Khoj"
-                  description="An real online treasure hunt"
-                  time="ENDS ON 30TH JUNE 7:06PM"
-                />
-              </div>
-
-              <div className="card1">
-                <Card3
-                  title="Ovid"
-                  description="An online paint competiton"
-                  time="ENDS ON 30TH JUNE 7:06PM"
-                />
-              </div>
-              <div className="card1">
-                <Card3
-                  title="Electrohut"
-                  description="An online Quanta quiz"
-                  time="ENDS ON 30TH JUNE 7:06PM"
-                />
+                {this.state.pastEvent.map((event) => (
+                  <div className="cardHolder1" key={event.id}>
+                    <div className="card">
+                      <div className="items">
+                        <h2> {event.name} </h2>
+                        <h3> {event.description} </h3>
+                        <p> hi hello </p>
+                        <button>Play</button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
