@@ -34,10 +34,36 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
+    console.log(localStorage.getItem("login"));
+
+    // ------------------------  This api call is made using javascript native fetch. I've madee a separate header to avoid code clustering ---------------------------------------
+
+    // var myHeaders = new Headers();
+    // myHeaders.append(
+    //   "Authorization",
+    //   `Bearer ${localStorage.getItem("login")}`
+    // );
+
+    // var requestOptions = {
+    //   method: "GET",
+    //   headers: myHeaders,
+    //   redirect: "follow",
+    // };
+
+    // fetch(
+    //   "https://plexus-2.herokuapp.com/api/dashboard/present_events/",
+    //   requestOptions
+    // )
+    //   .then((response) => response.text())
+    //   .then((result) => console.log(result))
+    //   .catch((error) => console.log("error", error));
+
+    // ------------------------  This is your code just you are passing the token wrong way. ---------------------------------------
+
     axios
       .get("https://plexus-2.herokuapp.com/api/dashboard/present_events/", {
         headers: {
-          Authorization: "Bearer".concat(localStorage.getItem("login")),
+          Authorization: `Bearer ${localStorage.getItem("login")}`,
         },
       })
       .then((response) => {
