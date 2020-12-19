@@ -34,7 +34,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      postId: null,
+      EventName: null,
     };
   }
 
@@ -42,13 +42,18 @@ export default class Home extends Component {
     console.log(localStorage.getItem("login"));
 
     axios
-      .get("https://plexus-2.herokuapp.com/api/dashboard/present_events/", {
+      .get("https://plexus-2.herokuapp.com/dashboard/present-events/", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("login")}`,
         },
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
+        console.log(response.data);
+        console.log(response.data[0].name);
+        this.setState({
+          EventName: response.data[0].name,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -89,7 +94,8 @@ export default class Home extends Component {
   // }
 
   render() {
-    const { postId } = this.state;
+    const { EventName } = this.state;
+
     return (
       <div className="homePage">
         <div className="wrapper">
@@ -194,11 +200,16 @@ export default class Home extends Component {
 
             <div className="cardEvents">
               <div className="card1">
-                <Card1
-                  title={postId}
-                  description="An online treasure hunt"
-                  time="ENDS ON 30TH JUNE 7:06PM"
-                />
+                <div className="cardHolder1">
+                  <div className="card">
+                    <div className="items">
+                      <h2> {EventName} </h2>
+                      <h3> hi hello </h3>
+                      <p> hi hello </p>
+                      <button>Play</button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="card1">
