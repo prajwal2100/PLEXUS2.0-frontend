@@ -137,7 +137,7 @@ export default class SignupPage extends Component {
 
       axios({
         method: "post",
-        url: "https://plexus-2.herokuapp.com/api/register/player_register/",
+        url: "https://plexus-2.herokuapp.com/registration/player-register/",
         // url: "register/player_register/",
         data: payload,
         headers: { "Content-Type": "application/json" },

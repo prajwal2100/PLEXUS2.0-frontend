@@ -1,5 +1,5 @@
 export function PostData(type, userData) {
-  let BaseUrl = "https://plexus-2.herokuapp.com/api/register/login/";
+  let BaseUrl = "https://plexus-2.herokuapp.com/registration/login/";
   return new Promise((resolve, reject) => {
     // BaseUrl + type
     fetch(BaseUrl, {
