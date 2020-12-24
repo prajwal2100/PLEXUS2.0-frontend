@@ -25,6 +25,129 @@
   src: url(./fonts/ProximaNova-Regular.otf) format(opentype);
 }
 
+//selectionPage
+.SelectionPage {
+  .wrapper {
+    background: #1f183e;
+    height: 100vh;
+
+    img {
+      max-width: 177px;
+      height: 45px;
+      position: relative;
+      left: 3rem;
+      top: 2rem;
+    }
+
+    .sidebar {
+      background-color: #151029;
+      height: 135vh;
+      width: 15%;
+      position: fixed;
+
+      .navlist {
+        ul {
+          // border: 1px solid green;
+          padding: 8px;
+          position: relative;
+          top: 5rem;
+          background-color: #24e3ae;
+          a {
+            text-decoration: none;
+            li {
+              color: #2d2c2c;
+              font-size: 17px;
+              font-weight: 600;
+              font-family: pnReg;
+              display: inline-block;
+              .icon1 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mainpage {
+      height: 100vh;
+      width: 100%;
+      .nav {
+        display: flex;
+        width: 100%;
+        height: 5%;
+        background-color: #1d1739;
+        border-bottom: 1px solid #524396;
+        .title {
+          a {
+            padding-left: 20px;
+            font-size: 26px;
+            position: absolute;
+            top: 0.3rem;
+            display: none;
+            font-family: pnBold;
+            text-decoration: none;
+            color: #24e3ae;
+          }
+        }
+        .login {
+          a {
+            position: absolute;
+            right: 2rem;
+            top: 0.6rem;
+            text-decoration: none;
+            font-family: pnBold;
+            font-size: 16px;
+            line-height: 19px;
+            color: #24e3ae;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .wrapper {
+      .sidebar {
+        img {
+          // height: 50px;
+          // width: 126px;
+          // position: absolute;
+          top: 0.2rem;
+          left: 1rem;
+        }
+        // width: 0%;
+        .navlist {
+          display: none;
+        }
+      }
+    }
+
+    .mainpage {
+      background-color: #1f183e;
+      height: 350vh;
+
+      .nav {
+        height: 2.5%;
+        .title {
+          display: none;
+        }
+        .login {
+          display: none;
+        }
+      }
+    }
+
+    .footer {
+      width: 100%;
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
 // cover page
 .coverPage {
   .wrapper {

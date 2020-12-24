@@ -14,11 +14,13 @@ import Dashboard from "./Components/Dashboard";
 import Leaderboard from "./Components/Leaderboard";
 import AboutEvent from "./Components/AboutEvent";
 import Editprofile from "./Components/Editprofile";
+import SelectionPage from "./Components/SelectionPage";
 
 function App() {
   return (
     <div>
       <Switch>
+        {/* <Route exact path="/" component={SelectionPage} /> */}
         <Route exact path="/" component={CoverPage} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/home" component={Home} />

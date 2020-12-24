@@ -53,6 +53,7 @@ export default class Home extends Component {
         // console.log(response);
         console.log(response.data);
         console.log(response.data[0].name);
+
         this.setState({
           ongoingEvent: response.data,
         });
@@ -238,7 +239,7 @@ export default class Home extends Component {
                       <div className="items">
                         <h2> {event.name} </h2>
                         <h3> {event.description} </h3>
-                        <p> {event.start_time} </p>
+                        <p> Start Time : {event.start_time.slice(12, 16)} </p>
                         <button>Play</button>
                       </div>
                     </div>
@@ -257,7 +258,7 @@ export default class Home extends Component {
                       <div className="items">
                         <h2> {event.name} </h2>
                         <h3> {event.description} </h3>
-                        <p> hi hello </p>
+                        <p> Start Time : {event.start_time.slice(12, 16)} </p>
                         <button>Play</button>
                       </div>
                     </div>
@@ -276,7 +277,7 @@ export default class Home extends Component {
                       <div className="items">
                         <h2> {event.name} </h2>
                         <h3> {event.description} </h3>
-                        <p> hi hello </p>
+                        <p> Start Time : {event.start_time.slice(12, 16)} </p>
                         <button>Play</button>
                       </div>
                     </div>

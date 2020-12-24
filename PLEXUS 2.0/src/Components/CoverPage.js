@@ -157,7 +157,7 @@ export default class CoverPage extends Component {
                         <div className="items">
                           <h2> {event.name} </h2>
                           <h3> {event.description} </h3>
-                          <p> {event.start_time} </p>
+                          <p> Start Time : {event.start_time.slice(12, 16)} </p>
                           <button>Play</button>
                         </div>
                       </div>
@@ -176,7 +176,7 @@ export default class CoverPage extends Component {
                         <div className="items">
                           <h2> {event.name} </h2>
                           <h3> {event.description} </h3>
-                          <p> hi hello </p>
+                          <p> Start Time : {event.start_time.slice(12, 16)} </p>
                           <button>Play</button>
                         </div>
                       </div>
@@ -195,7 +195,7 @@ export default class CoverPage extends Component {
                         <div className="items">
                           <h2> {event.name} </h2>
                           <h3> {event.description} </h3>
-                          <p> hi hello </p>
+                          <p> Start Time : {event.start_time.slice(12, 16)} </p>
                           <button>Play</button>
                         </div>
                       </div>

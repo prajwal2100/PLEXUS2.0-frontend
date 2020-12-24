@@ -24,6 +24,116 @@
   src: url(./fonts/ProximaNova-Regular.otf) format(opentype);
 }
 
+.SelectionPage .wrapper {
+  background: #1f183e;
+  height: 100vh;
+}
+
+.SelectionPage .wrapper img {
+  max-width: 177px;
+  height: 45px;
+  position: relative;
+  left: 3rem;
+  top: 2rem;
+}
+
+.SelectionPage .wrapper .sidebar {
+  background-color: #151029;
+  height: 135vh;
+  width: 15%;
+  position: fixed;
+}
+
+.SelectionPage .wrapper .sidebar .navlist ul {
+  padding: 8px;
+  position: relative;
+  top: 5rem;
+  background-color: #24e3ae;
+}
+
+.SelectionPage .wrapper .sidebar .navlist ul a {
+  text-decoration: none;
+}
+
+.SelectionPage .wrapper .sidebar .navlist ul a li {
+  color: #2d2c2c;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: pnReg;
+  display: inline-block;
+}
+
+.SelectionPage .wrapper .sidebar .navlist ul a li .icon1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.SelectionPage .wrapper .mainpage {
+  height: 100vh;
+  width: 100%;
+}
+
+.SelectionPage .wrapper .mainpage .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 5%;
+  background-color: #1d1739;
+  border-bottom: 1px solid #524396;
+}
+
+.SelectionPage .wrapper .mainpage .nav .title a {
+  padding-left: 20px;
+  font-size: 26px;
+  position: absolute;
+  top: 0.3rem;
+  display: none;
+  font-family: pnBold;
+  text-decoration: none;
+  color: #24e3ae;
+}
+
+.SelectionPage .wrapper .mainpage .nav .login a {
+  position: absolute;
+  right: 2rem;
+  top: 0.6rem;
+  text-decoration: none;
+  font-family: pnBold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #24e3ae;
+}
+
+@media only screen and (max-width: 400px) {
+  .SelectionPage .wrapper .sidebar img {
+    top: 0.2rem;
+    left: 1rem;
+  }
+  .SelectionPage .wrapper .sidebar .navlist {
+    display: none;
+  }
+  .SelectionPage .mainpage {
+    background-color: #1f183e;
+    height: 350vh;
+  }
+  .SelectionPage .mainpage .nav {
+    height: 2.5%;
+  }
+  .SelectionPage .mainpage .nav .title {
+    display: none;
+  }
+  .SelectionPage .mainpage .nav .login {
+    display: none;
+  }
+  .SelectionPage .footer {
+    width: 100%;
+  }
+  .SelectionPage .footer p {
+    text-align: center;
+  }
+}
+
 .coverPage .wrapper {
   background: #1f183e;
   height: 135vh;
