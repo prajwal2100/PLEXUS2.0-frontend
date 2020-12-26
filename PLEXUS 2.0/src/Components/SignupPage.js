@@ -176,14 +176,14 @@ export default class SignupPage extends Component {
           console.log("error");
           alert("A user with that username already exists.");
 
-          document.getElementById("name").value = "";
-          document.getElementById("username").value = "";
-          document.getElementById("college").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("password").value = "";
-          document.getElementById("confirmPassword").value = "";
-          document.getElementById("contact").value = "";
-          document.getElementById("adminssionNO").value = "";
+          // document.getElementById("name").value = "";
+          // document.getElementById("username").value = "";
+          // document.getElementById("college").value = "";
+          // document.getElementById("email").value = "";
+          // document.getElementById("password").value = "";
+          // document.getElementById("confirmPassword").value = "";
+          // document.getElementById("contact").value = "";
+          // document.getElementById("adminssionNO").value = "";
 
           document.getElementById("loader").style.display = "none";
 

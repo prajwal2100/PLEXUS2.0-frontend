@@ -47,8 +47,8 @@ export default class Login extends Component {
           this.props.history.push("/home");
         } else {
           alert("Invalid Credentials OR not Registered");
-          document.getElementById("user").value = "";
-          document.getElementById("pass").value = "";
+          // document.getElementById("user").value = "";
+          // document.getElementById("pass").value = "";
           document.getElementById("loader").style.display = "none";
           document.getElementById("btnid").style.display = "block";
         }

@@ -21,6 +21,11 @@ export default class Home extends Component {
       document.getElementById("mySidebar").style.width = "250px";
     }
   };
+
+  logout = () => {
+    localStorage.clear();
+  };
+
   closeNav = () => {
     if (
       document.getElementById("mySidebar") &&
@@ -129,21 +134,23 @@ export default class Home extends Component {
   // }
 
   render() {
-    return (
+    const isAuth = localStorage.getItem("login");
+
+    return isAuth ? (
       <div className="homePage">
         <div className="wrapper">
           <div id="mySidebar" className="collapse-sidebar">
-            <a href="" className="closebtn" onClick={this.closeNav}>
+            <a className="closebtn" onClick={this.closeNav}>
               ×
             </a>
-            <a href="/home"> Home </a>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/leaderboard">Leaderboard</a>
-            <a href="/event">About Event</a>
-            <a href="/profile">Edit Profile</a>
-            <a href="/login">
+            <Link to="/home"> Home </Link>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/leaderboard">Leaderboard</Link>
+            <Link to="/event">About Event</Link>
+            <Link to="/profile">Edit Profile</Link>
+            <Link to="/login">
               <button>Logout</button>
-            </a>
+            </Link>
           </div>
 
           <div id="collapse-main">
@@ -218,7 +225,9 @@ export default class Home extends Component {
               </p>
 
               <p className="login">
-                <a href="/login">Log out</a>
+                <a href="/login" onClick={this.logout}>
+                  Log out
+                </a>
               </p>
             </div>
           </div>
@@ -289,6 +298,8 @@ export default class Home extends Component {
         </div>
         <Footer />
       </div>
+    ) : (
+      <Redirect to={{ pathname: "/login" }} />
     );
   }
 }

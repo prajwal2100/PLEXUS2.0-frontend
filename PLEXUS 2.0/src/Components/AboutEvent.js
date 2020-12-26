@@ -5,6 +5,7 @@ import { AiOutlineDashboard } from "react-icons/ai";
 import { AiFillAccountBook } from "react-icons/ai";
 import { AiOutlineNotification } from "react-icons/ai";
 import { AiFillProfile } from "react-icons/ai";
+import { Redirect } from "react-router-dom";
 
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
@@ -19,6 +20,9 @@ export default class AboutEvent extends Component {
     }
   };
 
+  logout = () => {
+    localStorage.clear();
+  };
   closeNav = () => {
     if (
       document.getElementById("mySidebar") &&
@@ -30,23 +34,24 @@ export default class AboutEvent extends Component {
   };
 
   render() {
-    return (
+    const isAuth = localStorage.getItem("login");
+    return isAuth ? (
       <div>
         <>
           <div className="aboutEvent">
             <div className="wrapper">
               <div id="mySidebar" className="collapse-sidebar">
-                <a href="" className="closebtn" onClick={this.closeNav}>
+                <a className="closebtn" onClick={this.closeNav}>
                   ×
                 </a>
-                <a href="/home">Home</a>
-                <a href="/dashboard">Dashboard</a>
-                <a href="/leaderboard">Leaderboard</a>
-                <a href="/event">About Event</a>
-                <a href="/profile">Edit Profile</a>
-                <a href="/login">
+                <Link to="/home"> Home </Link>
+                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/leaderboard">Leaderboard</Link>
+                <Link to="/event">About Event</Link>
+                <Link to="/profile">Edit Profile</Link>
+                <Link to="/login">
                   <button>Logout</button>
-                </a>
+                </Link>
               </div>
 
               <div id="collapse-main">
@@ -120,7 +125,9 @@ export default class AboutEvent extends Component {
                     <Link to="/">zealicon</Link>
                   </p>
                   <p className="login">
-                    <Link to="/">LogOut</Link>
+                    <Link to="/" onClick={this.logout}>
+                      LogOut
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -191,6 +198,8 @@ export default class AboutEvent extends Component {
           </div>
         </>
       </div>
+    ) : (
+      <Redirect to={{ pathname: "/login" }} />
     );
   }
 }

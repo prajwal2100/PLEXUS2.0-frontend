@@ -6,6 +6,7 @@ import Card1 from "./Card1";
 import Card2 from "./Card2";
 import Card3 from "./Card3";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 import { AiOutlineHome } from "react-icons/ai";
 import Footer from "./Footer";
@@ -97,16 +98,17 @@ export default class CoverPage extends Component {
   }
 
   render() {
+    // const isAuth = localStorage.getItem("login");
     return (
       <div>
         <div className="coverPage">
           <div className="wrapper">
             <div id="mySidebar" className="collapse-sidebar">
-              <a href="" className="closebtn" onClick={this.closeNav}>
+              <a className="closebtn" onClick={this.closeNav}>
                 ×
               </a>
-              <a href="/">Home</a>
-              <a href="/login">Login</a>
+              <Link to="/">Home</Link>
+              <Link to="/login">Login</Link>
               {/* <a href="#">Clients</a> 
               <a href="#">Contact</a> */}
             </div>
