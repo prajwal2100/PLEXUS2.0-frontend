@@ -109,7 +109,7 @@ export default class SignupPage extends Component {
   // If the form is validated we will  make api call
 
   handleSubmit = (event) => {
-    console.log(this.props);
+    // console.log(this.props);
 
     event.preventDefault();
     if (validateForm(this.state.errors)) {
@@ -150,15 +150,15 @@ export default class SignupPage extends Component {
           console.log(response);
           console.log(response.statusText);
           if (response.statusText === "Created") {
-            console.log("username");
-            console.log(this.state.username);
-            console.log(this.state.password);
+            // console.log("username");
+            // console.log(this.state.username);
+            // console.log(this.state.password);
 
             if (this.state.username && this.state.password) {
               PostData("login", this.state).then((result) => {
                 let responseJSON = result;
-                console.log(responseJSON);
-                console.log("response from backend");
+                // console.log(responseJSON);
+                // console.log("response from backend");
 
                 if (responseJSON.access != null) {
                   localStorage.setItem("login", responseJSON.access);
@@ -177,7 +177,7 @@ export default class SignupPage extends Component {
           // Show error to user. Like ALREADY REGISTERD Or anything. I'm just consoling the messgae
 
           // console.log(response.data.message);
-          console.log("error");
+          // console.log("error");
           // alert("A user with that username already exists.");
           toast.info("A user with that username already exists.");
 

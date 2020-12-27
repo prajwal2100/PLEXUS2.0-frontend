@@ -46,7 +46,7 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    console.log(localStorage.getItem("login"));
+    // console.log(localStorage.getItem("login"));
 
     axios
       .get("https://plexus-2.herokuapp.com/dashboard/present-events/", {
@@ -56,8 +56,8 @@ export default class Home extends Component {
       })
       .then((response) => {
         // console.log(response);
-        console.log(response.data);
-        console.log(response.data[0].name);
+        // console.log(response.data);
+        // console.log(response.data[0].name);
 
         this.setState({
           ongoingEvent: response.data,
@@ -74,7 +74,7 @@ export default class Home extends Component {
         },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         this.setState({
           futureEvent: response.data,
         });
@@ -90,7 +90,7 @@ export default class Home extends Component {
         },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         this.setState({
           pastEvent: response.data,
         });

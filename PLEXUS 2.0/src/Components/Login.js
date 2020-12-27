@@ -27,8 +27,8 @@ export default class Login extends Component {
   }
 
   login() {
-    console.log(this.state.username);
-    console.log(this.state.password);
+    // console.log(this.state.username);
+    // console.log(this.state.password);
 
     if (this.state.username != undefined || this.state.password != undefined) {
       if (document.getElementById("btnid")) {
@@ -43,8 +43,8 @@ export default class Login extends Component {
     if (this.state.username && this.state.password) {
       PostData("login", this.state).then((result) => {
         let responseJSON = result;
-        console.log(responseJSON);
-        console.log("response from backend");
+        // console.log(responseJSON);
+        // console.log("response from backend");
 
         if (responseJSON.access != null) {
           localStorage.setItem("login", responseJSON.access);

@@ -16,7 +16,7 @@ import "../App.css";
 
 export default class Editprofile extends Component {
   openNav = () => {
-    console.log("hi whats up");
+    // console.log("hi whats up");
     if (document.getElementById("mySidebar")) {
       document.getElementById("mySidebar").style.width = "250px";
     }

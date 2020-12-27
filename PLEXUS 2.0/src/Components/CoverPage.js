@@ -13,7 +13,7 @@ import Footer from "./Footer";
 
 export default class CoverPage extends Component {
   openNav = () => {
-    console.log("hi whats up");
+    // console.log("hi whats up");
     if (document.getElementById("mySidebar")) {
       document.getElementById("mySidebar").style.width = "250px";
     }
@@ -44,7 +44,7 @@ export default class CoverPage extends Component {
   }
 
   componentDidMount() {
-    console.log(localStorage.getItem("login"));
+    // console.log(localStorage.getItem("login"));
 
     axios
       .get("https://plexus-2.herokuapp.com/dashboard/present-events/", {
@@ -54,8 +54,8 @@ export default class CoverPage extends Component {
       })
       .then((response) => {
         // console.log(response);
-        console.log(response.data);
-        console.log(response.data[0].name);
+        // console.log(response.data);
+        // console.log(response.data[0].name);
         this.setState({
           ongoingEvent: response.data,
         });
@@ -71,7 +71,7 @@ export default class CoverPage extends Component {
         },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         this.setState({
           futureEvent: response.data,
         });
@@ -87,7 +87,7 @@ export default class CoverPage extends Component {
         },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         this.setState({
           pastEvent: response.data,
         });
