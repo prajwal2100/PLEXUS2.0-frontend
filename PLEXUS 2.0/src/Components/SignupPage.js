@@ -11,6 +11,10 @@ import eclipse4 from "../images/Ellipse4.png";
 import { notify, report } from "superagent";
 import { PostData } from "../services/PostData";
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
+
 // function TO VALIDATE EMAIL. You can test your regex on https://regex101.com/.
 
 // Take a quick look at https://regexr.com/ or just google to know basic about regex
@@ -174,7 +178,8 @@ export default class SignupPage extends Component {
 
           // console.log(response.data.message);
           console.log("error");
-          alert("A user with that username already exists.");
+          // alert("A user with that username already exists.");
+          toast.info("A user with that username already exists.");
 
           // document.getElementById("name").value = "";
           // document.getElementById("username").value = "";
