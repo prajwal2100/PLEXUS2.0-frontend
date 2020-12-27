@@ -8,6 +8,10 @@ import Footer from "./Footer";
 import "../App.css";
 import "../ldbtn.min.css";
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +50,7 @@ export default class Login extends Component {
           localStorage.setItem("login", responseJSON.access);
           this.props.history.push("/home");
         } else {
-          alert("Invalid Credentials OR not Registered");
+          toast.info("Invalid Credentials OR not Registered");
           // document.getElementById("user").value = "";
           // document.getElementById("pass").value = "";
           document.getElementById("loader").style.display = "none";
